@@ -52,6 +52,14 @@ _Local times in Cuernavaca, Mexico_
   - 9-11 am: Review session
   - 12-2 pm: spatial transcriptomics with `r BiocStyle::Biocpkg("spatialLIBD")` + open discussion (career paths, networking, etc)
   
+External links:
+
+* [Cursos LCG](https://cursos.lcg.unam.mx/mod/url/view.php?id=2220)
+* [GitHub source code](https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021)
+* Zoom (ask)
+* [CDSB](https://comunidadbioinfo.github.io/)
+* [Slack CDSB Mexico](https://comunidadbioinfo.slack.com)
+  
 
 ## Course Prerequisites {-}
 
