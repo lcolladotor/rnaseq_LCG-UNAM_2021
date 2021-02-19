@@ -1,0 +1,76 @@
+---
+title: "R/Bioconductor-powered Team Data Science"
+author: "Leonardo Collado-Torres"
+site: bookdown::bookdown_site
+apple-touch-sin: "icon_192.png"
+apple-touch-icon-size: 192
+favicon: "icon_32.png"
+github-repo: "lcolladotor/bioc_team_ds"
+documentclass: book
+output:
+  bookdown::gitbook:
+    includes:
+      after_body: map_and_ga.html
+    css: "style.css"
+    
+---
+
+# Overview {-}
+
+**R/Bioconductor-powered Team Data Science** by [Leonardo Collado Torres](http://lcolladotor.github.io) and team members.
+
+With lessons learned from former mentors [Jeffrey T. Leek](https://github.com/jtleek) and [Andrew E. Jaffe](https://github.com/andrewejaffe).
+
+## Team members {-}
+
+* [Abby Spangler](https://github.com/abspangler13)
+* [Arta Seyedian](https://github.com/aseyedia)
+* [Brenda Pardo](https://github.com/bpardo99)
+* [Joshua M. Stolz](https://github.com/joshstolz)
+* [Louise Huuki](https://github.com/lahuuki)
+* [Nicholas J. Eagles](https://github.com/Nick-Eagles)
+
+### Alumni {-}
+
+* [Amy Peterson](https://github.com/Ashkaunr)
+* [Ashkaun Razmara](https://github.com/amy-peterson)
+
+## DSgs-guide team members {-}
+
+* [Arta Seyedian](https://github.com/aseyedia)
+* [Joshua M. Stolz](https://github.com/joshstolz)
+* [Louise Huuki](https://github.com/lahuuki)
+* [Nicholas J. Eagles](https://github.com/Nick-Eagles)
+* [Madhavi Tippani](https://github.com/madhavitippani)
+
+_Check [Become a DSgs guide](#become-a-dsgs-guide) to join the DSgs-guide team_.
+
+## Acknowledgements {-}
+
+The contents of this book have been refined thanks to feedback from:
+
+* [Keri Martinowich](https://github.com/kmartinow)
+* [Kristen R. Maynard](https://github.com/kmaynard12)
+
+This book was last updated on `r Sys.time()`.
+
+## R session information {-}
+
+Details on the R version used for making this book. The source code is available at [`lcolladotor/bioc_team_ds`](https://github.com/lcolladotor/bioc_team_ds).
+
+```{r session_info_chunk, eval = FALSE}
+## Load the package at the top of your script
+library("sessioninfo")
+
+## Reproducibility information
+print('Reproducibility information:')
+Sys.time()
+proc.time()
+options(width = 120)
+session_info()
+```
+
+```{r session_info, echo = FALSE}
+<<session_info_chunk>>
+```
+
