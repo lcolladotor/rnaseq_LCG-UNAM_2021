@@ -1,11 +1,11 @@
 ---
-title: "R/Bioconductor-powered Team Data Science"
+title: "Intro RNA-seq LCG-UNAM 2021"
 author: "Leonardo Collado-Torres"
 site: bookdown::bookdown_site
 apple-touch-sin: "icon_192.png"
 apple-touch-icon-size: 192
 favicon: "icon_32.png"
-github-repo: "lcolladotor/bioc_team_ds"
+github-repo: "lcolladotor/rnaseq_LCG-UNAM_2021"
 documentclass: book
 output:
   bookdown::gitbook:
@@ -17,60 +17,137 @@ output:
 
 # Overview {-}
 
-**R/Bioconductor-powered Team Data Science** by [Leonardo Collado Torres](http://lcolladotor.github.io) and team members.
+Here you can find the files for the February 2021 introduction to R, RStudio and RNA-sequencing (RNA-seq) course for [LCG-UNAM](https://lcg.unam.mx/) at [CCG-UNAM](https://ccg.unam.mx/) (February 23-26, 2021). The rest of the chapters will be in Spanish.
 
-With lessons learned from former mentors [Jeffrey T. Leek](https://github.com/jtleek) and [Andrew E. Jaffe](https://github.com/andrewejaffe).
+Instructor:
 
-## Team members {-}
+* [**Leonardo Collado-Torres**](http://lcolladotor.github.io/): [team website](https://lcolladotor.github.io/bioc_team_ds/), [Twitter](https://twitter.com/lcolladotor)
 
-* [Abby Spangler](https://github.com/abspangler13)
-* [Arta Seyedian](https://github.com/aseyedia)
-* [Brenda Pardo](https://github.com/bpardo99)
-* [Joshua M. Stolz](https://github.com/joshstolz)
-* [Louise Huuki](https://github.com/lahuuki)
-* [Nicholas J. Eagles](https://github.com/Nick-Eagles)
+Teach assistants:
 
-### Alumni {-}
+* Elisa Márquez
+* Citlali Gil
 
-* [Amy Peterson](https://github.com/Ashkaunr)
-* [Ashkaun Razmara](https://github.com/amy-peterson)
+Course Coordinators:
 
-## DSgs-guide team members {-}
+* Heladia Salgado
+* Julio Collado Vides
 
-* [Arta Seyedian](https://github.com/aseyedia)
-* [Joshua M. Stolz](https://github.com/joshstolz)
-* [Louise Huuki](https://github.com/lahuuki)
-* [Nicholas J. Eagles](https://github.com/Nick-Eagles)
-* [Madhavi Tippani](https://github.com/madhavitippani)
+Download the materials for this course with `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')` or view online at [**lcolladotor.github.io/rnaseq_LCG-UNAM_2021**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021).
 
-_Check [Become a DSgs guide](#become-a-dsgs-guide) to join the DSgs-guide team_.
+## Course Schedule {-}
 
-## Acknowledgements {-}
+_Local times in Cuernavaca, Mexico_
 
-The contents of this book have been refined thanks to feedback from:
+* Tuesday February 23:
+  - 9-11 am: introduction to R, RStudio, `r BiocStyle::CRANpkg("usethis")` and `r BiocStyle::CRANpkg("here")`
+  - 12-2 pm: introduction to Bioconductor `r BiocStyle::Biocpkg("SummarizedExperiment")`
+* Wednesday February 24:
+  - 9-11 am: Exploring expression data with `r BiocStyle::Biocpkg("iSEE")`
+  - 12-2 pm: Downloading RNA-seq data using `r BiocStyle::Biocpkg("recount3")`
+* Thursday February 25:
+  - 9-11 am: statistical models with `r BiocStyle::Biocpkg("ExploreModelMatrix")`
+  - 12-2 pm: differential expression analysis with `r BiocStyle::Biocpkg("limma")`
+* Friday February 26:
+  - 9-11 am: Review session
+  - 12-2 pm: spatial transcriptomics with `r BiocStyle::Biocpkg("spatialLIBD")` + open discussion (career paths, networking, etc)
+  
 
-* [Keri Martinowich](https://github.com/kmartinow)
-* [Kristen R. Maynard](https://github.com/kmaynard12)
+## Course Prerequisites {-}
 
-This book was last updated on `r Sys.time()`.
+Install R 4.0.x from [CRAN](https://cran.r-project.org/) then install the following R packages:
+
+```{r install, eval = FALSE}
+## For installing Bioconductor packages
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+## Install required packages
+BiocManager::install(
+    c(
+        'usethis', ## Utilities
+        'here',
+        'biocthis',
+        'pryr',
+        'sessioninfo',
+        
+        'SummarizedExperiment', ## Main containers / vis
+        'iSEE',
+        
+        'ExploreModelMatrix', ## RNA-seq
+        'limma',
+        'recount3',
+        
+        'pheatmap', ## Visualization
+        'ggplot2',
+        'patchwork',
+        'RColorBrewer',
+        
+        'spatialLIBD' ## Advanced
+    )
+)
+```
+
+You will also need to install [RStudio](https://rstudio.com/products/rstudio/download/#download) version 1.4 or newer.
+
+## Course Evaluation {-}
+
+* Participation
+  - Written and/or verbal
+  - During sessions
+  - Through Slack
+  - Through GitHub: your notes (**most important**), pull requests to this repository
+  - Community building
+* Public work
+  - Taking notes on GitHub
+  - Deploying on shinyapps.io
+  - R package
 
 ## R session information {-}
 
-Details on the R version used for making this book. The source code is available at [`lcolladotor/bioc_team_ds`](https://github.com/lcolladotor/bioc_team_ds).
+Details on the R version used for making this book. The source code is available at [`lcolladotor/rnaseq_LCG-UNAM_2021`](https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021).
 
-```{r session_info_chunk, eval = FALSE}
+```{r session_packages, eval = TRUE, message = FALSE}
 ## Load the package at the top of your script
 library("sessioninfo")
 
-## Reproducibility information
-print('Reproducibility information:')
-Sys.time()
-proc.time()
-options(width = 120)
-session_info()
+##  Utilities
+library("BiocStyle")
+library("biocthis")
+library("here")
+library("pryr")
+library("usethis")
+library("sessioninfo")
+
+## Main containers / vis
+library("SummarizedExperiment")
+library("iSEE")
+
+## RNA-seq
+library("ExploreModelMatrix")
+library("limma")
+library("recount3")
+
+## Visualization
+library("ggplot2")
+library("patchwork")
+library("pheatmap")
+library("RColorBrewer")
+
+## Advanced
+library("spatialLIBD")
 ```
 
-```{r session_info, echo = FALSE}
-<<session_info_chunk>>
+```{r session_info}
+## Reproducibility information
+options(width = 120)
+session_info()
+proc.time()
 ```
+
+This book was last updated at `r Sys.time()`.
+
+## License  {-}
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
