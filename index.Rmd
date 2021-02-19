@@ -35,6 +35,12 @@ Course Coordinators:
 
 Download the materials for this course with `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')` or view online at [**lcolladotor.github.io/rnaseq_LCG-UNAM_2021**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021).
 
+## Code of Conduct {-}
+
+We'll follow the CDSB code of conduct [comunidadbioinfo.github.io/codigo-de-conducta/](https://comunidadbioinfo.github.io/codigo-de-conducta/) as well as version 1.0.1 of the Bioconductor code of conduct [bioconductor.org/about/code-of-conduct/](http://bioconductor.org/about/code-of-conduct/). 
+
+For reporting any violations of the code of conduct, report them to the Instructor and/or Course Coordinators.
+
 ## Course Schedule {-}
 
 _Local times in Cuernavaca, Mexico_
