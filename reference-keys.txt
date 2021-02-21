@@ -10,3 +10,4 @@ estructura-de-un-paquete-de-bioc
 las-dos-ramas-de-bioconductor-release-y-devel
 cursos-y-eventos
 comunidad
+ejercicio-grupal
