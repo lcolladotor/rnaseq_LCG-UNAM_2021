@@ -78,12 +78,12 @@ git2r::clone('https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021',
 
 
 ```{r proj, eval = FALSE}
-usethis::create_project('~/Desktop/rnaseq_playground_leo')
+usethis::create_project('~/Desktop/rnaseq_2021_notas')
 ```
 
 ```{r create_setup, eval = FALSE}
 ## Start a setup file
-usethis::use_r('00-setup.R')
+usethis::use_r('01-notas.R')
 ```
 
 * Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html

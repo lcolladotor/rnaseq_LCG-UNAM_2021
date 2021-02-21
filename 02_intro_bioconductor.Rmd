@@ -93,4 +93,17 @@ Bioconductor, the R package repository for the “analysis and comprehension of 
     - Ejemplo: https://support.bioconductor.org/t/recount/
     - Pueden revisar ese sitio web y usarlo para aprender cómo en https://lcolladotor.github.io/bioc_team_ds/helping-others.html#bioconductor-support-practice-grounds
 * Twitter: https://twitter.com/bioconductor
-   
+  
+  
+## Ejercicio grupal
+
+* Exploren en http://bioconductor.org/news/bioc_3_12_release/ la lista de nuevos paquetes de Bioconductor (BioC 3.12)
+* Cada quien escoja un paquete o dos
+* Exploren la documentación del paquete, si es que está pasando las pruebas en los diferentes sistemas operativos, si es que lxs autores han respondido a las preguntas de lxs usuarixs, etc.
+* Discutan cuales paquetes les interesaron más como equipo y escriban un resumen de su discusión en sus notas en GitHub.
+* Ejemplo de una actividad similar:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today was different, so no video. We used breakout rooms to work in pairs &amp; highlight new <a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw">@Bioconductor</a> 3.12 📦s in a spreadsheet, then we chatted about them<a href="https://t.co/GDVDmGshIr">https://t.co/GDVDmGshIr</a><br><br>125 new software 📦s + much more! Lots of new toys to look at!<a href="https://t.co/C4qXfrQMm7">https://t.co/C4qXfrQMm7</a><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/niGUP6Tns8">pic.twitter.com/niGUP6Tns8</a></p>&mdash; LIBD rstats club (@LIBDrstats) <a href="https://twitter.com/LIBDrstats/status/1324861604488503300?ref_src=twsrc%5Etfw">November 6, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+* (Opcional) Escriban un tweet promocionando el paquete que más les gustó y etiqueten a lxs autores si es que están en Twitter. Está plática de Mara Averick para `rstudio::conf(2018)` explica cómo comunicar información vía tweets https://rstudio.com/resources/rstudioconf-2018/phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection/.
+
