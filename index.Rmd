@@ -82,6 +82,7 @@ BiocManager::install(
         'usethis', ## Utilities
         'here',
         'biocthis',
+        'postcards',
         'pryr',
         'sessioninfo',
         
@@ -107,15 +108,18 @@ You will also need to install [RStudio](https://rstudio.com/products/rstudio/dow
 ## Course Evaluation {-}
 
 * Participation
-  - Written and/or verbal
-  - During sessions
-  - Through Slack
-  - Through GitHub: your notes (**most important**), pull requests to this repository
-  - Community building
+  - (main evidence) written and/or verbal participation during sessions and break-out rooms
+  - (optional, strongly encouraged for your own career) Community building: CDSB Slack (introduce yourself), twitter, GitHub, etc.
 * Public work
-  - Taking notes on GitHub
-  - Deploying on shinyapps.io
-  - R package
+  - (main evidence) Taking notes on GitHub
+  - (optional) Deploy an iSEE `shiny` app on shinyapps.io
+  - (advanced and optional) R package with notes following `usethis::create_package()` + `biocthis::use_bioc_pkg_templates()`.
+* Final project
+  - (main evidence) code in a public URL (gist, GitHub, ...)
+  - (optional) a rendered Rmd file (RPubs, GitHub)
+  - (optional advanced) Copy this repository, remove all the Rmds except the index.Rmd and edit accordingly. GitHub Actions will then help you render it. You'll need to fetch the `gh-pages` branch and at least make one commit for the HTML to be available such as this [commit](https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021/commit/e15bd6c234dd0ca4233050a4a0a42184994fef3b).
+  
+The final grade will be a weighted average from the student's self evaluation (10%), the evaluation by each TA (15% each), your participation as evaluated by the instructor (10%), your public work (20%) and your final project (30%).
 
 ## R session information {-}
 
@@ -129,6 +133,7 @@ library("sessioninfo")
 library("BiocStyle")
 library("biocthis")
 library("here")
+library("postcards")
 library("pryr")
 library("usethis")
 library("sessioninfo")
