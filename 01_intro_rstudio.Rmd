@@ -1,4 +1,131 @@
 # Introducción a R y RStudio
 
 
-TODO
+## Material del curso
+
+* Pueden descargar la versión estática con `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')`
+* Pueden verlo en línea a través de  [**lcolladotor.github.io/rnaseq_LCG-UNAM_2021**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021)
+* Pueden **clonarlo** desde GitHub de tal forma que podrán actualizarlo fácilmente usando *git pull*
+
+```{bash clone_course, eval = FALSE}
+git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git
+
+## Si tienen su SSH key configurarda pueden usar
+## Info sobre SSH keys de GitHub: 
+## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git
+```
+
+O desde R con:
+
+```{r clone_repo, eval = FALSE}
+## Opción más nueva:
+library("gert")
+repo <- git_clone("lcolladotor/rnaseq_LCG-UNAM_2021")
+setwd("rnaseq_LCG-UNAM_2021")
+
+## Otra opción:
+git2r::clone('https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021',
+    'rnaseq_LCG-UNAM_20210')
+```
+
+## R
+
+* R: es gratis, de acceso libre, utilizado para muchos campos de trabajo, fuerte en la bioinformática a través de Bioconductor
+* Instalación a través de CRAN: https://cran.r-project.org/
+* Para explorar que se puede hacer con R:
+  - R Weekly https://rweekly.org/
+  - R Bloggers https://www.r-bloggers.com/
+  - Twitter https://twitter.com/search?q=%23rstats&src=typed_query
+  - Twitter en español https://twitter.com/search?q=%23rstatsES&src=typed_query
+  - TidyTuesday https://twitter.com/search?q=%23TidyTuesday&src=typed_query
+  - DatosDeMiercoles https://twitter.com/search?q=%23datosdemiercoles&src=typed_query
+* Para pedir ayuda hay muchas opciones
+  - https://lcolladotor.github.io/bioc_team_ds/how-to-ask-for-help.html
+  
+
+* Material en el que estoy involucrado:
+  - https://twitter.com/lcolladotor
+  - https://www.youtube.com/c/LeonardoColladoTorres/playlists
+  - LIBD rstats club https://docs.google.com/spreadsheets/d/1is8dZSd0FZ9Qi1Zvq1uRhm-P1McnJRd_zxdAfCRoMfA/edit?usp=sharing
+  - https://twitter.com/CDSBMexico y https://twitter.com/LIBDrstats
+  - https://twitter.com/Bioconductor
+
+
+## GitHub
+
+* Permite compartir código
+* Se complementa con Git que es para tener un control de versiones de tu código
+  - https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Introduccion-al-flujo-de-trabajo-orientado-a-proyectos.pdf
+* Puedes tener páginas web estáticas
+  - https://pages.github.com/
+  - https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021. En especial https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021/tree/gh-pages se convierte en http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021/
+  - Página personal: https://github.com/lcolladotor/lcolladotor.github.com se convierte en http://lcolladotor.github.io/. Está todo hecho con https://github.com/lcolladotor/lcolladotorsource
+* Tip: usen el mismo nombre de usuario en GitHub, Twitter, Gmail, etc. 
+  - How to be a Modern Scientist: https://lcolladotor.github.io/bioc_team_ds/how-to-be-a-modern-scientist.html
+
+## RStudio
+
+* RStudio Desktop es gratis http://www.rstudio.com/products/rstudio/download/preview/
+* Nos ayuda a realizar muchas cosas con R de forma más rápida
+  - Demo `rsthemes`
+* Es actualizado con bastante frecuencia
+* RStudio cheatsheets https://www.rstudio.com/resources/cheatsheets/
+  - https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf
+* RStudio projects: usalos para organizar tu código
+  - https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Trabajando-con-proyectos.pdf
+
+
+```{r proj, eval = FALSE}
+usethis::create_project('~/Desktop/rnaseq_playground_leo')
+```
+
+```{r create_setup, eval = FALSE}
+## Start a setup file
+usethis::use_r('00-setup.R')
+```
+
+* Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html
+
+```{r use_git, eval = FALSE}
+usethis::create_github_token()
+gitcreds::gitcreds_set()
+usethis::use_github() ## commit first, then run this command
+```
+
+## Ejercicio postcards
+
+* Similar a https://pages.github.com/
+* `postcards` tiene 4 templados de páginas web https://github.com/seankross/postcards
+* Tu página web debe describir decir algo sobre ti, tus intereses, y tus proyectos además de cómo contactarte
+  - Ejemplo https://amy-peterson.github.io/ vía https://github.com/amy-peterson/amy-peterson.github.com
+  - http://jtleek.com/ vía https://github.com/jtleek/jtleek.github.io
+  - http://aejaffe.com/ vía https://github.com/andrewejaffe/andrewejaffe.github.io
+
+
+```{r postcards_proj, eval = FALSE}
+## Creen el RStudio project
+usethis::create_project('Su_Usuario.github.io')
+
+## Configure Git
+usethis::use_git()
+```
+
+Creen su templado usando `postcards`. Va a crear un archivo `index.Rmd`
+
+```{r postcards_create, eval = FALSE}
+## Solo uno de estos, de acurdo al templado que más les gustó
+postcards::create_postcard(template = "jolla")
+postcards::create_postcard(template = "jolla-blue")
+postcards::create_postcard(template = "trestles")
+postcards::create_postcard(template = "onofre")
+```
+
+* Llenen su información usando el formato `Markdown`. Por ejemplo https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L17-L31.
+* Agreguen sus perfiles estilo https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L7-L12
+* Den click en el botón azul de `knit` en RStudio. Es equivalente a `rmarkdown::render("index.Rmd")`. Esto creará el archivo `index.html`.
+* Hagan un `commit` para guardar los archivos nuevos incluyendo `index.html` y luego un `push` para subir los archivos a GitHub.
+* Agreguen su repositorio a nuestra [tabla con su información](https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing).
+* (opcional) Anuncien su nueva página web en Twitter usando el hashtag `#rstats` y/o etiquen al autor de `postcards` https://twitter.com/seankross. Pueden después incluir su página web en su introducción en el canal `#bienvenida` del Slack de la CDSB ^^.
+
+
