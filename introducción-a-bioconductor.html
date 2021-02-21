@@ -145,7 +145,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#rstudio"><i class="fa fa-check"></i><b>1.4</b> RStudio</a></li>
 <li class="chapter" data-level="1.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#ejercicio-postcards"><i class="fa fa-check"></i><b>1.5</b> Ejercicio postcards</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html"><i class="fa fa-check"></i><b>2</b> Introducción a Bioconductor</a></li>
+<li class="chapter" data-level="2" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html"><i class="fa fa-check"></i><b>2</b> Introducción a Bioconductor</a><ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#encontrando-paquetes-de-bioconductor"><i class="fa fa-check"></i><b>2.1</b> Encontrando paquetes de Bioconductor</a></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#estructura-de-un-paquete-de-bioc"><i class="fa fa-check"></i><b>2.2</b> Estructura de un paquete de BioC</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#las-dos-ramas-de-bioconductor-release-y-devel"><i class="fa fa-check"></i><b>2.3</b> Las dos ramas de Bioconductor: release y devel</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#cursos-y-eventos"><i class="fa fa-check"></i><b>2.4</b> Cursos y eventos</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#comunidad"><i class="fa fa-check"></i><b>2.5</b> Comunidad</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -165,8 +171,139 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introducción-a-bioconductor" class="section level1">
 <h1><span class="header-section-number">2</span> Introducción a Bioconductor</h1>
-<p>TODO</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c0Ch_sXiGDQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><a href="https://docs.google.com/document/d/1VZ4dOesHjbWhrvSIXO8Ne1Qk4ZdGEhAySNviZOHPqjI/edit?usp=sharing"><em>Original Notes in English</em></a></p>
+<p>Bioconductor, the R package repository for the “analysis and comprehension of high-throughput genomic data” <a href="http://bioconductor.org/" class="uri">http://bioconductor.org/</a></p>
+<ul>
+<li><p>Blog post que escribí en 2014: Where do I start using Bioconductor? <a href="http://lcolladotor.github.io/2014/10/16/startbioc/#.XqxNGRNKiuo" class="uri">http://lcolladotor.github.io/2014/10/16/startbioc/#.XqxNGRNKiuo</a></p></li>
+<li><p>Sobre Bioconductor: <a href="http://bioconductor.org/about/" class="uri">http://bioconductor.org/about/</a></p>
+<ul>
+<li>Soy parte del Community Advisory Board <a href="http://bioconductor.org/about/community-advisory-board/" class="uri">http://bioconductor.org/about/community-advisory-board/</a> ^^</li>
+</ul></li>
+</ul>
+<p><img src="http://bioconductor.org/images/cab/cab.png" width="400px" /></p>
+<ul>
+<li>Artículos principales
+<ul>
+<li>2004 artículo: <a href="http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf" class="uri">http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf</a></li>
+<li>2005 libro: <a href="https://www.amazon.com/Bioinformatics-Computational-Solutions-Bioconductor-Statistics/dp/0387251464" class="uri">https://www.amazon.com/Bioinformatics-Computational-Solutions-Bioconductor-Statistics/dp/0387251464</a></li>
+<li>2015 artículo: <a href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html" class="uri">http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html</a></li>
+</ul></li>
+</ul>
+<div id="encontrando-paquetes-de-bioconductor" class="section level2">
+<h2><span class="header-section-number">2.1</span> Encontrando paquetes de Bioconductor</h2>
+<ul>
+<li>Tipos de paquetes de Bioconductor:
+<ul>
+<li>Software: tipo de paquete principal; la mayoría los hacen usuarios aunque algunos los hacen gente pagada directamente por Bioconductor</li>
+<li>Annotation: facilitan el interactuar con bases de datos de anotación</li>
+<li>Experiment Data: contienen datos para algún artículo o datos que se usan en ejemplos más exhaustivos</li>
+<li>Workflows: demuestran como puedes usar varios paquetes de Bioconductor para ciertos tipos de análisis</li>
+</ul></li>
+<li>Para descubrir paquetes:
+<ul>
+<li>Software: <a href="http://bioconductor.org/packages/release/bioc/" class="uri">http://bioconductor.org/packages/release/bioc/</a></li>
+<li>Annotation: <a href="http://bioconductor.org/packages/release/data/annotation/" class="uri">http://bioconductor.org/packages/release/data/annotation/</a></li>
+<li>Experiment Data: <a href="http://bioconductor.org/packages/release/data/experiment/" class="uri">http://bioconductor.org/packages/release/data/experiment/</a></li>
+<li>Workflows: <a href="http://bioconductor.org/packages/release/workflows/" class="uri">http://bioconductor.org/packages/release/workflows/</a></li>
+</ul></li>
+<li>Paquetes de R de Leo: <a href="https://lcolladotor.github.io/pkgs/" class="uri">https://lcolladotor.github.io/pkgs/</a></li>
+<li>Encontrando paquetes a través de <code>biocViews</code>: <a href="http://bioconductor.org/packages/release/BiocViews.html#___Software" class="uri">http://bioconductor.org/packages/release/BiocViews.html#___Software</a>
+<ul>
+<li>Estructura tipo árbol</li>
+<li>Son 4 árboles principales: software, annotation, experiment, workflow</li>
+<li>Dentro de cada árbol, un paquete puede ser parte de varias ramas</li>
+<li>Tiene una búsqueda de texto simple</li>
+<li>Ejemplo: Software → WorkflowStep → Visualization → <a href="http://bioconductor.org/packages/release/BiocViews.html#___Visualization" class="uri">http://bioconductor.org/packages/release/BiocViews.html#___Visualization</a> (486 paquetes en BioC 3.11 abril-octubre 2020, 506 en BioC 3.12 octubre 2020-abril 2021)</li>
+</ul></li>
+</ul>
+</div>
+<div id="estructura-de-un-paquete-de-bioc" class="section level2">
+<h2><span class="header-section-number">2.2</span> Estructura de un paquete de BioC</h2>
+<ul>
+<li>Usa <code>https://bioconductor.org/packages/&lt;pkg_name&gt;</code>
+<ul>
+<li>Ejemplo: <a href="https://bioconductor.org/packages/recount" class="uri">https://bioconductor.org/packages/recount</a></li>
+<li>Otro ejemplo: <a href="https://bioconductor.org/packages/SummarizedExperiment" class="uri">https://bioconductor.org/packages/SummarizedExperiment</a></li>
+</ul></li>
+<li>Badges (etiquetas): rápidamente podemos evaluar como está</li>
+<li>Parráfo de descripción del paquete</li>
+<li>Cómo citar al paquete de Bioconductor</li>
+<li>Cómo instalarlo. Más detalles en <a href="http://bioconductor.org/install/" class="uri">http://bioconductor.org/install/</a></li>
+<li>Documentación
+<ul>
+<li>Una líga por cada vignette en formato PDF o HTML. Es la documentación <strong>principal</strong>!</li>
+<li>Una vignette es donde lxs autores del paquete explican cómo usar las diferentes funciones del paquete y en qué orden</li>
+</ul></li>
+<li>Detalles
+<ul>
+<li>Términos de <code>biocViews</code></li>
+<li>Cómo se relaciona a otros paquetes (depends, imports, linking to, suggests, depends on me, …)</li>
+<li>URL: donde puedes encontrar el código fuente</li>
+<li>BugReports: donde puedes pedir ayuda</li>
+</ul></li>
+<li>Más detalles sobre el paquete
+<ul>
+<li>Estadísticas de descargas</li>
+</ul></li>
+</ul>
+</div>
+<div id="las-dos-ramas-de-bioconductor-release-y-devel" class="section level2">
+<h2><span class="header-section-number">2.3</span> Las dos ramas de Bioconductor: release y devel</h2>
+<ul>
+<li>Dos ramas
+<ul>
+<li><code>release</code>, actualmente 3.11</li>
+<li><code>devel</code>, actualmente 3.12</li>
+<li>Ejemplo: <a href="http://bioconductor.org/packages/devel/bioc/html/recount.html" class="uri">http://bioconductor.org/packages/devel/bioc/html/recount.html</a></li>
+</ul></li>
+<li>Bioconductor tiene es actualizado cada 6 meses (abril y octubre). R lo actualizan 1 vez al año (abril).</li>
+<li>Todo el software lo prueban en macOS, Windows y linux
+<ul>
+<li>Ejemplo: <a href="http://bioconductor.org/checkResults/release/bioc-LATEST/recount/" class="uri">http://bioconductor.org/checkResults/release/bioc-LATEST/recount/</a> y <a href="http://bioconductor.org/checkResults/devel/bioc-LATEST/recount/" class="uri">http://bioconductor.org/checkResults/devel/bioc-LATEST/recount/</a></li>
+</ul></li>
+<li>Resumen BioC 3.12 <a href="http://bioconductor.org/news/bioc_3_12_release/" class="uri">http://bioconductor.org/news/bioc_3_12_release/</a>
+<ul>
+<li>Blog post en LIBD rstats club: Quick overview on the new Bioconductor 3.8 release <a href="http://research.libd.org/rstatsclub/2018/11/02/quick-overview-on-the-new-bioconductor-3-8-release/" class="uri">http://research.libd.org/rstatsclub/2018/11/02/quick-overview-on-the-new-bioconductor-3-8-release/</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="cursos-y-eventos" class="section level2">
+<h2><span class="header-section-number">2.4</span> Cursos y eventos</h2>
+<ul>
+<li><a href="http://bioconductor.org/help/events/" class="uri">http://bioconductor.org/help/events/</a></li>
+<li><a href="http://bioconductor.org/help/course-materials/" class="uri">http://bioconductor.org/help/course-materials/</a></li>
+<li>BioC2021: conferencia principal anual <a href="https://bioc2021.bioconductor.org/" class="uri">https://bioc2021.bioconductor.org/</a>
+<ul>
+<li>Talleres del BioC2019: <a href="https://rebrand.ly/biocworkshops2019" class="uri">https://rebrand.ly/biocworkshops2019</a></li>
+</ul></li>
+</ul>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Teach online data science, bioinformatics, or other computational skills interactively using the Orchestra platform:<a href="https://t.co/r4aJ2xAZbh">https://t.co/r4aJ2xAZbh</a> <br>Nearly 50 workshop environments preloaded with <a href="https://twitter.com/hashtag/jupyter?src=hash&amp;ref_src=twsrc%5Etfw">#jupyter</a>, <a href="https://twitter.com/hashtag/rstudio?src=hash&amp;ref_src=twsrc%5Etfw">#rstudio</a>, <a href="https://twitter.com/hashtag/shell?src=hash&amp;ref_src=twsrc%5Etfw">#shell</a>. <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a>, or <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a>.<a href="https://twitter.com/NIHSTRIDES?ref_src=twsrc%5Etfw"><span class="citation">@NIHSTRIDES</span></a> <a href="https://twitter.com/NIHDataScience?ref_src=twsrc%5Etfw"><span class="citation">@NIHDataScience</span></a> <a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw"><span class="citation">@Bioconductor</span></a> <a href="https://t.co/HyWVLBJxGU">pic.twitter.com/HyWVLBJxGU</a>
+</p>
+— Sean Davis (<span class="citation">@seandavis12</span>) <a href="https://twitter.com/seandavis12/status/1348291911090626560?ref_src=twsrc%5Etfw">January 10, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<ul>
+<li>El que ayudo a organizar en México: CDSB Workshop 2020 <a href="https://comunidadbioinfo.github.io/post/cdsb2020-building-workflows-with-rstudio-and-scrnaseq-with-bioconductor/#.XmJT-Z-YU1I" class="uri">https://comunidadbioinfo.github.io/post/cdsb2020-building-workflows-with-rstudio-and-scrnaseq-with-bioconductor/#.XmJT-Z-YU1I</a></li>
+</ul>
+</div>
+<div id="comunidad" class="section level2">
+<h2><span class="header-section-number">2.5</span> Comunidad</h2>
+<ul>
+<li>Slack: <a href="https://bioc-community.herokuapp.com/" class="uri">https://bioc-community.herokuapp.com/</a></li>
+<li>Sitio web de ayuda: <a href="https://support.bioconductor.org/" class="uri">https://support.bioconductor.org/</a>
+<ul>
+<li>Usa la(s) etiqueta(s) adecuada(s) para que lxs autores de los paquetes reciban email de forma automática</li>
+<li>Ejemplo: <a href="https://support.bioconductor.org/t/recount/" class="uri">https://support.bioconductor.org/t/recount/</a></li>
+<li>Pueden revisar ese sitio web y usarlo para aprender cómo en <a href="https://lcolladotor.github.io/bioc_team_ds/helping-others.html#bioconductor-support-practice-grounds" class="uri">https://lcolladotor.github.io/bioc_team_ds/helping-others.html#bioconductor-support-practice-grounds</a></li>
+</ul></li>
+<li>Twitter: <a href="https://twitter.com/bioconductor" class="uri">https://twitter.com/bioconductor</a></li>
+</ul>
 
+</div>
 </div>
 <div class="container">
     <footer class="site-footer">

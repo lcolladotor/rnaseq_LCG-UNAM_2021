@@ -5,3 +5,8 @@ github
 rstudio
 ejercicio-postcards
 introducción-a-bioconductor
+encontrando-paquetes-de-bioconductor
+estructura-de-un-paquete-de-bioc
+las-dos-ramas-de-bioconductor-release-y-devel
+cursos-y-eventos
+comunidad
