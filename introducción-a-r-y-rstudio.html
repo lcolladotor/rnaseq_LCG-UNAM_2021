@@ -139,10 +139,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y RStudio</a><ul>
-<li class="chapter" data-level="1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#material-del-curso"><i class="fa fa-check"></i><b>1.1</b> Material del curso</a></li>
-<li class="chapter" data-level="1.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#r"><i class="fa fa-check"></i><b>1.2</b> R</a></li>
-<li class="chapter" data-level="1.3" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#github"><i class="fa fa-check"></i><b>1.3</b> GitHub</a></li>
-<li class="chapter" data-level="1.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#rstudio"><i class="fa fa-check"></i><b>1.4</b> RStudio</a></li>
+<li class="chapter" data-level="1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#github"><i class="fa fa-check"></i><b>1.2</b> GitHub</a></li>
+<li class="chapter" data-level="1.3" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#rstudio"><i class="fa fa-check"></i><b>1.3</b> RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#material-del-curso"><i class="fa fa-check"></i><b>1.4</b> Material del curso</a></li>
 <li class="chapter" data-level="1.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#ejercicio-postcards"><i class="fa fa-check"></i><b>1.5</b> Ejercicio postcards</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html"><i class="fa fa-check"></i><b>2</b> Introducción a Bioconductor</a><ul>
@@ -172,31 +172,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introducción-a-r-y-rstudio" class="section level1">
 <h1><span class="header-section-number">1</span> Introducción a R y RStudio</h1>
-<div id="material-del-curso" class="section level2">
-<h2><span class="header-section-number">1.1</span> Material del curso</h2>
-<ul>
-<li>Pueden descargar la versión estática con <code>usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')</code></li>
-<li>Pueden verlo en línea a través de <a href="http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021"><strong>lcolladotor.github.io/rnaseq_LCG-UNAM_2021</strong></a></li>
-<li>Pueden <strong>clonarlo</strong> desde GitHub de tal forma que podrán actualizarlo fácilmente usando <em>git pull</em></li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="introducción-a-r-y-rstudio.html#cb7-1"></a><span class="fu">git</span> clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git</span>
-<span id="cb7-2"><a href="introducción-a-r-y-rstudio.html#cb7-2"></a></span>
-<span id="cb7-3"><a href="introducción-a-r-y-rstudio.html#cb7-3"></a><span class="co">## Si tienen su SSH key configurarda pueden usar</span></span>
-<span id="cb7-4"><a href="introducción-a-r-y-rstudio.html#cb7-4"></a><span class="co">## Info sobre SSH keys de GitHub: </span></span>
-<span id="cb7-5"><a href="introducción-a-r-y-rstudio.html#cb7-5"></a><span class="co">## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</span></span>
-<span id="cb7-6"><a href="introducción-a-r-y-rstudio.html#cb7-6"></a><span class="fu">git</span> clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git</span></code></pre></div>
-<p>O desde R con:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r-y-rstudio.html#cb8-1"></a><span class="co">## Opción más nueva:</span></span>
-<span id="cb8-2"><a href="introducción-a-r-y-rstudio.html#cb8-2"></a><span class="kw">library</span>(<span class="st">&quot;gert&quot;</span>)</span>
-<span id="cb8-3"><a href="introducción-a-r-y-rstudio.html#cb8-3"></a>repo &lt;-<span class="st"> </span><span class="kw">git_clone</span>(<span class="st">&quot;lcolladotor/rnaseq_LCG-UNAM_2021&quot;</span>)</span>
-<span id="cb8-4"><a href="introducción-a-r-y-rstudio.html#cb8-4"></a><span class="kw">setwd</span>(<span class="st">&quot;rnaseq_LCG-UNAM_2021&quot;</span>)</span>
-<span id="cb8-5"><a href="introducción-a-r-y-rstudio.html#cb8-5"></a></span>
-<span id="cb8-6"><a href="introducción-a-r-y-rstudio.html#cb8-6"></a><span class="co">## Otra opción:</span></span>
-<span id="cb8-7"><a href="introducción-a-r-y-rstudio.html#cb8-7"></a>git2r<span class="op">::</span><span class="kw">clone</span>(<span class="st">&#39;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&#39;</span>,</span>
-<span id="cb8-8"><a href="introducción-a-r-y-rstudio.html#cb8-8"></a>    <span class="st">&#39;rnaseq_LCG-UNAM_20210&#39;</span>)</span></code></pre></div>
-</div>
 <div id="r" class="section level2">
-<h2><span class="header-section-number">1.2</span> R</h2>
+<h2><span class="header-section-number">1.1</span> R</h2>
 <ul>
 <li>R: es gratis, de acceso libre, utilizado para muchos campos de trabajo, fuerte en la bioinformática a través de Bioconductor</li>
 <li>Instalación a través de CRAN: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></li>
@@ -225,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="icon_192.png"></p>
 </div>
 <div id="github" class="section level2">
-<h2><span class="header-section-number">1.3</span> GitHub</h2>
+<h2><span class="header-section-number">1.2</span> GitHub</h2>
 <ul>
 <li>Permite compartir código</li>
 <li>Se complementa con Git que es para tener un control de versiones de tu código
@@ -245,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="rstudio" class="section level2">
-<h2><span class="header-section-number">1.4</span> RStudio</h2>
+<h2><span class="header-section-number">1.3</span> RStudio</h2>
 <ul>
 <li>RStudio Desktop es gratis <a href="http://www.rstudio.com/products/rstudio/download/preview/" class="uri">http://www.rstudio.com/products/rstudio/download/preview/</a></li>
 <li>Nos ayuda a realizar muchas cosas con R de forma más rápida
@@ -262,15 +239,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Trabajando-con-proyectos.pdf" class="uri">https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Trabajando-con-proyectos.pdf</a></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introducción-a-r-y-rstudio.html#cb9-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&#39;~/Desktop/rnaseq_2021_notas&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introducción-a-r-y-rstudio.html#cb10-1"></a><span class="co">## Start a setup file</span></span>
-<span id="cb10-2"><a href="introducción-a-r-y-rstudio.html#cb10-2"></a>usethis<span class="op">::</span><span class="kw">use_r</span>(<span class="st">&#39;01-notas.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introducción-a-r-y-rstudio.html#cb7-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&#39;~/rnaseq_2021_notas&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r-y-rstudio.html#cb8-1"></a><span class="co">## Start a setup file</span></span>
+<span id="cb8-2"><a href="introducción-a-r-y-rstudio.html#cb8-2"></a>usethis<span class="op">::</span><span class="kw">use_r</span>(<span class="st">&#39;01-notas.R&#39;</span>)</span></code></pre></div>
 <ul>
 <li>Configura <code>usethis</code> con GitHub vía <a href="https://usethis.r-lib.org/articles/articles/git-credentials.html" class="uri">https://usethis.r-lib.org/articles/articles/git-credentials.html</a></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introducción-a-r-y-rstudio.html#cb11-1"></a>usethis<span class="op">::</span><span class="kw">create_github_token</span>()</span>
-<span id="cb11-2"><a href="introducción-a-r-y-rstudio.html#cb11-2"></a>gitcreds<span class="op">::</span><span class="kw">gitcreds_set</span>()</span>
-<span id="cb11-3"><a href="introducción-a-r-y-rstudio.html#cb11-3"></a>usethis<span class="op">::</span><span class="kw">use_github</span>() <span class="co">## commit first, then run this command</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introducción-a-r-y-rstudio.html#cb9-1"></a><span class="co">## Para poder conectar tu compu con GitHub</span></span>
+<span id="cb9-2"><a href="introducción-a-r-y-rstudio.html#cb9-2"></a>usethis<span class="op">::</span><span class="kw">create_github_token</span>() <span class="co">## Abrirá una página web, escoje un nombre único</span></span>
+<span id="cb9-3"><a href="introducción-a-r-y-rstudio.html#cb9-3"></a><span class="co">## y luego da click en el botón verde al final. Después copia el token</span></span>
+<span id="cb9-4"><a href="introducción-a-r-y-rstudio.html#cb9-4"></a><span class="co">## (son 40 caracteres)</span></span>
+<span id="cb9-5"><a href="introducción-a-r-y-rstudio.html#cb9-5"></a>gitcreds<span class="op">::</span><span class="kw">gitcreds_set</span>() <span class="co">## Ojo, copia el token, no tu password de git!</span></span>
+<span id="cb9-6"><a href="introducción-a-r-y-rstudio.html#cb9-6"></a><span class="co">## Si no, terminaras en la situación descrita en</span></span>
+<span id="cb9-7"><a href="introducción-a-r-y-rstudio.html#cb9-7"></a><span class="co">## https://github.com/r-lib/usethis/issues/1347</span></span>
+<span id="cb9-8"><a href="introducción-a-r-y-rstudio.html#cb9-8"></a></span>
+<span id="cb9-9"><a href="introducción-a-r-y-rstudio.html#cb9-9"></a><span class="co">## Configura tu usuario de GitHub</span></span>
+<span id="cb9-10"><a href="introducción-a-r-y-rstudio.html#cb9-10"></a>usethis<span class="op">::</span><span class="kw">edit_git_config</span>()</span>
+<span id="cb9-11"><a href="introducción-a-r-y-rstudio.html#cb9-11"></a><span class="co"># [user]</span></span>
+<span id="cb9-12"><a href="introducción-a-r-y-rstudio.html#cb9-12"></a><span class="co">#   name = Leonardo Collado Torres</span></span>
+<span id="cb9-13"><a href="introducción-a-r-y-rstudio.html#cb9-13"></a><span class="co">#   email = lcolladotor@gmail.com</span></span>
+<span id="cb9-14"><a href="introducción-a-r-y-rstudio.html#cb9-14"></a></span>
+<span id="cb9-15"><a href="introducción-a-r-y-rstudio.html#cb9-15"></a><span class="co">## Para inicializar el repositorio de Git</span></span>
+<span id="cb9-16"><a href="introducción-a-r-y-rstudio.html#cb9-16"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
+<span id="cb9-17"><a href="introducción-a-r-y-rstudio.html#cb9-17"></a></span>
+<span id="cb9-18"><a href="introducción-a-r-y-rstudio.html#cb9-18"></a><span class="co">## Para conectar tu repositorio local de Git con los servidores de GitHub</span></span>
+<span id="cb9-19"><a href="introducción-a-r-y-rstudio.html#cb9-19"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
+<p>Resultado ejemplo: <a href="https://github.com/lcolladotor/rnaseq_2021_notas" class="uri">https://github.com/lcolladotor/rnaseq_2021_notas</a></p>
+<p>Una vez que termines, agrega la liga al repositorio con tus notas del curso en el <a href="https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing">Google Sheet</a> del curso. (De ser necesario, pide permisos para editar el archivo.)</p>
+</div>
+<div id="material-del-curso" class="section level2">
+<h2><span class="header-section-number">1.4</span> Material del curso</h2>
+<ul>
+<li>Pueden descargar la versión estática con <code>usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')</code></li>
+<li>Pueden verlo en línea a través de <a href="http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021"><strong>lcolladotor.github.io/rnaseq_LCG-UNAM_2021</strong></a></li>
+<li>Pueden <strong>clonarlo</strong> desde GitHub de tal forma que podrán actualizarlo fácilmente usando <em>git pull</em></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="introducción-a-r-y-rstudio.html#cb10-1"></a><span class="fu">git</span> clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git</span>
+<span id="cb10-2"><a href="introducción-a-r-y-rstudio.html#cb10-2"></a></span>
+<span id="cb10-3"><a href="introducción-a-r-y-rstudio.html#cb10-3"></a><span class="co">## Si tienen su SSH key configurarda pueden usar</span></span>
+<span id="cb10-4"><a href="introducción-a-r-y-rstudio.html#cb10-4"></a><span class="co">## Info sobre SSH keys de GitHub: </span></span>
+<span id="cb10-5"><a href="introducción-a-r-y-rstudio.html#cb10-5"></a><span class="co">## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</span></span>
+<span id="cb10-6"><a href="introducción-a-r-y-rstudio.html#cb10-6"></a><span class="fu">git</span> clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git</span></code></pre></div>
+<p>O desde R con:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introducción-a-r-y-rstudio.html#cb11-1"></a><span class="co">## Opción más nueva:</span></span>
+<span id="cb11-2"><a href="introducción-a-r-y-rstudio.html#cb11-2"></a><span class="kw">library</span>(<span class="st">&quot;gert&quot;</span>)</span>
+<span id="cb11-3"><a href="introducción-a-r-y-rstudio.html#cb11-3"></a>repo &lt;-<span class="st"> </span><span class="kw">git_clone</span>(</span>
+<span id="cb11-4"><a href="introducción-a-r-y-rstudio.html#cb11-4"></a>    <span class="st">&quot;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&quot;</span>,</span>
+<span id="cb11-5"><a href="introducción-a-r-y-rstudio.html#cb11-5"></a>    <span class="st">&quot;~/rnaseq_LCG-UNAM_2021&quot;</span></span>
+<span id="cb11-6"><a href="introducción-a-r-y-rstudio.html#cb11-6"></a>)</span>
+<span id="cb11-7"><a href="introducción-a-r-y-rstudio.html#cb11-7"></a><span class="kw">setwd</span>(repo)</span>
+<span id="cb11-8"><a href="introducción-a-r-y-rstudio.html#cb11-8"></a></span>
+<span id="cb11-9"><a href="introducción-a-r-y-rstudio.html#cb11-9"></a><span class="co">## Otra opción:</span></span>
+<span id="cb11-10"><a href="introducción-a-r-y-rstudio.html#cb11-10"></a>git2r<span class="op">::</span><span class="kw">clone</span>(<span class="st">&#39;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&#39;</span>,</span>
+<span id="cb11-11"><a href="introducción-a-r-y-rstudio.html#cb11-11"></a>    <span class="st">&#39;~/rnaseq_LCG-UNAM_20210&#39;</span>)</span></code></pre></div>
 </div>
 <div id="ejercicio-postcards" class="section level2">
 <h2><span class="header-section-number">1.5</span> Ejercicio postcards</h2>
@@ -287,8 +308,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introducción-a-r-y-rstudio.html#cb12-1"></a><span class="co">## Creen el RStudio project</span></span>
 <span id="cb12-2"><a href="introducción-a-r-y-rstudio.html#cb12-2"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&#39;Su_Usuario.github.io&#39;</span>)</span>
 <span id="cb12-3"><a href="introducción-a-r-y-rstudio.html#cb12-3"></a></span>
-<span id="cb12-4"><a href="introducción-a-r-y-rstudio.html#cb12-4"></a><span class="co">## Configure Git</span></span>
-<span id="cb12-5"><a href="introducción-a-r-y-rstudio.html#cb12-5"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span></code></pre></div>
+<span id="cb12-4"><a href="introducción-a-r-y-rstudio.html#cb12-4"></a><span class="co">## Configura Git y GitHub</span></span>
+<span id="cb12-5"><a href="introducción-a-r-y-rstudio.html#cb12-5"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
+<span id="cb12-6"><a href="introducción-a-r-y-rstudio.html#cb12-6"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
 <p>Creen su templado usando <code>postcards</code>. Va a crear un archivo <code>index.Rmd</code></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introducción-a-r-y-rstudio.html#cb13-1"></a><span class="co">## Solo uno de estos, de acurdo al templado que más les gustó</span></span>
 <span id="cb13-2"><a href="introducción-a-r-y-rstudio.html#cb13-2"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;jolla&quot;</span>)</span>

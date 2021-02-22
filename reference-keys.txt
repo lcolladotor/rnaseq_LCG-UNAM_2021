@@ -1,8 +1,8 @@
 introducción-a-r-y-rstudio
-material-del-curso
 r
 github
 rstudio
+material-del-curso
 ejercicio-postcards
 introducción-a-bioconductor
 encontrando-paquetes-de-bioconductor
