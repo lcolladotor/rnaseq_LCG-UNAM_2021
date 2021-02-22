@@ -63,6 +63,7 @@ External links:
 * [Cursos LCG](https://cursos.lcg.unam.mx/mod/url/view.php?id=2220)
 * [GitHub source code](https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021)
 * Zoom (ask)
+* [LCG-UNAM RStudio server](http://132.248.220.108:8787/)
 * [CDSB](https://comunidadbioinfo.github.io/)
 * [Slack CDSB Mexico](https://comunidadbioinfo.slack.com)
   

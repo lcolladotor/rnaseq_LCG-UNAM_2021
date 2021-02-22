@@ -1,34 +1,5 @@
 # Introducción a R y RStudio
 
-
-## Material del curso
-
-* Pueden descargar la versión estática con `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')`
-* Pueden verlo en línea a través de  [**lcolladotor.github.io/rnaseq_LCG-UNAM_2021**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021)
-* Pueden **clonarlo** desde GitHub de tal forma que podrán actualizarlo fácilmente usando *git pull*
-
-```{bash clone_course, eval = FALSE}
-git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git
-
-## Si tienen su SSH key configurarda pueden usar
-## Info sobre SSH keys de GitHub: 
-## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git
-```
-
-O desde R con:
-
-```{r clone_repo, eval = FALSE}
-## Opción más nueva:
-library("gert")
-repo <- git_clone("lcolladotor/rnaseq_LCG-UNAM_2021")
-setwd("rnaseq_LCG-UNAM_2021")
-
-## Otra opción:
-git2r::clone('https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021',
-    'rnaseq_LCG-UNAM_20210')
-```
-
 ## R
 
 * R: es gratis, de acceso libre, utilizado para muchos campos de trabajo, fuerte en la bioinformática a través de Bioconductor
@@ -78,7 +49,7 @@ git2r::clone('https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021',
 
 
 ```{r proj, eval = FALSE}
-usethis::create_project('~/Desktop/rnaseq_2021_notas')
+usethis::create_project('~/rnaseq_2021_notas')
 ```
 
 ```{r create_setup, eval = FALSE}
@@ -89,9 +60,60 @@ usethis::use_r('01-notas.R')
 * Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html
 
 ```{r use_git, eval = FALSE}
-usethis::create_github_token()
-gitcreds::gitcreds_set()
-usethis::use_github() ## commit first, then run this command
+## Para poder conectar tu compu con GitHub
+usethis::create_github_token() ## Abrirá una página web, escoje un nombre único
+## y luego da click en el botón verde al final. Después copia el token
+## (son 40 caracteres)
+gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
+## Si no, terminaras en la situación descrita en
+## https://github.com/r-lib/usethis/issues/1347
+
+## Configura tu usuario de GitHub
+usethis::edit_git_config()
+# [user]
+# 	name = Leonardo Collado Torres
+# 	email = lcolladotor@gmail.com
+
+## Para inicializar el repositorio de Git
+usethis::use_git()
+
+## Para conectar tu repositorio local de Git con los servidores de GitHub
+usethis::use_github()
+```
+
+Resultado ejemplo: https://github.com/lcolladotor/rnaseq_2021_notas
+
+Una vez que termines, agrega la liga al repositorio con tus notas del curso en el [Google Sheet](https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing) del curso. (De ser necesario, pide permisos para editar el archivo.)
+
+## Material del curso
+
+* Pueden descargar la versión estática con `usethis::use_course('lcolladotor/rnaseq_LCG-UNAM_2021')`
+* Pueden verlo en línea a través de  [**lcolladotor.github.io/rnaseq_LCG-UNAM_2021**](http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021)
+* Pueden **clonarlo** desde GitHub de tal forma que podrán actualizarlo fácilmente usando *git pull*
+
+```{bash clone_course, eval = FALSE}
+git clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git
+
+## Si tienen su SSH key configurarda pueden usar
+## Info sobre SSH keys de GitHub: 
+## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git
+```
+
+O desde R con:
+
+```{r clone_repo, eval = FALSE}
+## Opción más nueva:
+library("gert")
+repo <- git_clone(
+    "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021",
+    "~/rnaseq_LCG-UNAM_2021"
+)
+setwd(repo)
+
+## Otra opción:
+git2r::clone('https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021',
+    '~/rnaseq_LCG-UNAM_20210')
 ```
 
 ## Ejercicio postcards
@@ -108,8 +130,9 @@ usethis::use_github() ## commit first, then run this command
 ## Creen el RStudio project
 usethis::create_project('Su_Usuario.github.io')
 
-## Configure Git
+## Configura Git y GitHub
 usethis::use_git()
+usethis::use_github()
 ```
 
 Creen su templado usando `postcards`. Va a crear un archivo `index.Rmd`
