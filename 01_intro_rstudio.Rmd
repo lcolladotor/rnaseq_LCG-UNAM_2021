@@ -127,7 +127,7 @@ sessioninfo::session_info()
 
 * Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html
 
-```{r use_git, eval = FALSE}
+```{r use_git_init, eval = FALSE}
 ## Para poder conectar tu compu con GitHub
 usethis::create_github_token() ## Abrirá una página web, escoje un nombre único
 ## y luego da click en el botón verde al final. Después copia el token
@@ -135,12 +135,25 @@ usethis::create_github_token() ## Abrirá una página web, escoje un nombre úni
 gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## Si no, terminaras en la situación descrita en
 ## https://github.com/r-lib/usethis/issues/1347
-## Tambien puedes usar
-# usethis::edit_r_environ()
-## y luego agregar las siguientes dos líneas (la línea en blanco es importante)
-# GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
-#
+```
 
+
+En el servidor de [RStudio de la LCG-UNAM](http://132.248.220.108:8787/) no funciona bien `gitcreds::gitcreds_set()` así que tenemos que editar el archivo `.Renviron` donde nuestro token no se guarda de forma privada, y por lo cual hoy en día no es lo que recomienda [Jenny Bryan](https://twitter.com/JennyBryan). Pero es lo que funciona en este caso. Usando el siguiente comando podemos abrir el archivo `.Renviron`.
+
+```{r edit_r_envir, eval = FALSE}
+usethis::edit_r_environ()
+```
+
+Después guarden su token de GitHub usando la siguiente sintáxis (ojo con la línea en blanco al final, las mayúsculas al inicio, y el que no hay espacios antes y después del `=`).
+
+```
+GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
+
+```
+
+Después de guardar el `.Renviron`, vayan a `Session` hasta arriba y reinicien la sesión de R para que se cargue el `.Renviron` antes de continuar.
+
+```{r use_git_cont, eval = FALSE}
 ## Configura tu usuario de GitHub
 usethis::edit_git_config()
 # [user]
