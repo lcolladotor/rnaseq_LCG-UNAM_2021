@@ -31,7 +31,7 @@
   
   <link rel="shortcut icon" href="icon_32.png" type="image/x-icon" />
 <link rel="prev" href="introducción-a-bioconductor.html"/>
-
+<link rel="next" href="datos-de-rna-seq-a-través-de-recount3.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -158,7 +158,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#ejercicio"><i class="fa fa-check"></i><b>3.2</b> Ejercicio</a></li>
 <li class="chapter" data-level="3.3" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#isee"><i class="fa fa-check"></i><b>3.3</b> iSEE</a></li>
 <li class="chapter" data-level="3.4" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#ejercicio-con-spatiallibd"><i class="fa fa-check"></i><b>3.4</b> Ejercicio con spatialLIBD</a></li>
+<li class="chapter" data-level="3.5" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#comunidad-1"><i class="fa fa-check"></i><b>3.5</b> Comunidad</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html"><i class="fa fa-check"></i><b>4</b> Datos de RNA-seq a través de recount3</a></li>
 </ul>
 
       </nav>
@@ -384,14 +386,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="http://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html" class="uri">http://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html</a></li>
 <li><a href="http://bioconductor.org/packages/release/data/experiment/html/spatialLIBD.html" class="uri">http://bioconductor.org/packages/release/data/experiment/html/spatialLIBD.html</a></li>
 <li><a href="https://doi.org/10.1038/s41593-020-00787-0" class="uri">https://doi.org/10.1038/s41593-020-00787-0</a></li>
+<li><a href="https://osca.bioconductor.org/" class="uri">https://osca.bioconductor.org/</a></li>
+<li><a href="https://www.nature.com/articles/s41592-019-0654-x" class="uri">https://www.nature.com/articles/s41592-019-0654-x</a> Figuras 2 y 3</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb37-1"></a><span class="co">## Descarguemos unos datos de spatialLIBD</span></span>
 <span id="cb37-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb37-2"></a>sce_layer &lt;-<span class="st"> </span>spatialLIBD<span class="op">::</span><span class="kw">fetch_data</span>(<span class="st">&quot;sce_layer&quot;</span>)</span></code></pre></div>
-<pre><code>## using temporary cache /tmp/RtmpWoulyQ/BiocFileCache</code></pre>
+<pre><code>## using temporary cache /tmp/RtmpMaTf2X/BiocFileCache</code></pre>
 <pre><code>## snapshotDate(): 2020-10-27</code></pre>
 <pre><code>## adding rname &#39;https://www.dropbox.com/s/bg8xwysh2vnjwvg/Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata?dl=1&#39;</code></pre>
-<pre><code>## 2021-02-23 05:50:16 loading file /tmp/RtmpWoulyQ/BiocFileCache/6da53c8b65f_Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata%3Fdl%3D1</code></pre>
+<pre><code>## 2021-02-23 06:04:21 loading file /tmp/RtmpMaTf2X/BiocFileCache/6dc694b0252_Human_DLPFC_Visium_processedData_sce_scran_sce_layer_spatialLIBD.Rdata%3Fdl%3D1</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb42-1"></a>sce_layer</span></code></pre></div>
 <pre><code>## class: SingleCellExperiment 
 ## dim: 22331 76 
@@ -421,6 +425,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>ENSG00000168314
 ENSG00000183036
 ENSG00000197971</code></pre>
+</div>
+<div id="comunidad-1" class="section level2">
+<h2><span class="header-section-number">3.5</span> Comunidad</h2>
+<p>Autores de <code>iSEE</code>:</p>
+<ul>
+<li><a href="https://twitter.com/KevinRUE67" class="uri">https://twitter.com/KevinRUE67</a></li>
+<li><a href="https://twitter.com/FedeBioinfo" class="uri">https://twitter.com/FedeBioinfo</a></li>
+<li><a href="https://twitter.com/CSoneson" class="uri">https://twitter.com/CSoneson</a></li>
+<li>Aaron Lun <a href="https://orcid.org/0000-0002-3564-4813" class="uri">https://orcid.org/0000-0002-3564-4813</a></li>
+</ul>
 
 </div>
 </div>
@@ -472,8 +486,8 @@ Published with <a href="https://bookdown.org/" target="_blank" rel="noopener">Bo
           </div>
         </div>
       </div>
-<a href="introducción-a-bioconductor.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introducción-a-bioconductor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="datos-de-rna-seq-a-través-de-recount3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
