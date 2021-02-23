@@ -93,6 +93,38 @@ usethis::create_project("~/rnaseq_2021_notas")
 usethis::use_r("01-notas.R")
 ```
 
+O por ejemplo el archivo [01-visualizar-mtcars.R](https://github.com/lcolladotor/rnaseq_2021_notas_en_vivo/blob/master/R/01-visualizar-mtcars.R)
+
+```{r create_01-visualizar-mtcars, eval = FALSE}
+## Creemos el archivo R/01-visualizar-mtcars.R
+usethis::use_r("01-visualizar-mtcars.R")
+```
+
+con el siguiente contenido:
+
+```{r vis_mtcars, eval = FALSE}
+library("sessioninfo")
+library("here")
+library("ggplot2")
+
+## Hello world
+print("Soy Leo")
+
+## Crear directorio para las figuras
+dir.create(here::here("figuras"), showWarnings = FALSE)
+
+## Hacer una imagen de ejemplo
+pdf(here::here("figuras", "mtcars_gear_vs_mpg.pdf"),
+    useDingbats = FALSE)
+ggplot(mtcars, aes(group = gear, y = mpg)) + geom_boxplot()
+dev.off()
+
+## Para reproducir mi código
+options(width = 120)
+sessioninfo::session_info()
+```
+
+
 * Configura `usethis` con GitHub vía https://usethis.r-lib.org/articles/articles/git-credentials.html
 
 ```{r use_git, eval = FALSE}
@@ -122,7 +154,7 @@ usethis::use_git()
 usethis::use_github()
 ```
 
-Resultado ejemplo: https://github.com/lcolladotor/rnaseq_2021_notas
+Resultado ejemplo: https://github.com/lcolladotor/rnaseq_2021_notas. El que hice en vivo está disponible vía https://github.com/lcolladotor/rnaseq_2021_notas_en_vivo.
 
 Una vez que termines, agrega la liga al repositorio con tus notas del curso en el [Google Sheet](https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing) del curso. (De ser necesario, pide permisos para editar el archivo.)
 
