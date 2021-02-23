@@ -27,6 +27,9 @@
 ##         rsthemes::use_theme_auto(lat = 39.2891, lon = -76.5583)
 ##     }, action = "append")
 ## }
+## 
+## ## https://blog.rstudio.com/2013/06/10/rstudio-cran-mirror/
+## options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 
 ## ----proj, eval = FALSE-------------------------------------------------------------------------------------------------------
@@ -46,6 +49,11 @@
 ## gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## ## Si no, terminaras en la situación descrita en
 ## ## https://github.com/r-lib/usethis/issues/1347
+## ## Tambien puedes usar
+## # usethis::edit_r_environ()
+## ## y luego agregar las siguientes dos líneas (la línea en blanco es importante)
+## # GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
+## #
 ## 
 ## ## Configura tu usuario de GitHub
 ## usethis::edit_git_config()
