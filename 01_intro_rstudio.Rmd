@@ -72,6 +72,9 @@ if (interactive() && requireNamespace("rsthemes", quietly = TRUE)) {
         rsthemes::use_theme_auto(lat = 39.2891, lon = -76.5583)
     }, action = "append")
 }
+
+## https://blog.rstudio.com/2013/06/10/rstudio-cran-mirror/
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 ```
 
 * Es actualizado con bastante frecuencia
