@@ -105,7 +105,7 @@ gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## https://github.com/r-lib/usethis/issues/1347
 ## Tambien puedes usar
 # usethis::edit_r_environ()
-## y luego agregar las siguientes dos lineas (la linea en blanco es importante)
+## y luego agregar las siguientes dos líneas (la línea en blanco es importante)
 # GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
 #
 
