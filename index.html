@@ -153,6 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#comunidad"><i class="fa fa-check"></i><b>2.5</b> Comunidad</a></li>
 <li class="chapter" data-level="2.6" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#ejercicio-grupal"><i class="fa fa-check"></i><b>2.6</b> Ejercicio grupal</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html"><i class="fa fa-check"></i><b>3</b> Objetos de Bioconductor para datos de expresión</a><ul>
+<li class="chapter" data-level="3.1" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#summarizedexperiment"><i class="fa fa-check"></i><b>3.1</b> SummarizedExperiment</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -204,11 +207,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Tuesday February 23:
 <ul>
 <li>9-11 am: introduction to R, RStudio, <em><a href="https://CRAN.R-project.org/package=usethis">usethis</a></em> and <em><a href="https://CRAN.R-project.org/package=here">here</a></em></li>
-<li>12-2 pm: introduction to Bioconductor <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em></li>
+<li>12-2 pm: introduction to Bioconductor</li>
 </ul></li>
 <li>Wednesday February 24:
 <ul>
-<li>9-11 am: Exploring expression data with <em><a href="https://bioconductor.org/packages/3.12/iSEE">iSEE</a></em></li>
+<li>9-11 am: expression data R/Bioconductor objects and visualization: <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> and <em><a href="https://bioconductor.org/packages/3.12/iSEE">iSEE</a></em></li>
 <li>12-2 pm: Downloading RNA-seq data using <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em></li>
 </ul></li>
 <li>Thursday February 25:
@@ -236,34 +239,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Course Prerequisites</h2>
 <p>Install R 4.0.x from <a href="https://cran.r-project.org/">CRAN</a> then install the following R packages:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="co">## For installing Bioconductor packages</span></span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="dt">quietly =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a>    <span class="kw">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
-<span id="cb1-4"><a href="index.html#cb1-4"></a></span>
-<span id="cb1-5"><a href="index.html#cb1-5"></a><span class="co">## Install required packages</span></span>
-<span id="cb1-6"><a href="index.html#cb1-6"></a>BiocManager<span class="op">::</span><span class="kw">install</span>(</span>
-<span id="cb1-7"><a href="index.html#cb1-7"></a>    <span class="kw">c</span>(</span>
-<span id="cb1-8"><a href="index.html#cb1-8"></a>        <span class="st">&#39;usethis&#39;</span>, <span class="co">## Utilities</span></span>
-<span id="cb1-9"><a href="index.html#cb1-9"></a>        <span class="st">&#39;here&#39;</span>,</span>
-<span id="cb1-10"><a href="index.html#cb1-10"></a>        <span class="st">&#39;biocthis&#39;</span>,</span>
-<span id="cb1-11"><a href="index.html#cb1-11"></a>        <span class="st">&#39;postcards&#39;</span>,</span>
-<span id="cb1-12"><a href="index.html#cb1-12"></a>        <span class="st">&#39;pryr&#39;</span>,</span>
-<span id="cb1-13"><a href="index.html#cb1-13"></a>        <span class="st">&#39;sessioninfo&#39;</span>,</span>
-<span id="cb1-14"><a href="index.html#cb1-14"></a>        </span>
-<span id="cb1-15"><a href="index.html#cb1-15"></a>        <span class="st">&#39;SummarizedExperiment&#39;</span>, <span class="co">## Main containers / vis</span></span>
-<span id="cb1-16"><a href="index.html#cb1-16"></a>        <span class="st">&#39;iSEE&#39;</span>,</span>
-<span id="cb1-17"><a href="index.html#cb1-17"></a>        </span>
-<span id="cb1-18"><a href="index.html#cb1-18"></a>        <span class="st">&#39;ExploreModelMatrix&#39;</span>, <span class="co">## RNA-seq</span></span>
-<span id="cb1-19"><a href="index.html#cb1-19"></a>        <span class="st">&#39;limma&#39;</span>,</span>
-<span id="cb1-20"><a href="index.html#cb1-20"></a>        <span class="st">&#39;recount3&#39;</span>,</span>
-<span id="cb1-21"><a href="index.html#cb1-21"></a>        </span>
-<span id="cb1-22"><a href="index.html#cb1-22"></a>        <span class="st">&#39;pheatmap&#39;</span>, <span class="co">## Visualization</span></span>
-<span id="cb1-23"><a href="index.html#cb1-23"></a>        <span class="st">&#39;ggplot2&#39;</span>,</span>
-<span id="cb1-24"><a href="index.html#cb1-24"></a>        <span class="st">&#39;patchwork&#39;</span>,</span>
-<span id="cb1-25"><a href="index.html#cb1-25"></a>        <span class="st">&#39;RColorBrewer&#39;</span>,</span>
-<span id="cb1-26"><a href="index.html#cb1-26"></a>        </span>
-<span id="cb1-27"><a href="index.html#cb1-27"></a>        <span class="st">&#39;spatialLIBD&#39;</span> <span class="co">## Advanced</span></span>
-<span id="cb1-28"><a href="index.html#cb1-28"></a>    )</span>
-<span id="cb1-29"><a href="index.html#cb1-29"></a>)</span></code></pre></div>
+<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)) {</span>
+<span id="cb1-3"><a href="index.html#cb1-3"></a>      <span class="kw">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb1-4"><a href="index.html#cb1-4"></a>  }</span>
+<span id="cb1-5"><a href="index.html#cb1-5"></a></span>
+<span id="cb1-6"><a href="index.html#cb1-6"></a><span class="co">## Install required packages</span></span>
+<span id="cb1-7"><a href="index.html#cb1-7"></a>BiocManager<span class="op">::</span><span class="kw">install</span>(</span>
+<span id="cb1-8"><a href="index.html#cb1-8"></a>    <span class="kw">c</span>(</span>
+<span id="cb1-9"><a href="index.html#cb1-9"></a>        <span class="st">&quot;usethis&quot;</span>, <span class="co">## Utilities</span></span>
+<span id="cb1-10"><a href="index.html#cb1-10"></a>        <span class="st">&quot;here&quot;</span>,</span>
+<span id="cb1-11"><a href="index.html#cb1-11"></a>        <span class="st">&quot;biocthis&quot;</span>,</span>
+<span id="cb1-12"><a href="index.html#cb1-12"></a>        <span class="st">&quot;postcards&quot;</span>,</span>
+<span id="cb1-13"><a href="index.html#cb1-13"></a>        <span class="st">&quot;pryr&quot;</span>,</span>
+<span id="cb1-14"><a href="index.html#cb1-14"></a>        <span class="st">&quot;sessioninfo&quot;</span>,</span>
+<span id="cb1-15"><a href="index.html#cb1-15"></a></span>
+<span id="cb1-16"><a href="index.html#cb1-16"></a>        <span class="st">&quot;SummarizedExperiment&quot;</span>, <span class="co">## Main containers / vis</span></span>
+<span id="cb1-17"><a href="index.html#cb1-17"></a>        <span class="st">&quot;iSEE&quot;</span>,</span>
+<span id="cb1-18"><a href="index.html#cb1-18"></a></span>
+<span id="cb1-19"><a href="index.html#cb1-19"></a>        <span class="st">&quot;ExploreModelMatrix&quot;</span>, <span class="co">## RNA-seq</span></span>
+<span id="cb1-20"><a href="index.html#cb1-20"></a>        <span class="st">&quot;limma&quot;</span>,</span>
+<span id="cb1-21"><a href="index.html#cb1-21"></a>        <span class="st">&quot;recount3&quot;</span>,</span>
+<span id="cb1-22"><a href="index.html#cb1-22"></a></span>
+<span id="cb1-23"><a href="index.html#cb1-23"></a>        <span class="st">&quot;pheatmap&quot;</span>, <span class="co">## Visualization</span></span>
+<span id="cb1-24"><a href="index.html#cb1-24"></a>        <span class="st">&quot;ggplot2&quot;</span>,</span>
+<span id="cb1-25"><a href="index.html#cb1-25"></a>        <span class="st">&quot;patchwork&quot;</span>,</span>
+<span id="cb1-26"><a href="index.html#cb1-26"></a>        <span class="st">&quot;RColorBrewer&quot;</span>,</span>
+<span id="cb1-27"><a href="index.html#cb1-27"></a></span>
+<span id="cb1-28"><a href="index.html#cb1-28"></a>        <span class="st">&quot;spatialLIBD&quot;</span> <span class="co">## Advanced</span></span>
+<span id="cb1-29"><a href="index.html#cb1-29"></a>    )</span>
+<span id="cb1-30"><a href="index.html#cb1-30"></a>)</span></code></pre></div>
 <p>You will also need to install <a href="https://rstudio.com/products/rstudio/download/#download">RStudio</a> version 1.4 or newer.</p>
 </div>
 <div id="course-evaluation" class="section level2 unnumbered">
@@ -334,7 +338,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       Etc/UTC                     
-##  date     2021-02-22                  
+##  date     2021-02-23                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 ##  package                * version  date       lib source        
@@ -364,6 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  blob                     1.2.1    2020-01-20 [1] RSPM (R 4.0.3)
 ##  bmp                      0.3      2017-09-11 [1] RSPM (R 4.0.3)
 ##  bookdown                 0.21     2020-10-13 [1] RSPM (R 4.0.2)
+##  bslib                    0.2.4    2021-01-25 [1] RSPM (R 4.0.3)
 ##  cachem                   1.0.4    2021-02-13 [2] RSPM (R 4.0.3)
 ##  Cairo                    1.5-12.2 2020-07-07 [1] RSPM (R 4.0.3)
 ##  circlize                 0.4.12   2021-01-08 [1] RSPM (R 4.0.3)
@@ -378,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  cowplot                  1.1.1    2020-12-30 [1] RSPM (R 4.0.3)
 ##  crayon                   1.4.1    2021-02-08 [2] RSPM (R 4.0.3)
 ##  curl                     4.3      2019-12-02 [2] RSPM (R 4.0.0)
-##  data.table               1.13.6   2020-12-30 [1] RSPM (R 4.0.3)
+##  data.table               1.14.0   2021-02-21 [1] RSPM (R 4.0.3)
 ##  DBI                      1.1.1    2021-01-15 [1] RSPM (R 4.0.3)
 ##  dbplyr                   2.1.0    2021-02-03 [1] RSPM (R 4.0.3)
 ##  DelayedArray             0.16.1   2021-01-22 [1] Bioconductor  
@@ -424,6 +429,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  iSEE                   * 2.2.4    2021-02-01 [1] Bioconductor  
 ##  iterators                1.0.13   2020-10-15 [1] RSPM (R 4.0.3)
 ##  jpeg                     0.1-8.1  2019-10-24 [1] RSPM (R 4.0.3)
+##  jquerylib                0.1.3    2020-12-17 [1] RSPM (R 4.0.3)
 ##  jsonlite                 1.7.2    2020-12-09 [2] RSPM (R 4.0.3)
 ##  knitr                    1.31     2021-01-27 [2] RSPM (R 4.0.3)
 ##  later                    1.1.0.1  2020-06-05 [2] RSPM (R 4.0.2)
@@ -469,7 +475,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  rintrojs                 0.2.2    2019-05-29 [1] RSPM (R 4.0.0)
 ##  rjson                    0.2.20   2018-06-08 [1] RSPM (R 4.0.3)
 ##  rlang                    0.4.10   2020-12-30 [2] RSPM (R 4.0.3)
-##  rmarkdown                2.6      2020-12-14 [1] RSPM (R 4.0.3)
+##  rmarkdown                2.7      2021-02-19 [1] RSPM (R 4.0.3)
 ##  roxygen2                 7.1.1    2020-06-27 [2] RSPM (R 4.0.2)
 ##  rprojroot                2.0.2    2020-11-15 [2] RSPM (R 4.0.3)
 ##  Rsamtools                2.6.0    2020-10-27 [1] Bioconductor  
@@ -478,6 +484,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  rsvd                     1.0.3    2020-02-17 [1] RSPM (R 4.0.0)
 ##  rtracklayer              1.50.0   2020-10-27 [1] Bioconductor  
 ##  S4Vectors              * 0.28.1   2020-12-09 [1] Bioconductor  
+##  sass                     0.3.1    2021-01-24 [1] RSPM (R 4.0.3)
 ##  scales                   1.1.1    2020-05-11 [1] RSPM (R 4.0.3)
 ##  scater                   1.18.5   2021-02-16 [1] Bioconductor  
 ##  scatterplot3d            0.3-41   2018-03-14 [1] RSPM (R 4.0.3)
@@ -522,8 +529,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [3] /usr/local/lib/R/library</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1"></a><span class="kw">proc.time</span>()</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##  14.860   0.786  15.698</code></pre>
-<p>This book was last updated at 2021-02-22 16:00:25.</p>
+##  14.241   0.883  15.165</code></pre>
+<p>This book was last updated at 2021-02-23 02:36:27.</p>
 </div>
 <div id="license" class="section level2 unnumbered">
 <h2>License</h2>

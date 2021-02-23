@@ -11,3 +11,5 @@ las-dos-ramas-de-bioconductor-release-y-devel
 cursos-y-eventos
 comunidad
 ejercicio-grupal
+objetos-de-bioconductor-para-datos-de-expresión
+summarizedexperiment

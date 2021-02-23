@@ -153,6 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#comunidad"><i class="fa fa-check"></i><b>2.5</b> Comunidad</a></li>
 <li class="chapter" data-level="2.6" data-path="introducción-a-bioconductor.html"><a href="introducción-a-bioconductor.html#ejercicio-grupal"><i class="fa fa-check"></i><b>2.6</b> Ejercicio grupal</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html"><i class="fa fa-check"></i><b>3</b> Objetos de Bioconductor para datos de expresión</a><ul>
+<li class="chapter" data-level="3.1" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#summarizedexperiment"><i class="fa fa-check"></i><b>3.1</b> SummarizedExperiment</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -229,6 +232,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Demo <code>rsthemes</code></li>
 </ul></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introducción-a-r-y-rstudio.html#cb7-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="kw">c</span>(</span>
+<span id="cb7-2"><a href="introducción-a-r-y-rstudio.html#cb7-2"></a>    <span class="st">&quot;gadenbuie/rsthemes&quot;</span></span>
+<span id="cb7-3"><a href="introducción-a-r-y-rstudio.html#cb7-3"></a>))</span>
+<span id="cb7-4"><a href="introducción-a-r-y-rstudio.html#cb7-4"></a>remotes<span class="op">::</span><span class="kw">install_cran</span>(<span class="st">&quot;suncalc&quot;</span>)</span>
+<span id="cb7-5"><a href="introducción-a-r-y-rstudio.html#cb7-5"></a>rsthemes<span class="op">::</span><span class="kw">install_rsthemes</span>(<span class="dt">include_base16 =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r-y-rstudio.html#cb8-1"></a>usethis<span class="op">::</span><span class="kw">edit_r_profile</span>()</span>
+<span id="cb8-2"><a href="introducción-a-r-y-rstudio.html#cb8-2"></a></span>
+<span id="cb8-3"><a href="introducción-a-r-y-rstudio.html#cb8-3"></a><span class="co">## From https://www.garrickadenbuie.com/project/rsthemes/</span></span>
+<span id="cb8-4"><a href="introducción-a-r-y-rstudio.html#cb8-4"></a><span class="cf">if</span> (<span class="kw">interactive</span>() <span class="op">&amp;&amp;</span><span class="st"> </span><span class="kw">requireNamespace</span>(<span class="st">&quot;rsthemes&quot;</span>, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)) {</span>
+<span id="cb8-5"><a href="introducción-a-r-y-rstudio.html#cb8-5"></a>    <span class="co"># Set preferred themes if not handled elsewhere..</span></span>
+<span id="cb8-6"><a href="introducción-a-r-y-rstudio.html#cb8-6"></a>    rsthemes<span class="op">::</span><span class="kw">set_theme_light</span>(<span class="st">&quot;Solarized Light {rsthemes}&quot;</span>) <span class="co"># light theme</span></span>
+<span id="cb8-7"><a href="introducción-a-r-y-rstudio.html#cb8-7"></a>    rsthemes<span class="op">::</span><span class="kw">set_theme_dark</span>(<span class="st">&quot;base16 Monokai {rsthemes}&quot;</span>) <span class="co"># dark theme</span></span>
+<span id="cb8-8"><a href="introducción-a-r-y-rstudio.html#cb8-8"></a>    rsthemes<span class="op">::</span><span class="kw">set_theme_favorite</span>(<span class="kw">c</span>(</span>
+<span id="cb8-9"><a href="introducción-a-r-y-rstudio.html#cb8-9"></a>        <span class="st">&quot;Solarized Light {rsthemes}&quot;</span>,</span>
+<span id="cb8-10"><a href="introducción-a-r-y-rstudio.html#cb8-10"></a>        <span class="st">&quot;base16 Monokai {rsthemes}&quot;</span>,</span>
+<span id="cb8-11"><a href="introducción-a-r-y-rstudio.html#cb8-11"></a>        <span class="st">&quot;One Dark {rsthemes}&quot;</span></span>
+<span id="cb8-12"><a href="introducción-a-r-y-rstudio.html#cb8-12"></a>    ))</span>
+<span id="cb8-13"><a href="introducción-a-r-y-rstudio.html#cb8-13"></a></span>
+<span id="cb8-14"><a href="introducción-a-r-y-rstudio.html#cb8-14"></a>    <span class="co"># Whenever the R session restarts inside RStudio...</span></span>
+<span id="cb8-15"><a href="introducción-a-r-y-rstudio.html#cb8-15"></a>    <span class="kw">setHook</span>(<span class="st">&quot;rstudio.sessionInit&quot;</span>, <span class="cf">function</span>(isNewSession) {</span>
+<span id="cb8-16"><a href="introducción-a-r-y-rstudio.html#cb8-16"></a>        <span class="co"># Automatically choose the correct theme based on time of day</span></span>
+<span id="cb8-17"><a href="introducción-a-r-y-rstudio.html#cb8-17"></a>        <span class="co">## Used rsthemes::geolocate() once</span></span>
+<span id="cb8-18"><a href="introducción-a-r-y-rstudio.html#cb8-18"></a>        rsthemes<span class="op">::</span><span class="kw">use_theme_auto</span>(<span class="dt">lat =</span> <span class="fl">39.2891</span>, <span class="dt">lon =</span> <span class="fl">-76.5583</span>)</span>
+<span id="cb8-19"><a href="introducción-a-r-y-rstudio.html#cb8-19"></a>    }, <span class="dt">action =</span> <span class="st">&quot;append&quot;</span>)</span>
+<span id="cb8-20"><a href="introducción-a-r-y-rstudio.html#cb8-20"></a>}</span></code></pre></div>
+<ul>
 <li>Es actualizado con bastante frecuencia</li>
 <li>RStudio cheatsheets <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a>
 <ul>
@@ -239,31 +269,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Trabajando-con-proyectos.pdf" class="uri">https://github.com/ComunidadBioInfo/cdsb2020/blob/master/presentaciones_flujos-de-trabajo/Trabajando-con-proyectos.pdf</a></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introducción-a-r-y-rstudio.html#cb7-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&#39;~/rnaseq_2021_notas&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r-y-rstudio.html#cb8-1"></a><span class="co">## Start a setup file</span></span>
-<span id="cb8-2"><a href="introducción-a-r-y-rstudio.html#cb8-2"></a>usethis<span class="op">::</span><span class="kw">use_r</span>(<span class="st">&#39;01-notas.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introducción-a-r-y-rstudio.html#cb9-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/rnaseq_2021_notas&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introducción-a-r-y-rstudio.html#cb10-1"></a><span class="co">## Start a setup file</span></span>
+<span id="cb10-2"><a href="introducción-a-r-y-rstudio.html#cb10-2"></a>usethis<span class="op">::</span><span class="kw">use_r</span>(<span class="st">&quot;01-notas.R&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Configura <code>usethis</code> con GitHub vía <a href="https://usethis.r-lib.org/articles/articles/git-credentials.html" class="uri">https://usethis.r-lib.org/articles/articles/git-credentials.html</a></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introducción-a-r-y-rstudio.html#cb9-1"></a><span class="co">## Para poder conectar tu compu con GitHub</span></span>
-<span id="cb9-2"><a href="introducción-a-r-y-rstudio.html#cb9-2"></a>usethis<span class="op">::</span><span class="kw">create_github_token</span>() <span class="co">## Abrirá una página web, escoje un nombre único</span></span>
-<span id="cb9-3"><a href="introducción-a-r-y-rstudio.html#cb9-3"></a><span class="co">## y luego da click en el botón verde al final. Después copia el token</span></span>
-<span id="cb9-4"><a href="introducción-a-r-y-rstudio.html#cb9-4"></a><span class="co">## (son 40 caracteres)</span></span>
-<span id="cb9-5"><a href="introducción-a-r-y-rstudio.html#cb9-5"></a>gitcreds<span class="op">::</span><span class="kw">gitcreds_set</span>() <span class="co">## Ojo, copia el token, no tu password de git!</span></span>
-<span id="cb9-6"><a href="introducción-a-r-y-rstudio.html#cb9-6"></a><span class="co">## Si no, terminaras en la situación descrita en</span></span>
-<span id="cb9-7"><a href="introducción-a-r-y-rstudio.html#cb9-7"></a><span class="co">## https://github.com/r-lib/usethis/issues/1347</span></span>
-<span id="cb9-8"><a href="introducción-a-r-y-rstudio.html#cb9-8"></a></span>
-<span id="cb9-9"><a href="introducción-a-r-y-rstudio.html#cb9-9"></a><span class="co">## Configura tu usuario de GitHub</span></span>
-<span id="cb9-10"><a href="introducción-a-r-y-rstudio.html#cb9-10"></a>usethis<span class="op">::</span><span class="kw">edit_git_config</span>()</span>
-<span id="cb9-11"><a href="introducción-a-r-y-rstudio.html#cb9-11"></a><span class="co"># [user]</span></span>
-<span id="cb9-12"><a href="introducción-a-r-y-rstudio.html#cb9-12"></a><span class="co">#   name = Leonardo Collado Torres</span></span>
-<span id="cb9-13"><a href="introducción-a-r-y-rstudio.html#cb9-13"></a><span class="co">#   email = lcolladotor@gmail.com</span></span>
-<span id="cb9-14"><a href="introducción-a-r-y-rstudio.html#cb9-14"></a></span>
-<span id="cb9-15"><a href="introducción-a-r-y-rstudio.html#cb9-15"></a><span class="co">## Para inicializar el repositorio de Git</span></span>
-<span id="cb9-16"><a href="introducción-a-r-y-rstudio.html#cb9-16"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
-<span id="cb9-17"><a href="introducción-a-r-y-rstudio.html#cb9-17"></a></span>
-<span id="cb9-18"><a href="introducción-a-r-y-rstudio.html#cb9-18"></a><span class="co">## Para conectar tu repositorio local de Git con los servidores de GitHub</span></span>
-<span id="cb9-19"><a href="introducción-a-r-y-rstudio.html#cb9-19"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introducción-a-r-y-rstudio.html#cb11-1"></a><span class="co">## Para poder conectar tu compu con GitHub</span></span>
+<span id="cb11-2"><a href="introducción-a-r-y-rstudio.html#cb11-2"></a>usethis<span class="op">::</span><span class="kw">create_github_token</span>() <span class="co">## Abrirá una página web, escoje un nombre único</span></span>
+<span id="cb11-3"><a href="introducción-a-r-y-rstudio.html#cb11-3"></a><span class="co">## y luego da click en el botón verde al final. Después copia el token</span></span>
+<span id="cb11-4"><a href="introducción-a-r-y-rstudio.html#cb11-4"></a><span class="co">## (son 40 caracteres)</span></span>
+<span id="cb11-5"><a href="introducción-a-r-y-rstudio.html#cb11-5"></a>gitcreds<span class="op">::</span><span class="kw">gitcreds_set</span>() <span class="co">## Ojo, copia el token, no tu password de git!</span></span>
+<span id="cb11-6"><a href="introducción-a-r-y-rstudio.html#cb11-6"></a><span class="co">## Si no, terminaras en la situación descrita en</span></span>
+<span id="cb11-7"><a href="introducción-a-r-y-rstudio.html#cb11-7"></a><span class="co">## https://github.com/r-lib/usethis/issues/1347</span></span>
+<span id="cb11-8"><a href="introducción-a-r-y-rstudio.html#cb11-8"></a></span>
+<span id="cb11-9"><a href="introducción-a-r-y-rstudio.html#cb11-9"></a><span class="co">## Configura tu usuario de GitHub</span></span>
+<span id="cb11-10"><a href="introducción-a-r-y-rstudio.html#cb11-10"></a>usethis<span class="op">::</span><span class="kw">edit_git_config</span>()</span>
+<span id="cb11-11"><a href="introducción-a-r-y-rstudio.html#cb11-11"></a><span class="co"># [user]</span></span>
+<span id="cb11-12"><a href="introducción-a-r-y-rstudio.html#cb11-12"></a><span class="co">#   name = Leonardo Collado Torres</span></span>
+<span id="cb11-13"><a href="introducción-a-r-y-rstudio.html#cb11-13"></a><span class="co">#   email = lcolladotor@gmail.com</span></span>
+<span id="cb11-14"><a href="introducción-a-r-y-rstudio.html#cb11-14"></a></span>
+<span id="cb11-15"><a href="introducción-a-r-y-rstudio.html#cb11-15"></a><span class="co">## Para inicializar el repositorio de Git</span></span>
+<span id="cb11-16"><a href="introducción-a-r-y-rstudio.html#cb11-16"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
+<span id="cb11-17"><a href="introducción-a-r-y-rstudio.html#cb11-17"></a></span>
+<span id="cb11-18"><a href="introducción-a-r-y-rstudio.html#cb11-18"></a><span class="co">## Para conectar tu repositorio local de Git con los servidores de GitHub</span></span>
+<span id="cb11-19"><a href="introducción-a-r-y-rstudio.html#cb11-19"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
 <p>Resultado ejemplo: <a href="https://github.com/lcolladotor/rnaseq_2021_notas" class="uri">https://github.com/lcolladotor/rnaseq_2021_notas</a></p>
 <p>Una vez que termines, agrega la liga al repositorio con tus notas del curso en el <a href="https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing">Google Sheet</a> del curso. (De ser necesario, pide permisos para editar el archivo.)</p>
 </div>
@@ -274,24 +304,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Pueden verlo en línea a través de <a href="http://lcolladotor.github.io/rnaseq_LCG-UNAM_2021"><strong>lcolladotor.github.io/rnaseq_LCG-UNAM_2021</strong></a></li>
 <li>Pueden <strong>clonarlo</strong> desde GitHub de tal forma que podrán actualizarlo fácilmente usando <em>git pull</em></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="introducción-a-r-y-rstudio.html#cb10-1"></a><span class="fu">git</span> clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git</span>
-<span id="cb10-2"><a href="introducción-a-r-y-rstudio.html#cb10-2"></a></span>
-<span id="cb10-3"><a href="introducción-a-r-y-rstudio.html#cb10-3"></a><span class="co">## Si tienen su SSH key configurarda pueden usar</span></span>
-<span id="cb10-4"><a href="introducción-a-r-y-rstudio.html#cb10-4"></a><span class="co">## Info sobre SSH keys de GitHub: </span></span>
-<span id="cb10-5"><a href="introducción-a-r-y-rstudio.html#cb10-5"></a><span class="co">## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</span></span>
-<span id="cb10-6"><a href="introducción-a-r-y-rstudio.html#cb10-6"></a><span class="fu">git</span> clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="introducción-a-r-y-rstudio.html#cb12-1"></a><span class="fu">git</span> clone https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021.git</span>
+<span id="cb12-2"><a href="introducción-a-r-y-rstudio.html#cb12-2"></a></span>
+<span id="cb12-3"><a href="introducción-a-r-y-rstudio.html#cb12-3"></a><span class="co">## Si tienen su SSH key configurarda pueden usar</span></span>
+<span id="cb12-4"><a href="introducción-a-r-y-rstudio.html#cb12-4"></a><span class="co">## Info sobre SSH keys de GitHub: </span></span>
+<span id="cb12-5"><a href="introducción-a-r-y-rstudio.html#cb12-5"></a><span class="co">## https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</span></span>
+<span id="cb12-6"><a href="introducción-a-r-y-rstudio.html#cb12-6"></a><span class="fu">git</span> clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git</span></code></pre></div>
 <p>O desde R con:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introducción-a-r-y-rstudio.html#cb11-1"></a><span class="co">## Opción más nueva:</span></span>
-<span id="cb11-2"><a href="introducción-a-r-y-rstudio.html#cb11-2"></a><span class="kw">library</span>(<span class="st">&quot;gert&quot;</span>)</span>
-<span id="cb11-3"><a href="introducción-a-r-y-rstudio.html#cb11-3"></a>repo &lt;-<span class="st"> </span><span class="kw">git_clone</span>(</span>
-<span id="cb11-4"><a href="introducción-a-r-y-rstudio.html#cb11-4"></a>    <span class="st">&quot;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&quot;</span>,</span>
-<span id="cb11-5"><a href="introducción-a-r-y-rstudio.html#cb11-5"></a>    <span class="st">&quot;~/rnaseq_LCG-UNAM_2021&quot;</span></span>
-<span id="cb11-6"><a href="introducción-a-r-y-rstudio.html#cb11-6"></a>)</span>
-<span id="cb11-7"><a href="introducción-a-r-y-rstudio.html#cb11-7"></a><span class="kw">setwd</span>(repo)</span>
-<span id="cb11-8"><a href="introducción-a-r-y-rstudio.html#cb11-8"></a></span>
-<span id="cb11-9"><a href="introducción-a-r-y-rstudio.html#cb11-9"></a><span class="co">## Otra opción:</span></span>
-<span id="cb11-10"><a href="introducción-a-r-y-rstudio.html#cb11-10"></a>git2r<span class="op">::</span><span class="kw">clone</span>(<span class="st">&#39;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&#39;</span>,</span>
-<span id="cb11-11"><a href="introducción-a-r-y-rstudio.html#cb11-11"></a>    <span class="st">&#39;~/rnaseq_LCG-UNAM_20210&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introducción-a-r-y-rstudio.html#cb13-1"></a><span class="co">## Opción más nueva:</span></span>
+<span id="cb13-2"><a href="introducción-a-r-y-rstudio.html#cb13-2"></a><span class="kw">library</span>(<span class="st">&quot;gert&quot;</span>)</span>
+<span id="cb13-3"><a href="introducción-a-r-y-rstudio.html#cb13-3"></a>repo &lt;-<span class="st"> </span><span class="kw">git_clone</span>(</span>
+<span id="cb13-4"><a href="introducción-a-r-y-rstudio.html#cb13-4"></a>    <span class="st">&quot;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&quot;</span>,</span>
+<span id="cb13-5"><a href="introducción-a-r-y-rstudio.html#cb13-5"></a>    <span class="st">&quot;~/rnaseq_LCG-UNAM_2021&quot;</span></span>
+<span id="cb13-6"><a href="introducción-a-r-y-rstudio.html#cb13-6"></a>)</span>
+<span id="cb13-7"><a href="introducción-a-r-y-rstudio.html#cb13-7"></a><span class="kw">setwd</span>(repo)</span>
+<span id="cb13-8"><a href="introducción-a-r-y-rstudio.html#cb13-8"></a></span>
+<span id="cb13-9"><a href="introducción-a-r-y-rstudio.html#cb13-9"></a><span class="co">## Otra opción:</span></span>
+<span id="cb13-10"><a href="introducción-a-r-y-rstudio.html#cb13-10"></a>git2r<span class="op">::</span><span class="kw">clone</span>(</span>
+<span id="cb13-11"><a href="introducción-a-r-y-rstudio.html#cb13-11"></a>    <span class="st">&quot;https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021&quot;</span>,</span>
+<span id="cb13-12"><a href="introducción-a-r-y-rstudio.html#cb13-12"></a>    <span class="st">&quot;~/rnaseq_LCG-UNAM_20210&quot;</span></span>
+<span id="cb13-13"><a href="introducción-a-r-y-rstudio.html#cb13-13"></a>)</span></code></pre></div>
 </div>
 <div id="ejercicio-postcards" class="section level2">
 <h2><span class="header-section-number">1.5</span> Ejercicio postcards</h2>
@@ -305,18 +337,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="http://aejaffe.com/" class="uri">http://aejaffe.com/</a> vía <a href="https://github.com/andrewejaffe/andrewejaffe.github.io" class="uri">https://github.com/andrewejaffe/andrewejaffe.github.io</a></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introducción-a-r-y-rstudio.html#cb12-1"></a><span class="co">## Creen el RStudio project</span></span>
-<span id="cb12-2"><a href="introducción-a-r-y-rstudio.html#cb12-2"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&#39;Su_Usuario.github.io&#39;</span>)</span>
-<span id="cb12-3"><a href="introducción-a-r-y-rstudio.html#cb12-3"></a></span>
-<span id="cb12-4"><a href="introducción-a-r-y-rstudio.html#cb12-4"></a><span class="co">## Configura Git y GitHub</span></span>
-<span id="cb12-5"><a href="introducción-a-r-y-rstudio.html#cb12-5"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
-<span id="cb12-6"><a href="introducción-a-r-y-rstudio.html#cb12-6"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introducción-a-r-y-rstudio.html#cb14-1"></a><span class="co">## Creen el RStudio project</span></span>
+<span id="cb14-2"><a href="introducción-a-r-y-rstudio.html#cb14-2"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;Su_Usuario.github.io&quot;</span>)</span>
+<span id="cb14-3"><a href="introducción-a-r-y-rstudio.html#cb14-3"></a></span>
+<span id="cb14-4"><a href="introducción-a-r-y-rstudio.html#cb14-4"></a><span class="co">## Configura Git y GitHub</span></span>
+<span id="cb14-5"><a href="introducción-a-r-y-rstudio.html#cb14-5"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
+<span id="cb14-6"><a href="introducción-a-r-y-rstudio.html#cb14-6"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
 <p>Creen su templado usando <code>postcards</code>. Va a crear un archivo <code>index.Rmd</code></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introducción-a-r-y-rstudio.html#cb13-1"></a><span class="co">## Solo uno de estos, de acurdo al templado que más les gustó</span></span>
-<span id="cb13-2"><a href="introducción-a-r-y-rstudio.html#cb13-2"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;jolla&quot;</span>)</span>
-<span id="cb13-3"><a href="introducción-a-r-y-rstudio.html#cb13-3"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;jolla-blue&quot;</span>)</span>
-<span id="cb13-4"><a href="introducción-a-r-y-rstudio.html#cb13-4"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;trestles&quot;</span>)</span>
-<span id="cb13-5"><a href="introducción-a-r-y-rstudio.html#cb13-5"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;onofre&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introducción-a-r-y-rstudio.html#cb15-1"></a><span class="co">## Solo uno de estos, de acurdo al templado que más les gustó</span></span>
+<span id="cb15-2"><a href="introducción-a-r-y-rstudio.html#cb15-2"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;jolla&quot;</span>)</span>
+<span id="cb15-3"><a href="introducción-a-r-y-rstudio.html#cb15-3"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;jolla-blue&quot;</span>)</span>
+<span id="cb15-4"><a href="introducción-a-r-y-rstudio.html#cb15-4"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;trestles&quot;</span>)</span>
+<span id="cb15-5"><a href="introducción-a-r-y-rstudio.html#cb15-5"></a>postcards<span class="op">::</span><span class="kw">create_postcard</span>(<span class="dt">template =</span> <span class="st">&quot;onofre&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Llenen su información usando el formato <code>Markdown</code>. Por ejemplo <a href="https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L17-L31" class="uri">https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L17-L31</a>.</li>
 <li>Agreguen sus perfiles estilo <a href="https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L7-L12" class="uri">https://github.com/andrewejaffe/andrewejaffe.github.io/blob/master/index.Rmd#L7-L12</a></li>
