@@ -13,3 +13,6 @@ comunidad
 ejercicio-grupal
 objetos-de-bioconductor-para-datos-de-expresión
 summarizedexperiment
+ejercicio
+isee
+ejercicio-con-spatiallibd
