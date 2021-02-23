@@ -115,8 +115,10 @@ dir.create(here::here("figuras"), showWarnings = FALSE)
 
 ## Hacer una imagen de ejemplo
 pdf(here::here("figuras", "mtcars_gear_vs_mpg.pdf"),
-    useDingbats = FALSE)
-ggplot(mtcars, aes(group = gear, y = mpg)) + geom_boxplot()
+    useDingbats = FALSE
+)
+ggplot(mtcars, aes(group = gear, y = mpg)) +
+    geom_boxplot()
 dev.off()
 
 ## Para reproducir mi código

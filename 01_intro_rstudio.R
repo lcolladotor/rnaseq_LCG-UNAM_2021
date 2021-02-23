@@ -1,4 +1,4 @@
-## ----install_rsthemes, eval = FALSE-------------------------------------------------------------------------------------------
+## ----install_rsthemes, eval = FALSE----------------------------------------------------------------
 ## remotes::install_github(c(
 ##     "gadenbuie/rsthemes"
 ## ))
@@ -6,7 +6,7 @@
 ## rsthemes::install_rsthemes(include_base16 = TRUE)
 
 
-## ----r_profile, eval = FALSE--------------------------------------------------------------------------------------------------
+## ----r_profile, eval = FALSE-----------------------------------------------------------------------
 ## usethis::edit_r_profile()
 ## 
 ## ## From https://www.garrickadenbuie.com/project/rsthemes/
@@ -32,16 +32,45 @@
 ## options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 
-## ----proj, eval = FALSE-------------------------------------------------------------------------------------------------------
+## ----proj, eval = FALSE----------------------------------------------------------------------------
 ## usethis::create_project("~/rnaseq_2021_notas")
 
 
-## ----create_setup, eval = FALSE-----------------------------------------------------------------------------------------------
+## ----create_setup, eval = FALSE--------------------------------------------------------------------
 ## ## Start a setup file
 ## usethis::use_r("01-notas.R")
 
 
-## ----use_git, eval = FALSE----------------------------------------------------------------------------------------------------
+## ----create_01-visualizar-mtcars, eval = FALSE-----------------------------------------------------
+## ## Creemos el archivo R/01-visualizar-mtcars.R
+## usethis::use_r("01-visualizar-mtcars.R")
+
+
+## ----vis_mtcars, eval = FALSE----------------------------------------------------------------------
+## library("sessioninfo")
+## library("here")
+## library("ggplot2")
+## 
+## ## Hello world
+## print("Soy Leo")
+## 
+## ## Crear directorio para las figuras
+## dir.create(here::here("figuras"), showWarnings = FALSE)
+## 
+## ## Hacer una imagen de ejemplo
+## pdf(here::here("figuras", "mtcars_gear_vs_mpg.pdf"),
+##     useDingbats = FALSE
+## )
+## ggplot(mtcars, aes(group = gear, y = mpg)) +
+##     geom_boxplot()
+## dev.off()
+## 
+## ## Para reproducir mi código
+## options(width = 120)
+## sessioninfo::session_info()
+
+
+## ----use_git_init, eval = FALSE--------------------------------------------------------------------
 ## ## Para poder conectar tu compu con GitHub
 ## usethis::create_github_token() ## Abrirá una página web, escoje un nombre único
 ## ## y luego da click en el botón verde al final. Después copia el token
@@ -49,12 +78,13 @@
 ## gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## ## Si no, terminaras en la situación descrita en
 ## ## https://github.com/r-lib/usethis/issues/1347
-## ## Tambien puedes usar
-## # usethis::edit_r_environ()
-## ## y luego agregar las siguientes dos líneas (la línea en blanco es importante)
-## # GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
-## #
-## 
+
+
+## ----edit_r_envir, eval = FALSE--------------------------------------------------------------------
+## usethis::edit_r_environ()
+
+
+## ----use_git_cont, eval = FALSE--------------------------------------------------------------------
 ## ## Configura tu usuario de GitHub
 ## usethis::edit_git_config()
 ## # [user]
@@ -80,7 +110,7 @@
 ## git clone git@github.com:lcolladotor/rnaseq_LCG-UNAM_2021.git
 
 
-## ----clone_repo, eval = FALSE-------------------------------------------------------------------------------------------------
+## ----clone_repo, eval = FALSE----------------------------------------------------------------------
 ## ## Opción más nueva:
 ## library("gert")
 ## repo <- git_clone(
@@ -96,7 +126,7 @@
 ## )
 
 
-## ----postcards_proj, eval = FALSE---------------------------------------------------------------------------------------------
+## ----postcards_proj, eval = FALSE------------------------------------------------------------------
 ## ## Creen el RStudio project
 ## usethis::create_project("Su_Usuario.github.io")
 ## 
@@ -105,7 +135,7 @@
 ## usethis::use_github()
 
 
-## ----postcards_create, eval = FALSE-------------------------------------------------------------------------------------------
+## ----postcards_create, eval = FALSE----------------------------------------------------------------
 ## ## Solo uno de estos, de acurdo al templado que más les gustó
 ## postcards::create_postcard(template = "jolla")
 ## postcards::create_postcard(template = "jolla-blue")

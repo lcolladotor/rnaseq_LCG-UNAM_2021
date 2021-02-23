@@ -25,8 +25,9 @@ Instructor:
 
 Teach assistants:
 
-* Elisa Márquez
-* Citlali Gil
+* [Elisa Márquez Zavala](https://github.com/emarquezz)
+* [Citlali Gil](https://github.com/CitlaliGA)
+
 
 Course Coordinators:
 
