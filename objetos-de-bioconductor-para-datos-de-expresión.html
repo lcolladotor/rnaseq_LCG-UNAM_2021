@@ -252,28 +252,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb22-1"></a><span class="kw">assayNames</span>(rse)</span></code></pre></div>
 <pre><code>## [1] &quot;counts&quot;</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb24-1"></a><span class="kw">head</span>(<span class="kw">assay</span>(rse))</span></code></pre></div>
-<pre><code>##             A         B        C        D         E        F
-## [1,] 7907.668 5052.9620 3602.577 1569.337  796.8626 8239.971
-## [2,] 1104.129 3797.2516 6523.502 4534.104  184.5009 9336.191
-## [3,] 1188.558 8468.3819 8625.183 8766.041 6616.6362 3549.938
-## [4,] 2596.017  783.3198 6465.583 4345.839 2507.3419 5901.464
-## [5,] 2930.688 2627.8490 1753.070 2735.067 9491.6546 9059.468
-## [6,] 9470.187 8115.8968 7207.060 7222.057 6878.4325 6849.261</code></pre>
+<pre><code>##             A        B         C         D         E        F
+## [1,] 9199.254 5147.717 3821.1425 1640.4884 6911.6939 5890.548
+## [2,] 3536.291 2491.918 1607.5286 5369.0112 6722.6505 2777.390
+## [3,] 2379.980 1322.629 7389.1064 8461.0603  318.7923 6250.770
+## [4,] 3264.953 6551.883  211.6818 5194.2838 3508.3849 7518.422
+## [5,] 9202.394 3461.957 8899.2274  446.2402 3396.5548 1580.018
+## [6,] 2459.182 4072.150 6864.9321 4081.7239 6045.7050 6834.150</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb26-1"></a><span class="kw">rowRanges</span>(rse)</span></code></pre></div>
 <pre><code>## GRanges object with 200 ranges and 1 metadata column:
 ##         seqnames        ranges strand |  feature_id
 ##            &lt;Rle&gt;     &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt;
-##     [1]     chr1 770631-770730      - |       ID001
-##     [2]     chr1 960702-960801      + |       ID002
-##     [3]     chr1 810676-810775      + |       ID003
-##     [4]     chr1 367886-367985      + |       ID004
-##     [5]     chr1 591625-591724      + |       ID005
+##     [1]     chr1 780459-780558      + |       ID001
+##     [2]     chr1 251847-251946      + |       ID002
+##     [3]     chr1 750916-751015      - |       ID003
+##     [4]     chr1 239812-239911      + |       ID004
+##     [5]     chr1 195265-195364      + |       ID005
 ##     ...      ...           ...    ... .         ...
-##   [196]     chr2 763911-764010      + |       ID196
-##   [197]     chr2 843961-844060      - |       ID197
-##   [198]     chr2 860603-860702      + |       ID198
-##   [199]     chr2 483808-483907      - |       ID199
-##   [200]     chr2 889803-889902      - |       ID200
+##   [196]     chr2 100385-100484      - |       ID196
+##   [197]     chr2 206438-206537      - |       ID197
+##   [198]     chr2 410425-410524      + |       ID198
+##   [199]     chr2 570581-570680      + |       ID199
+##   [200]     chr2 428794-428893      - |       ID200
 ##   -------
 ##   seqinfo: 2 sequences from an unspecified genome; no seqlengths</code></pre>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb28-1"></a><span class="kw">rowData</span>(rse) <span class="co"># same as &#39;mcols(rowRanges(rse))&#39;</span></span></code></pre></div>
