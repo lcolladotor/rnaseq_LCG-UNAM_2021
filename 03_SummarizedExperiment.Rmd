@@ -105,7 +105,7 @@ rse[, c("A", "D", "F")]
 * http://bioconductor.org/packages/release/bioc/vignettes/iSEE/inst/doc/basic.html
 
 
-```{r isee_basic}
+```{r isee_basic, eval = FALSE}
 ## Explora el objeto rse de forma interactiva
 library("iSEE")
 iSEE::iSEE(rse)
