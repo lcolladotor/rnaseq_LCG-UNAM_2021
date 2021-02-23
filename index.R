@@ -1,31 +1,32 @@
 ## ----install, eval = FALSE----------------------------------------------------------------------------------------------------
 ## ## For installing Bioconductor packages
-## if (!requireNamespace("BiocManager", quietly = TRUE))
-##     install.packages("BiocManager")
+## if (!requireNamespace("BiocManager", quietly = TRUE)) {
+##       install.packages("BiocManager")
+##   }
 ## 
 ## ## Install required packages
 ## BiocManager::install(
 ##     c(
-##         'usethis', ## Utilities
-##         'here',
-##         'biocthis',
-##         'postcards',
-##         'pryr',
-##         'sessioninfo',
+##         "usethis", ## Utilities
+##         "here",
+##         "biocthis",
+##         "postcards",
+##         "pryr",
+##         "sessioninfo",
 ## 
-##         'SummarizedExperiment', ## Main containers / vis
-##         'iSEE',
+##         "SummarizedExperiment", ## Main containers / vis
+##         "iSEE",
 ## 
-##         'ExploreModelMatrix', ## RNA-seq
-##         'limma',
-##         'recount3',
+##         "ExploreModelMatrix", ## RNA-seq
+##         "limma",
+##         "recount3",
 ## 
-##         'pheatmap', ## Visualization
-##         'ggplot2',
-##         'patchwork',
-##         'RColorBrewer',
+##         "pheatmap", ## Visualization
+##         "ggplot2",
+##         "patchwork",
+##         "RColorBrewer",
 ## 
-##         'spatialLIBD' ## Advanced
+##         "spatialLIBD" ## Advanced
 ##     )
 ## )
 

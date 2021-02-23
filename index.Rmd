@@ -47,9 +47,9 @@ _Local times in Cuernavaca, Mexico_
 
 * Tuesday February 23:
   - 9-11 am: introduction to R, RStudio, `r BiocStyle::CRANpkg("usethis")` and `r BiocStyle::CRANpkg("here")`
-  - 12-2 pm: introduction to Bioconductor `r BiocStyle::Biocpkg("SummarizedExperiment")`
+  - 12-2 pm: introduction to Bioconductor
 * Wednesday February 24:
-  - 9-11 am: Exploring expression data with `r BiocStyle::Biocpkg("iSEE")`
+  - 9-11 am: expression data R/Bioconductor objects and visualization: `r BiocStyle::Biocpkg("SummarizedExperiment")` and `r BiocStyle::Biocpkg("iSEE")`
   - 12-2 pm: Downloading RNA-seq data using `r BiocStyle::Biocpkg("recount3")`
 * Thursday February 25:
   - 9-11 am: statistical models with `r BiocStyle::Biocpkg("ExploreModelMatrix")`
@@ -74,32 +74,33 @@ Install R 4.0.x from [CRAN](https://cran.r-project.org/) then install the follow
 
 ```{r install, eval = FALSE}
 ## For installing Bioconductor packages
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+      install.packages("BiocManager")
+  }
 
 ## Install required packages
 BiocManager::install(
     c(
-        'usethis', ## Utilities
-        'here',
-        'biocthis',
-        'postcards',
-        'pryr',
-        'sessioninfo',
-        
-        'SummarizedExperiment', ## Main containers / vis
-        'iSEE',
-        
-        'ExploreModelMatrix', ## RNA-seq
-        'limma',
-        'recount3',
-        
-        'pheatmap', ## Visualization
-        'ggplot2',
-        'patchwork',
-        'RColorBrewer',
-        
-        'spatialLIBD' ## Advanced
+        "usethis", ## Utilities
+        "here",
+        "biocthis",
+        "postcards",
+        "pryr",
+        "sessioninfo",
+
+        "SummarizedExperiment", ## Main containers / vis
+        "iSEE",
+
+        "ExploreModelMatrix", ## RNA-seq
+        "limma",
+        "recount3",
+
+        "pheatmap", ## Visualization
+        "ggplot2",
+        "patchwork",
+        "RColorBrewer",
+
+        "spatialLIBD" ## Advanced
     )
 )
 ```

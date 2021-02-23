@@ -1,10 +1,41 @@
+## ----install_rsthemes, eval = FALSE-------------------------------------------------------------------------------------------
+## remotes::install_github(c(
+##     "gadenbuie/rsthemes"
+## ))
+## remotes::install_cran("suncalc")
+## rsthemes::install_rsthemes(include_base16 = TRUE)
+
+
+## ----r_profile, eval = FALSE--------------------------------------------------------------------------------------------------
+## usethis::edit_r_profile()
+## 
+## ## From https://www.garrickadenbuie.com/project/rsthemes/
+## if (interactive() && requireNamespace("rsthemes", quietly = TRUE)) {
+##     # Set preferred themes if not handled elsewhere..
+##     rsthemes::set_theme_light("Solarized Light {rsthemes}") # light theme
+##     rsthemes::set_theme_dark("base16 Monokai {rsthemes}") # dark theme
+##     rsthemes::set_theme_favorite(c(
+##         "Solarized Light {rsthemes}",
+##         "base16 Monokai {rsthemes}",
+##         "One Dark {rsthemes}"
+##     ))
+## 
+##     # Whenever the R session restarts inside RStudio...
+##     setHook("rstudio.sessionInit", function(isNewSession) {
+##         # Automatically choose the correct theme based on time of day
+##         ## Used rsthemes::geolocate() once
+##         rsthemes::use_theme_auto(lat = 39.2891, lon = -76.5583)
+##     }, action = "append")
+## }
+
+
 ## ----proj, eval = FALSE-------------------------------------------------------------------------------------------------------
-## usethis::create_project('~/rnaseq_2021_notas')
+## usethis::create_project("~/rnaseq_2021_notas")
 
 
 ## ----create_setup, eval = FALSE-----------------------------------------------------------------------------------------------
 ## ## Start a setup file
-## usethis::use_r('01-notas.R')
+## usethis::use_r("01-notas.R")
 
 
 ## ----use_git, eval = FALSE----------------------------------------------------------------------------------------------------
@@ -51,13 +82,15 @@
 ## setwd(repo)
 ## 
 ## ## Otra opción:
-## git2r::clone('https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021',
-##     '~/rnaseq_LCG-UNAM_20210')
+## git2r::clone(
+##     "https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021",
+##     "~/rnaseq_LCG-UNAM_20210"
+## )
 
 
 ## ----postcards_proj, eval = FALSE---------------------------------------------------------------------------------------------
 ## ## Creen el RStudio project
-## usethis::create_project('Su_Usuario.github.io')
+## usethis::create_project("Su_Usuario.github.io")
 ## 
 ## ## Configura Git y GitHub
 ## usethis::use_git()
