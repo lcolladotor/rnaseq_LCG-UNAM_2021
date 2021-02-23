@@ -103,6 +103,11 @@ usethis::create_github_token() ## Abrirá una página web, escoje un nombre úni
 gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ## Si no, terminaras en la situación descrita en
 ## https://github.com/r-lib/usethis/issues/1347
+## Tambien puedes usar
+# usethis::edit_r_environ()
+## y luego agregar las siguientes dos lineas (la linea en blanco es importante)
+# GITHUB_PAT=TU_CLAVE_DE_40_LETRAS
+#
 
 ## Configura tu usuario de GitHub
 usethis::edit_git_config()
