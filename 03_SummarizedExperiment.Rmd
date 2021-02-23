@@ -135,7 +135,7 @@ pryr::object_size(sce_layer)
 iSEE::iSEE(sce_layer)
 ```
 
-* Descarga un PDF que reproduzca la imagen del lado derecho de la siguiente diapostiva. Incluye ese PDF en tu repositorio de notas del curso.
+* Descarga un PDF que reproduzca la imagen del lado derecho de la siguiente diapositiva. Incluye ese PDF en tu repositorio de notas del curso.
 
 <script async class="speakerdeck-embed" data-slide="10" data-id="329db23f5f17460da31f45c7695a9f06" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
