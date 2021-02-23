@@ -285,18 +285,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-5"><a href="introducción-a-r-y-rstudio.html#cb11-5"></a>gitcreds<span class="op">::</span><span class="kw">gitcreds_set</span>() <span class="co">## Ojo, copia el token, no tu password de git!</span></span>
 <span id="cb11-6"><a href="introducción-a-r-y-rstudio.html#cb11-6"></a><span class="co">## Si no, terminaras en la situación descrita en</span></span>
 <span id="cb11-7"><a href="introducción-a-r-y-rstudio.html#cb11-7"></a><span class="co">## https://github.com/r-lib/usethis/issues/1347</span></span>
-<span id="cb11-8"><a href="introducción-a-r-y-rstudio.html#cb11-8"></a></span>
-<span id="cb11-9"><a href="introducción-a-r-y-rstudio.html#cb11-9"></a><span class="co">## Configura tu usuario de GitHub</span></span>
-<span id="cb11-10"><a href="introducción-a-r-y-rstudio.html#cb11-10"></a>usethis<span class="op">::</span><span class="kw">edit_git_config</span>()</span>
-<span id="cb11-11"><a href="introducción-a-r-y-rstudio.html#cb11-11"></a><span class="co"># [user]</span></span>
-<span id="cb11-12"><a href="introducción-a-r-y-rstudio.html#cb11-12"></a><span class="co">#   name = Leonardo Collado Torres</span></span>
-<span id="cb11-13"><a href="introducción-a-r-y-rstudio.html#cb11-13"></a><span class="co">#   email = lcolladotor@gmail.com</span></span>
-<span id="cb11-14"><a href="introducción-a-r-y-rstudio.html#cb11-14"></a></span>
-<span id="cb11-15"><a href="introducción-a-r-y-rstudio.html#cb11-15"></a><span class="co">## Para inicializar el repositorio de Git</span></span>
-<span id="cb11-16"><a href="introducción-a-r-y-rstudio.html#cb11-16"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
-<span id="cb11-17"><a href="introducción-a-r-y-rstudio.html#cb11-17"></a></span>
-<span id="cb11-18"><a href="introducción-a-r-y-rstudio.html#cb11-18"></a><span class="co">## Para conectar tu repositorio local de Git con los servidores de GitHub</span></span>
-<span id="cb11-19"><a href="introducción-a-r-y-rstudio.html#cb11-19"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
+<span id="cb11-8"><a href="introducción-a-r-y-rstudio.html#cb11-8"></a><span class="co">## Tambien puedes usar</span></span>
+<span id="cb11-9"><a href="introducción-a-r-y-rstudio.html#cb11-9"></a><span class="co"># usethis::edit_r_environ()</span></span>
+<span id="cb11-10"><a href="introducción-a-r-y-rstudio.html#cb11-10"></a><span class="co">## y luego agregar las siguientes dos lineas (la linea en blanco es importante)</span></span>
+<span id="cb11-11"><a href="introducción-a-r-y-rstudio.html#cb11-11"></a><span class="co"># GITHUB_PAT=TU_CLAVE_DE_40_LETRAS</span></span>
+<span id="cb11-12"><a href="introducción-a-r-y-rstudio.html#cb11-12"></a><span class="co">#</span></span>
+<span id="cb11-13"><a href="introducción-a-r-y-rstudio.html#cb11-13"></a></span>
+<span id="cb11-14"><a href="introducción-a-r-y-rstudio.html#cb11-14"></a><span class="co">## Configura tu usuario de GitHub</span></span>
+<span id="cb11-15"><a href="introducción-a-r-y-rstudio.html#cb11-15"></a>usethis<span class="op">::</span><span class="kw">edit_git_config</span>()</span>
+<span id="cb11-16"><a href="introducción-a-r-y-rstudio.html#cb11-16"></a><span class="co"># [user]</span></span>
+<span id="cb11-17"><a href="introducción-a-r-y-rstudio.html#cb11-17"></a><span class="co">#   name = Leonardo Collado Torres</span></span>
+<span id="cb11-18"><a href="introducción-a-r-y-rstudio.html#cb11-18"></a><span class="co">#   email = lcolladotor@gmail.com</span></span>
+<span id="cb11-19"><a href="introducción-a-r-y-rstudio.html#cb11-19"></a></span>
+<span id="cb11-20"><a href="introducción-a-r-y-rstudio.html#cb11-20"></a><span class="co">## Para inicializar el repositorio de Git</span></span>
+<span id="cb11-21"><a href="introducción-a-r-y-rstudio.html#cb11-21"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
+<span id="cb11-22"><a href="introducción-a-r-y-rstudio.html#cb11-22"></a></span>
+<span id="cb11-23"><a href="introducción-a-r-y-rstudio.html#cb11-23"></a><span class="co">## Para conectar tu repositorio local de Git con los servidores de GitHub</span></span>
+<span id="cb11-24"><a href="introducción-a-r-y-rstudio.html#cb11-24"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span></code></pre></div>
 <p>Resultado ejemplo: <a href="https://github.com/lcolladotor/rnaseq_2021_notas" class="uri">https://github.com/lcolladotor/rnaseq_2021_notas</a></p>
 <p>Una vez que termines, agrega la liga al repositorio con tus notas del curso en el <a href="https://docs.google.com/spreadsheets/d/1sOBAnPkN_mP_Tq6-a8TyO7T4ii_hRPLFlKXj4qJdfUs/edit?usp=sharing">Google Sheet</a> del curso. (De ser necesario, pide permisos para editar el archivo.)</p>
 </div>
