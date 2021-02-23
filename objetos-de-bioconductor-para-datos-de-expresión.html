@@ -212,86 +212,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-2"></a><span class="kw">library</span>(<span class="st">&quot;SummarizedExperiment&quot;</span>)</span>
 <span id="cb16-3"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-3"></a><span class="co">## ?SummarizedExperiment</span></span>
 <span id="cb16-4"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-4"></a></span>
-<span id="cb16-5"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-5"></a></span>
-<span id="cb16-6"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-6"></a><span class="co">## De la</span></span>
-<span id="cb16-7"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-7"></a>nrows &lt;-<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb16-8"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-8"></a>ncols &lt;-<span class="st"> </span><span class="dv">6</span></span>
-<span id="cb16-9"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-9"></a>counts &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(nrows <span class="op">*</span><span class="st"> </span>ncols, <span class="dv">1</span>, <span class="fl">1e4</span>), nrows)</span>
-<span id="cb16-10"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-10"></a>rowRanges &lt;-<span class="st"> </span><span class="kw">GRanges</span>(</span>
-<span id="cb16-11"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-11"></a>    <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;chr1&quot;</span>, <span class="st">&quot;chr2&quot;</span>), <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">150</span>)),</span>
-<span id="cb16-12"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-12"></a>    <span class="kw">IRanges</span>(<span class="kw">floor</span>(<span class="kw">runif</span>(<span class="dv">200</span>, <span class="fl">1e5</span>, <span class="fl">1e6</span>)), <span class="dt">width =</span> <span class="dv">100</span>),</span>
-<span id="cb16-13"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-13"></a>    <span class="dt">strand =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;+&quot;</span>, <span class="st">&quot;-&quot;</span>), <span class="dv">200</span>, <span class="ot">TRUE</span>),</span>
-<span id="cb16-14"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-14"></a>    <span class="dt">feature_id =</span> <span class="kw">sprintf</span>(<span class="st">&quot;ID%03d&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">200</span>)</span>
-<span id="cb16-15"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-15"></a>)</span>
-<span id="cb16-16"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-16"></a>colData &lt;-<span class="st"> </span><span class="kw">DataFrame</span>(</span>
-<span id="cb16-17"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-17"></a>    <span class="dt">Treatment =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;ChIP&quot;</span>, <span class="st">&quot;Input&quot;</span>), <span class="dv">3</span>),</span>
-<span id="cb16-18"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-18"></a>    <span class="dt">row.names =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span>
+<span id="cb16-5"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-5"></a><span class="co">## De los ejemplos en la ayuda oficial</span></span>
+<span id="cb16-6"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-6"></a></span>
+<span id="cb16-7"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-7"></a><span class="co">## Creamos los datos para nuestro objeto de tipo SummarizedExperiment</span></span>
+<span id="cb16-8"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-8"></a><span class="co">## para 200 genes a lo largo de 6 muestras</span></span>
+<span id="cb16-9"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-9"></a>nrows &lt;-<span class="st"> </span><span class="dv">200</span></span>
+<span id="cb16-10"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-10"></a>ncols &lt;-<span class="st"> </span><span class="dv">6</span></span>
+<span id="cb16-11"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-11"></a><span class="co">## Números al azar de cuentas</span></span>
+<span id="cb16-12"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-12"></a>counts &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(nrows <span class="op">*</span><span class="st"> </span>ncols, <span class="dv">1</span>, <span class="fl">1e4</span>), nrows)</span>
+<span id="cb16-13"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-13"></a><span class="co">## Información de nuestros genes</span></span>
+<span id="cb16-14"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-14"></a>rowRanges &lt;-<span class="st"> </span><span class="kw">GRanges</span>(</span>
+<span id="cb16-15"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-15"></a>    <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;chr1&quot;</span>, <span class="st">&quot;chr2&quot;</span>), <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">150</span>)),</span>
+<span id="cb16-16"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-16"></a>    <span class="kw">IRanges</span>(<span class="kw">floor</span>(<span class="kw">runif</span>(<span class="dv">200</span>, <span class="fl">1e5</span>, <span class="fl">1e6</span>)), <span class="dt">width =</span> <span class="dv">100</span>),</span>
+<span id="cb16-17"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-17"></a>    <span class="dt">strand =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;+&quot;</span>, <span class="st">&quot;-&quot;</span>), <span class="dv">200</span>, <span class="ot">TRUE</span>),</span>
+<span id="cb16-18"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-18"></a>    <span class="dt">feature_id =</span> <span class="kw">sprintf</span>(<span class="st">&quot;ID%03d&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">200</span>)</span>
 <span id="cb16-19"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-19"></a>)</span>
-<span id="cb16-20"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-20"></a>rse &lt;-<span class="st"> </span><span class="kw">SummarizedExperiment</span>(</span>
-<span id="cb16-21"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-21"></a>    <span class="dt">assays =</span> <span class="kw">SimpleList</span>(<span class="dt">counts =</span> counts),</span>
-<span id="cb16-22"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-22"></a>    <span class="dt">rowRanges =</span> rowRanges,</span>
-<span id="cb16-23"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-23"></a>    <span class="dt">colData =</span> colData</span>
-<span id="cb16-24"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-24"></a>)</span>
-<span id="cb16-25"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-25"></a>rse</span></code></pre></div>
+<span id="cb16-20"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-20"></a><span class="kw">names</span>(rowRanges) &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;gene_&quot;</span>, <span class="kw">seq_len</span>(<span class="kw">length</span>(rowRanges)))</span>
+<span id="cb16-21"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-21"></a><span class="co">## Información de nuestras muestras</span></span>
+<span id="cb16-22"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-22"></a>colData &lt;-<span class="st"> </span><span class="kw">DataFrame</span>(</span>
+<span id="cb16-23"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-23"></a>    <span class="dt">Treatment =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;ChIP&quot;</span>, <span class="st">&quot;Input&quot;</span>), <span class="dv">3</span>),</span>
+<span id="cb16-24"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-24"></a>    <span class="dt">row.names =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span>
+<span id="cb16-25"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-25"></a>)</span>
+<span id="cb16-26"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-26"></a><span class="co">## Juntamos ahora toda la información en un solo objeto de R</span></span>
+<span id="cb16-27"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-27"></a>rse &lt;-<span class="st"> </span><span class="kw">SummarizedExperiment</span>(</span>
+<span id="cb16-28"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-28"></a>    <span class="dt">assays =</span> <span class="kw">SimpleList</span>(<span class="dt">counts =</span> counts),</span>
+<span id="cb16-29"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-29"></a>    <span class="dt">rowRanges =</span> rowRanges,</span>
+<span id="cb16-30"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-30"></a>    <span class="dt">colData =</span> colData</span>
+<span id="cb16-31"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-31"></a>)</span>
+<span id="cb16-32"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-32"></a></span>
+<span id="cb16-33"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-33"></a><span class="co">## Exploremos el objeto resultante</span></span>
+<span id="cb16-34"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb16-34"></a>rse</span></code></pre></div>
 <pre><code>## class: RangedSummarizedExperiment 
 ## dim: 200 6 
 ## metadata(0):
 ## assays(1): counts
-## rownames: NULL
+## rownames(200): gene_1 gene_2 ... gene_199 gene_200
 ## rowData names(1): feature_id
 ## colnames(6): A B ... E F
 ## colData names(1): Treatment</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb18-1"></a><span class="kw">dim</span>(rse)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb18-1"></a><span class="co">## Número de genes y muestras</span></span>
+<span id="cb18-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb18-2"></a><span class="kw">dim</span>(rse)</span></code></pre></div>
 <pre><code>## [1] 200   6</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb20-1"></a><span class="kw">dimnames</span>(rse)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb20-1"></a><span class="co">## IDs de nuestros genes y muestras</span></span>
+<span id="cb20-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb20-2"></a><span class="kw">dimnames</span>(rse)</span></code></pre></div>
 <pre><code>## [[1]]
-## NULL
+##   [1] &quot;gene_1&quot;   &quot;gene_2&quot;   &quot;gene_3&quot;   &quot;gene_4&quot;   &quot;gene_5&quot;   &quot;gene_6&quot;   &quot;gene_7&quot;   &quot;gene_8&quot;   &quot;gene_9&quot;   &quot;gene_10&quot; 
+##  [11] &quot;gene_11&quot;  &quot;gene_12&quot;  &quot;gene_13&quot;  &quot;gene_14&quot;  &quot;gene_15&quot;  &quot;gene_16&quot;  &quot;gene_17&quot;  &quot;gene_18&quot;  &quot;gene_19&quot;  &quot;gene_20&quot; 
+##  [21] &quot;gene_21&quot;  &quot;gene_22&quot;  &quot;gene_23&quot;  &quot;gene_24&quot;  &quot;gene_25&quot;  &quot;gene_26&quot;  &quot;gene_27&quot;  &quot;gene_28&quot;  &quot;gene_29&quot;  &quot;gene_30&quot; 
+##  [31] &quot;gene_31&quot;  &quot;gene_32&quot;  &quot;gene_33&quot;  &quot;gene_34&quot;  &quot;gene_35&quot;  &quot;gene_36&quot;  &quot;gene_37&quot;  &quot;gene_38&quot;  &quot;gene_39&quot;  &quot;gene_40&quot; 
+##  [41] &quot;gene_41&quot;  &quot;gene_42&quot;  &quot;gene_43&quot;  &quot;gene_44&quot;  &quot;gene_45&quot;  &quot;gene_46&quot;  &quot;gene_47&quot;  &quot;gene_48&quot;  &quot;gene_49&quot;  &quot;gene_50&quot; 
+##  [51] &quot;gene_51&quot;  &quot;gene_52&quot;  &quot;gene_53&quot;  &quot;gene_54&quot;  &quot;gene_55&quot;  &quot;gene_56&quot;  &quot;gene_57&quot;  &quot;gene_58&quot;  &quot;gene_59&quot;  &quot;gene_60&quot; 
+##  [61] &quot;gene_61&quot;  &quot;gene_62&quot;  &quot;gene_63&quot;  &quot;gene_64&quot;  &quot;gene_65&quot;  &quot;gene_66&quot;  &quot;gene_67&quot;  &quot;gene_68&quot;  &quot;gene_69&quot;  &quot;gene_70&quot; 
+##  [71] &quot;gene_71&quot;  &quot;gene_72&quot;  &quot;gene_73&quot;  &quot;gene_74&quot;  &quot;gene_75&quot;  &quot;gene_76&quot;  &quot;gene_77&quot;  &quot;gene_78&quot;  &quot;gene_79&quot;  &quot;gene_80&quot; 
+##  [81] &quot;gene_81&quot;  &quot;gene_82&quot;  &quot;gene_83&quot;  &quot;gene_84&quot;  &quot;gene_85&quot;  &quot;gene_86&quot;  &quot;gene_87&quot;  &quot;gene_88&quot;  &quot;gene_89&quot;  &quot;gene_90&quot; 
+##  [91] &quot;gene_91&quot;  &quot;gene_92&quot;  &quot;gene_93&quot;  &quot;gene_94&quot;  &quot;gene_95&quot;  &quot;gene_96&quot;  &quot;gene_97&quot;  &quot;gene_98&quot;  &quot;gene_99&quot;  &quot;gene_100&quot;
+## [101] &quot;gene_101&quot; &quot;gene_102&quot; &quot;gene_103&quot; &quot;gene_104&quot; &quot;gene_105&quot; &quot;gene_106&quot; &quot;gene_107&quot; &quot;gene_108&quot; &quot;gene_109&quot; &quot;gene_110&quot;
+## [111] &quot;gene_111&quot; &quot;gene_112&quot; &quot;gene_113&quot; &quot;gene_114&quot; &quot;gene_115&quot; &quot;gene_116&quot; &quot;gene_117&quot; &quot;gene_118&quot; &quot;gene_119&quot; &quot;gene_120&quot;
+## [121] &quot;gene_121&quot; &quot;gene_122&quot; &quot;gene_123&quot; &quot;gene_124&quot; &quot;gene_125&quot; &quot;gene_126&quot; &quot;gene_127&quot; &quot;gene_128&quot; &quot;gene_129&quot; &quot;gene_130&quot;
+## [131] &quot;gene_131&quot; &quot;gene_132&quot; &quot;gene_133&quot; &quot;gene_134&quot; &quot;gene_135&quot; &quot;gene_136&quot; &quot;gene_137&quot; &quot;gene_138&quot; &quot;gene_139&quot; &quot;gene_140&quot;
+## [141] &quot;gene_141&quot; &quot;gene_142&quot; &quot;gene_143&quot; &quot;gene_144&quot; &quot;gene_145&quot; &quot;gene_146&quot; &quot;gene_147&quot; &quot;gene_148&quot; &quot;gene_149&quot; &quot;gene_150&quot;
+## [151] &quot;gene_151&quot; &quot;gene_152&quot; &quot;gene_153&quot; &quot;gene_154&quot; &quot;gene_155&quot; &quot;gene_156&quot; &quot;gene_157&quot; &quot;gene_158&quot; &quot;gene_159&quot; &quot;gene_160&quot;
+## [161] &quot;gene_161&quot; &quot;gene_162&quot; &quot;gene_163&quot; &quot;gene_164&quot; &quot;gene_165&quot; &quot;gene_166&quot; &quot;gene_167&quot; &quot;gene_168&quot; &quot;gene_169&quot; &quot;gene_170&quot;
+## [171] &quot;gene_171&quot; &quot;gene_172&quot; &quot;gene_173&quot; &quot;gene_174&quot; &quot;gene_175&quot; &quot;gene_176&quot; &quot;gene_177&quot; &quot;gene_178&quot; &quot;gene_179&quot; &quot;gene_180&quot;
+## [181] &quot;gene_181&quot; &quot;gene_182&quot; &quot;gene_183&quot; &quot;gene_184&quot; &quot;gene_185&quot; &quot;gene_186&quot; &quot;gene_187&quot; &quot;gene_188&quot; &quot;gene_189&quot; &quot;gene_190&quot;
+## [191] &quot;gene_191&quot; &quot;gene_192&quot; &quot;gene_193&quot; &quot;gene_194&quot; &quot;gene_195&quot; &quot;gene_196&quot; &quot;gene_197&quot; &quot;gene_198&quot; &quot;gene_199&quot; &quot;gene_200&quot;
 ## 
 ## [[2]]
 ## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot;</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb22-1"></a><span class="kw">assayNames</span>(rse)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb22-1"></a><span class="co">## Nombres de tablas de cuentas que tenemos (RPKM, CPM, counts, logcounts, etc)</span></span>
+<span id="cb22-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb22-2"></a><span class="kw">assayNames</span>(rse)</span></code></pre></div>
 <pre><code>## [1] &quot;counts&quot;</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb24-1"></a><span class="kw">head</span>(<span class="kw">assay</span>(rse))</span></code></pre></div>
-<pre><code>##             A         B         C        D        E        F
-## [1,] 3952.725 2379.9437 3207.0158 7997.427 6395.849 4829.950
-## [2,] 1601.618 4889.5173 6448.5738 9671.773 8824.129 6390.720
-## [3,] 4568.885 8401.1946 2164.3605 5497.401 7296.315 8114.227
-## [4,] 5566.093  626.3001 8530.6753 1800.026 4106.808 5097.846
-## [5,] 9448.849 8820.0026 8620.7828  250.190 7622.433 7102.972
-## [6,]  888.874 4418.5166  550.8954 5125.748 2732.345 9001.279</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb26-1"></a><span class="kw">rowRanges</span>(rse)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb24-1"></a><span class="co">## El inicio de nuestra tabla de cuentas</span></span>
+<span id="cb24-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb24-2"></a><span class="kw">head</span>(<span class="kw">assay</span>(rse))</span></code></pre></div>
+<pre><code>##                A        B         C        D          E        F
+## gene_1 1479.9687 2286.636 2224.0094 7917.946 9473.28450 2701.877
+## gene_2 5991.7970 5386.296 6068.4061 4491.398 2905.87680 7656.405
+## gene_3  768.3204 2894.137 7049.7701 7823.241   27.02221 5905.289
+## gene_4 1643.3548 5392.695 8534.6644 7587.389 4480.01790 1449.267
+## gene_5 3526.5931 9670.965  930.4069 5051.046 2707.81028 8871.830
+## gene_6 8965.5492 7312.142 8489.8873 3737.094 6971.52261 9335.038</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb26-1"></a><span class="co">## Información de los genes en un objeto de Bioconductor</span></span>
+<span id="cb26-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb26-2"></a><span class="kw">rowRanges</span>(rse)</span></code></pre></div>
 <pre><code>## GRanges object with 200 ranges and 1 metadata column:
-##         seqnames        ranges strand |  feature_id
-##            &lt;Rle&gt;     &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt;
-##     [1]     chr1 406151-406250      - |       ID001
-##     [2]     chr1 736901-737000      - |       ID002
-##     [3]     chr1 867047-867146      - |       ID003
-##     [4]     chr1 360283-360382      + |       ID004
-##     [5]     chr1 124887-124986      - |       ID005
-##     ...      ...           ...    ... .         ...
-##   [196]     chr2 873885-873984      + |       ID196
-##   [197]     chr2 590777-590876      - |       ID197
-##   [198]     chr2 312905-313004      - |       ID198
-##   [199]     chr2 506770-506869      - |       ID199
-##   [200]     chr2 518911-519010      + |       ID200
+##            seqnames        ranges strand |  feature_id
+##               &lt;Rle&gt;     &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt;
+##     gene_1     chr1 761890-761989      + |       ID001
+##     gene_2     chr1 562070-562169      - |       ID002
+##     gene_3     chr1 552138-552237      + |       ID003
+##     gene_4     chr1 408115-408214      - |       ID004
+##     gene_5     chr1 841634-841733      + |       ID005
+##        ...      ...           ...    ... .         ...
+##   gene_196     chr2 933730-933829      - |       ID196
+##   gene_197     chr2 746826-746925      + |       ID197
+##   gene_198     chr2 604182-604281      + |       ID198
+##   gene_199     chr2 663051-663150      + |       ID199
+##   gene_200     chr2 355762-355861      + |       ID200
 ##   -------
 ##   seqinfo: 2 sequences from an unspecified genome; no seqlengths</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb28-1"></a><span class="kw">rowData</span>(rse) <span class="co"># same as &#39;mcols(rowRanges(rse))&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb28-1"></a><span class="co">## Tabla con información de los genes</span></span>
+<span id="cb28-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb28-2"></a><span class="kw">rowData</span>(rse) <span class="co"># es idéntico a &#39;mcols(rowRanges(rse))&#39;</span></span></code></pre></div>
 <pre><code>## DataFrame with 200 rows and 1 column
-##      feature_id
-##     &lt;character&gt;
-## 1         ID001
-## 2         ID002
-## 3         ID003
-## 4         ID004
-## 5         ID005
-## ...         ...
-## 196       ID196
-## 197       ID197
-## 198       ID198
-## 199       ID199
-## 200       ID200</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb30-1"></a><span class="kw">colData</span>(rse)</span></code></pre></div>
+##           feature_id
+##          &lt;character&gt;
+## gene_1         ID001
+## gene_2         ID002
+## gene_3         ID003
+## gene_4         ID004
+## gene_5         ID005
+## ...              ...
+## gene_196       ID196
+## gene_197       ID197
+## gene_198       ID198
+## gene_199       ID199
+## gene_200       ID200</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb30-1"></a><span class="co">## Tabla con información de las muestras</span></span>
+<span id="cb30-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb30-2"></a><span class="kw">colData</span>(rse)</span></code></pre></div>
 <pre><code>## DataFrame with 6 rows and 1 column
 ##     Treatment
 ##   &lt;character&gt;
@@ -301,6 +336,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## D       Input
 ## E        ChIP
 ## F       Input</code></pre>
+<p>Ejercicio: explica que sucede en las siguientes líneas de código de R.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb32-1"></a><span class="co">## Comando 1</span></span>
+<span id="cb32-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb32-2"></a>rse[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, ]</span></code></pre></div>
+<pre><code>## class: RangedSummarizedExperiment 
+## dim: 2 6 
+## metadata(0):
+## assays(1): counts
+## rownames(2): gene_1 gene_2
+## rowData names(1): feature_id
+## colnames(6): A B ... E F
+## colData names(1): Treatment</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb34-1"></a><span class="co">## Comando 2</span></span>
+<span id="cb34-2"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#cb34-2"></a>rse[, <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;F&quot;</span>)]</span></code></pre></div>
+<pre><code>## class: RangedSummarizedExperiment 
+## dim: 200 3 
+## metadata(0):
+## assays(1): counts
+## rownames(200): gene_1 gene_2 ... gene_199 gene_200
+## rowData names(1): feature_id
+## colnames(3): A D F
+## colData names(1): Treatment</code></pre>
 
 </div>
 </div>
