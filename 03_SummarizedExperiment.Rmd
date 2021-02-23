@@ -117,6 +117,8 @@ iSEE::iSEE(rse)
     - http://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html
     - http://bioconductor.org/packages/release/data/experiment/html/spatialLIBD.html
     - https://doi.org/10.1038/s41593-020-00787-0
+    - https://osca.bioconductor.org/
+    - https://www.nature.com/articles/s41592-019-0654-x Figuras 2 y 3
 
 ```{r download_sce_layer}
 ## Descarguemos unos datos de spatialLIBD
@@ -145,3 +147,12 @@ ENSG00000168314
 ENSG00000183036
 ENSG00000197971
 ```
+
+## Comunidad
+
+Autores de `iSEE`:
+
+* https://twitter.com/KevinRUE67
+* https://twitter.com/FedeBioinfo
+* https://twitter.com/CSoneson
+* Aaron Lun https://orcid.org/0000-0002-3564-4813

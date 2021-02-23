@@ -1,0 +1,6 @@
+# Datos de RNA-seq a través de recount3
+
+* http://research.libd.org/recount3-docs/
+    - http://research.libd.org/recount3-docs/docs/quick-access.html#quick-recount3
+* http://research.libd.org/recount3/
+    - http://bioconductor.org/packages/release/bioc/html/recount3.html
