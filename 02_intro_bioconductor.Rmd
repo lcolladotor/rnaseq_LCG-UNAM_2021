@@ -62,8 +62,8 @@ Bioconductor, the R package repository for the “analysis and comprehension of 
 ## Las dos ramas de Bioconductor: release y devel
 
 * Dos ramas
-    - `release`, actualmente 3.11
-    - `devel`, actualmente 3.12
+    - `release`, actualmente 3.12
+    - `devel`, actualmente 3.13
     - Ejemplo: http://bioconductor.org/packages/devel/bioc/html/recount.html
 * Bioconductor tiene es actualizado cada 6 meses (abril y octubre). R lo actualizan 1 vez al año (abril).
 * Todo el software lo prueban en macOS, Windows y linux
