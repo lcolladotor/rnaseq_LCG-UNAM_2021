@@ -296,13 +296,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-10"><a href="introducción-a-r-y-rstudio.html#cb12-10"></a></span>
 <span id="cb12-11"><a href="introducción-a-r-y-rstudio.html#cb12-11"></a><span class="co">## Hacer una imagen de ejemplo</span></span>
 <span id="cb12-12"><a href="introducción-a-r-y-rstudio.html#cb12-12"></a><span class="kw">pdf</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;figuras&quot;</span>, <span class="st">&quot;mtcars_gear_vs_mpg.pdf&quot;</span>),</span>
-<span id="cb12-13"><a href="introducción-a-r-y-rstudio.html#cb12-13"></a>    <span class="dt">useDingbats =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb12-14"><a href="introducción-a-r-y-rstudio.html#cb12-14"></a><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(<span class="dt">group =</span> gear, <span class="dt">y =</span> mpg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</span>
-<span id="cb12-15"><a href="introducción-a-r-y-rstudio.html#cb12-15"></a><span class="kw">dev.off</span>()</span>
-<span id="cb12-16"><a href="introducción-a-r-y-rstudio.html#cb12-16"></a></span>
-<span id="cb12-17"><a href="introducción-a-r-y-rstudio.html#cb12-17"></a><span class="co">## Para reproducir mi código</span></span>
-<span id="cb12-18"><a href="introducción-a-r-y-rstudio.html#cb12-18"></a><span class="kw">options</span>(<span class="dt">width =</span> <span class="dv">120</span>)</span>
-<span id="cb12-19"><a href="introducción-a-r-y-rstudio.html#cb12-19"></a>sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</span></code></pre></div>
+<span id="cb12-13"><a href="introducción-a-r-y-rstudio.html#cb12-13"></a>    <span class="dt">useDingbats =</span> <span class="ot">FALSE</span></span>
+<span id="cb12-14"><a href="introducción-a-r-y-rstudio.html#cb12-14"></a>)</span>
+<span id="cb12-15"><a href="introducción-a-r-y-rstudio.html#cb12-15"></a><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(<span class="dt">group =</span> gear, <span class="dt">y =</span> mpg)) <span class="op">+</span></span>
+<span id="cb12-16"><a href="introducción-a-r-y-rstudio.html#cb12-16"></a><span class="st">    </span><span class="kw">geom_boxplot</span>()</span>
+<span id="cb12-17"><a href="introducción-a-r-y-rstudio.html#cb12-17"></a><span class="kw">dev.off</span>()</span>
+<span id="cb12-18"><a href="introducción-a-r-y-rstudio.html#cb12-18"></a></span>
+<span id="cb12-19"><a href="introducción-a-r-y-rstudio.html#cb12-19"></a><span class="co">## Para reproducir mi código</span></span>
+<span id="cb12-20"><a href="introducción-a-r-y-rstudio.html#cb12-20"></a><span class="kw">options</span>(<span class="dt">width =</span> <span class="dv">120</span>)</span>
+<span id="cb12-21"><a href="introducción-a-r-y-rstudio.html#cb12-21"></a>sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</span></code></pre></div>
 <ul>
 <li>Configura <code>usethis</code> con GitHub vía <a href="https://usethis.r-lib.org/articles/articles/git-credentials.html" class="uri">https://usethis.r-lib.org/articles/articles/git-credentials.html</a></li>
 </ul>
