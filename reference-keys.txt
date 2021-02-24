@@ -23,3 +23,5 @@ proyectos-recount
 usar-recount3
 ejercicio-1
 comunidad-2
+modelos-estadísticos
+exploremodelmatrix
