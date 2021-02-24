@@ -25,3 +25,15 @@ ejercicio-1
 comunidad-2
 modelos-estadísticos
 exploremodelmatrix
+ejemplo-1
+ejemplo-2
+ejemplo-3
+ejercicio-2
+datos-de-srp045638
+normalización-de-datos
+expresión-diferencial
+visualizando-genes-de
+ejercicio-3
+comunidad-3
+ejercicio-respuesta
+específicaciones-del-proyecto
