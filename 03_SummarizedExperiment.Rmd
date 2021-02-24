@@ -114,8 +114,8 @@ iSEE::iSEE(rse)
 ## Ejercicio con spatialLIBD
 
 * Vamos a descargar datos de un objeto `SingleCellExperiment` que es similar a uno de `SummarizedExperiment`.
-    - http://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html
-    - http://bioconductor.org/packages/release/data/experiment/html/spatialLIBD.html
+    - http://bioconductor.org/packages/SingleCellExperiment
+    - http://bioconductor.org/packages/spatialLIBD
     - https://doi.org/10.1038/s41593-020-00787-0
     - https://osca.bioconductor.org/
     - https://www.nature.com/articles/s41592-019-0654-x Figuras 2 y 3
