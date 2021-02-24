@@ -92,7 +92,8 @@ BiocManager::install(
         "SummarizedExperiment", ## Main containers / vis
         "iSEE",
 
-        "ExploreModelMatrix", ## RNA-seq
+        "edgeR", ## RNA-seq
+        "ExploreModelMatrix", 
         "limma",
         "recount3",
 
@@ -148,6 +149,7 @@ library("SummarizedExperiment")
 library("iSEE")
 
 ## RNA-seq
+library("edgeR")
 library("ExploreModelMatrix")
 library("limma")
 library("recount3")
