@@ -1,4 +1,4 @@
-## ----install, eval = FALSE-------------------------------------------------------------------------
+## ----install, eval = FALSE----------------------------------------------------------------------------------------------------
 ## ## For installing Bioconductor packages
 ## if (!requireNamespace("BiocManager", quietly = TRUE)) {
 ##       install.packages("BiocManager")
@@ -17,7 +17,8 @@
 ##         "SummarizedExperiment", ## Main containers / vis
 ##         "iSEE",
 ## 
-##         "ExploreModelMatrix", ## RNA-seq
+##         "edgeR", ## RNA-seq
+##         "ExploreModelMatrix",
 ##         "limma",
 ##         "recount3",
 ## 
@@ -31,7 +32,7 @@
 ## )
 
 
-## ----session_packages, eval = TRUE, message = FALSE------------------------------------------------
+## ----session_packages, eval = TRUE, message = FALSE---------------------------------------------------------------------------
 ## Load the package at the top of your script
 library("sessioninfo")
 
@@ -49,6 +50,7 @@ library("SummarizedExperiment")
 library("iSEE")
 
 ## RNA-seq
+library("edgeR")
 library("ExploreModelMatrix")
 library("limma")
 library("recount3")
@@ -63,7 +65,7 @@ library("RColorBrewer")
 library("spatialLIBD")
 
 
-## ----session_info----------------------------------------------------------------------------------
+## ----session_info-------------------------------------------------------------------------------------------------------------
 ## Reproducibility information
 options(width = 120)
 session_info()

@@ -93,7 +93,7 @@ BiocManager::install(
         "iSEE",
 
         "edgeR", ## RNA-seq
-        "ExploreModelMatrix", 
+        "ExploreModelMatrix",
         "limma",
         "recount3",
 
