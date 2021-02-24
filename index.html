@@ -273,18 +273,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-16"><a href="index.html#cb1-16"></a>        <span class="st">&quot;SummarizedExperiment&quot;</span>, <span class="co">## Main containers / vis</span></span>
 <span id="cb1-17"><a href="index.html#cb1-17"></a>        <span class="st">&quot;iSEE&quot;</span>,</span>
 <span id="cb1-18"><a href="index.html#cb1-18"></a></span>
-<span id="cb1-19"><a href="index.html#cb1-19"></a>        <span class="st">&quot;ExploreModelMatrix&quot;</span>, <span class="co">## RNA-seq</span></span>
-<span id="cb1-20"><a href="index.html#cb1-20"></a>        <span class="st">&quot;limma&quot;</span>,</span>
-<span id="cb1-21"><a href="index.html#cb1-21"></a>        <span class="st">&quot;recount3&quot;</span>,</span>
-<span id="cb1-22"><a href="index.html#cb1-22"></a></span>
-<span id="cb1-23"><a href="index.html#cb1-23"></a>        <span class="st">&quot;pheatmap&quot;</span>, <span class="co">## Visualization</span></span>
-<span id="cb1-24"><a href="index.html#cb1-24"></a>        <span class="st">&quot;ggplot2&quot;</span>,</span>
-<span id="cb1-25"><a href="index.html#cb1-25"></a>        <span class="st">&quot;patchwork&quot;</span>,</span>
-<span id="cb1-26"><a href="index.html#cb1-26"></a>        <span class="st">&quot;RColorBrewer&quot;</span>,</span>
-<span id="cb1-27"><a href="index.html#cb1-27"></a></span>
-<span id="cb1-28"><a href="index.html#cb1-28"></a>        <span class="st">&quot;spatialLIBD&quot;</span> <span class="co">## Advanced</span></span>
-<span id="cb1-29"><a href="index.html#cb1-29"></a>    )</span>
-<span id="cb1-30"><a href="index.html#cb1-30"></a>)</span></code></pre></div>
+<span id="cb1-19"><a href="index.html#cb1-19"></a>        <span class="st">&quot;edgeR&quot;</span>, <span class="co">## RNA-seq</span></span>
+<span id="cb1-20"><a href="index.html#cb1-20"></a>        <span class="st">&quot;ExploreModelMatrix&quot;</span>, </span>
+<span id="cb1-21"><a href="index.html#cb1-21"></a>        <span class="st">&quot;limma&quot;</span>,</span>
+<span id="cb1-22"><a href="index.html#cb1-22"></a>        <span class="st">&quot;recount3&quot;</span>,</span>
+<span id="cb1-23"><a href="index.html#cb1-23"></a></span>
+<span id="cb1-24"><a href="index.html#cb1-24"></a>        <span class="st">&quot;pheatmap&quot;</span>, <span class="co">## Visualization</span></span>
+<span id="cb1-25"><a href="index.html#cb1-25"></a>        <span class="st">&quot;ggplot2&quot;</span>,</span>
+<span id="cb1-26"><a href="index.html#cb1-26"></a>        <span class="st">&quot;patchwork&quot;</span>,</span>
+<span id="cb1-27"><a href="index.html#cb1-27"></a>        <span class="st">&quot;RColorBrewer&quot;</span>,</span>
+<span id="cb1-28"><a href="index.html#cb1-28"></a></span>
+<span id="cb1-29"><a href="index.html#cb1-29"></a>        <span class="st">&quot;spatialLIBD&quot;</span> <span class="co">## Advanced</span></span>
+<span id="cb1-30"><a href="index.html#cb1-30"></a>    )</span>
+<span id="cb1-31"><a href="index.html#cb1-31"></a>)</span></code></pre></div>
 <p>You will also need to install <a href="https://rstudio.com/products/rstudio/download/#download">RStudio</a> version 1.4 or newer.</p>
 </div>
 <div id="course-evaluation" class="section level2 unnumbered">
@@ -331,18 +332,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-15"><a href="index.html#cb2-15"></a><span class="kw">library</span>(<span class="st">&quot;iSEE&quot;</span>)</span>
 <span id="cb2-16"><a href="index.html#cb2-16"></a></span>
 <span id="cb2-17"><a href="index.html#cb2-17"></a><span class="co">## RNA-seq</span></span>
-<span id="cb2-18"><a href="index.html#cb2-18"></a><span class="kw">library</span>(<span class="st">&quot;ExploreModelMatrix&quot;</span>)</span>
-<span id="cb2-19"><a href="index.html#cb2-19"></a><span class="kw">library</span>(<span class="st">&quot;limma&quot;</span>)</span>
-<span id="cb2-20"><a href="index.html#cb2-20"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
-<span id="cb2-21"><a href="index.html#cb2-21"></a></span>
-<span id="cb2-22"><a href="index.html#cb2-22"></a><span class="co">## Visualization</span></span>
-<span id="cb2-23"><a href="index.html#cb2-23"></a><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb2-24"><a href="index.html#cb2-24"></a><span class="kw">library</span>(<span class="st">&quot;patchwork&quot;</span>)</span>
-<span id="cb2-25"><a href="index.html#cb2-25"></a><span class="kw">library</span>(<span class="st">&quot;pheatmap&quot;</span>)</span>
-<span id="cb2-26"><a href="index.html#cb2-26"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</span>
-<span id="cb2-27"><a href="index.html#cb2-27"></a></span>
-<span id="cb2-28"><a href="index.html#cb2-28"></a><span class="co">## Advanced</span></span>
-<span id="cb2-29"><a href="index.html#cb2-29"></a><span class="kw">library</span>(<span class="st">&quot;spatialLIBD&quot;</span>)</span></code></pre></div>
+<span id="cb2-18"><a href="index.html#cb2-18"></a><span class="kw">library</span>(<span class="st">&quot;edgeR&quot;</span>)</span>
+<span id="cb2-19"><a href="index.html#cb2-19"></a><span class="kw">library</span>(<span class="st">&quot;ExploreModelMatrix&quot;</span>)</span>
+<span id="cb2-20"><a href="index.html#cb2-20"></a><span class="kw">library</span>(<span class="st">&quot;limma&quot;</span>)</span>
+<span id="cb2-21"><a href="index.html#cb2-21"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
+<span id="cb2-22"><a href="index.html#cb2-22"></a></span>
+<span id="cb2-23"><a href="index.html#cb2-23"></a><span class="co">## Visualization</span></span>
+<span id="cb2-24"><a href="index.html#cb2-24"></a><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb2-25"><a href="index.html#cb2-25"></a><span class="kw">library</span>(<span class="st">&quot;patchwork&quot;</span>)</span>
+<span id="cb2-26"><a href="index.html#cb2-26"></a><span class="kw">library</span>(<span class="st">&quot;pheatmap&quot;</span>)</span>
+<span id="cb2-27"><a href="index.html#cb2-27"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</span>
+<span id="cb2-28"><a href="index.html#cb2-28"></a></span>
+<span id="cb2-29"><a href="index.html#cb2-29"></a><span class="co">## Advanced</span></span>
+<span id="cb2-30"><a href="index.html#cb2-30"></a><span class="kw">library</span>(<span class="st">&quot;spatialLIBD&quot;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="co">## Reproducibility information</span></span>
 <span id="cb3-2"><a href="index.html#cb3-2"></a><span class="kw">options</span>(<span class="dt">width =</span> <span class="dv">120</span>)</span>
 <span id="cb3-3"><a href="index.html#cb3-3"></a><span class="kw">session_info</span>()</span></code></pre></div>
@@ -413,6 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  dotCall64                1.0-1    2021-02-11 [1] RSPM (R 4.0.3)
 ##  dplyr                    1.0.4    2021-02-02 [1] RSPM (R 4.0.3)
 ##  DT                       0.17     2021-01-06 [2] RSPM (R 4.0.3)
+##  edgeR                  * 3.32.1   2021-01-14 [1] Bioconductor  
 ##  ellipsis                 0.3.1    2020-05-15 [2] RSPM (R 4.0.0)
 ##  evaluate                 0.14     2019-05-28 [2] RSPM (R 4.0.0)
 ##  ExperimentHub            1.16.0   2020-10-27 [1] Bioconductor  
@@ -456,6 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  lazyeval                 0.2.2    2019-03-15 [2] RSPM (R 4.0.0)
 ##  lifecycle                1.0.0    2021-02-15 [2] RSPM (R 4.0.3)
 ##  limma                  * 3.46.0   2020-10-27 [1] Bioconductor  
+##  locfit                   1.5-9.4  2020-03-25 [1] RSPM (R 4.0.3)
 ##  magrittr                 2.0.1    2020-11-17 [2] RSPM (R 4.0.3)
 ##  maps                     3.3.0    2018-04-03 [1] RSPM (R 4.0.3)
 ##  MASS                     7.3-53.1 2021-02-12 [3] RSPM (R 4.0.3)
@@ -549,8 +553,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [3] /usr/local/lib/R/library</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1"></a><span class="kw">proc.time</span>()</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##  14.443   0.789  15.369</code></pre>
-<p>This book was last updated at 2021-02-24 18:48:27.</p>
+##  14.110   0.753  14.915</code></pre>
+<p>This book was last updated at 2021-02-24 21:20:28.</p>
 </div>
 <div id="license" class="section level2 unnumbered">
 <h2>License</h2>
