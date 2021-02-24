@@ -156,3 +156,7 @@ Autores de `iSEE`:
 * https://twitter.com/FedeBioinfo
 * https://twitter.com/CSoneson
 * Aaron Lun https://orcid.org/0000-0002-3564-4813
+* Otro ejemplo de exploración de datos usando `SummarizedExperiment` y `iSEE`:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today we explored RNA-seq data from <a href="https://twitter.com/StefanoBerto83?ref_src=twsrc%5Etfw">@StefanoBerto83</a> et al who made it easy to re-use. Thank you! ^^<a href="https://twitter.com/lcolladotor?ref_src=twsrc%5Etfw">@lcolladotor</a> used <a href="https://twitter.com/hashtag/shiny?src=hash&amp;ref_src=twsrc%5Etfw">#shiny</a> + <a href="https://twitter.com/hashtag/ggpubr?src=hash&amp;ref_src=twsrc%5Etfw">#ggpubr</a> as well as <a href="https://twitter.com/hashtag/iSEE?src=hash&amp;ref_src=twsrc%5Etfw">#iSEE</a><br><br>📔 <a href="https://t.co/iUQHE0xqRc">https://t.co/iUQHE0xqRc</a><br>🗞️ <a href="https://t.co/qhAdXbhY9c">https://t.co/qhAdXbhY9c</a><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw">@Bioconductor</a><a href="https://t.co/OXTukByhoo">https://t.co/OXTukByhoo</a></p>&mdash; LIBD rstats club (@LIBDrstats) <a href="https://twitter.com/LIBDrstats/status/1360349352250789890?ref_src=twsrc%5Etfw">February 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
