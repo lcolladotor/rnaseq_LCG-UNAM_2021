@@ -18,3 +18,8 @@ isee
 ejercicio-con-spatiallibd
 comunidad-1
 datos-de-rna-seq-a-través-de-recount3
+procesar-datos-crudos-fastq
+proyectos-recount
+usar-recount3
+ejercicio-1
+comunidad-2

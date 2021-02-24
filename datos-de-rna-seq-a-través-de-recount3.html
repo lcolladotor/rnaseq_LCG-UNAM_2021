@@ -160,7 +160,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#ejercicio-con-spatiallibd"><i class="fa fa-check"></i><b>3.4</b> Ejercicio con spatialLIBD</a></li>
 <li class="chapter" data-level="3.5" data-path="objetos-de-bioconductor-para-datos-de-expresión.html"><a href="objetos-de-bioconductor-para-datos-de-expresión.html#comunidad-1"><i class="fa fa-check"></i><b>3.5</b> Comunidad</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html"><i class="fa fa-check"></i><b>4</b> Datos de RNA-seq a través de recount3</a></li>
+<li class="chapter" data-level="4" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html"><i class="fa fa-check"></i><b>4</b> Datos de RNA-seq a través de recount3</a><ul>
+<li class="chapter" data-level="4.1" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html#procesar-datos-crudos-fastq"><i class="fa fa-check"></i><b>4.1</b> Procesar datos crudos (FASTQ)</a></li>
+<li class="chapter" data-level="4.2" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html#proyectos-recount"><i class="fa fa-check"></i><b>4.2</b> Proyectos recount</a></li>
+<li class="chapter" data-level="4.3" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html#usar-recount3"><i class="fa fa-check"></i><b>4.3</b> Usar recount3</a></li>
+<li class="chapter" data-level="4.4" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html#ejercicio-1"><i class="fa fa-check"></i><b>4.4</b> Ejercicio</a></li>
+<li class="chapter" data-level="4.5" data-path="datos-de-rna-seq-a-través-de-recount3.html"><a href="datos-de-rna-seq-a-través-de-recount3.html#comunidad-2"><i class="fa fa-check"></i><b>4.5</b> Comunidad</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -180,17 +186,172 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="datos-de-rna-seq-a-través-de-recount3" class="section level1">
 <h1><span class="header-section-number">4</span> Datos de RNA-seq a través de recount3</h1>
+<div id="procesar-datos-crudos-fastq" class="section level2">
+<h2><span class="header-section-number">4.1</span> Procesar datos crudos (FASTQ)</h2>
+<p><img src="http://research.libd.org/SPEAQeasy/images/4_workflow.png" width="800px"/></p>
 <ul>
-<li><a href="http://research.libd.org/recount3-docs/" class="uri">http://research.libd.org/recount3-docs/</a>
-<ul>
-<li><a href="http://research.libd.org/recount3-docs/docs/quick-access.html#quick-recount3" class="uri">http://research.libd.org/recount3-docs/docs/quick-access.html#quick-recount3</a></li>
-</ul></li>
-<li><a href="http://research.libd.org/recount3/" class="uri">http://research.libd.org/recount3/</a>
-<ul>
-<li><a href="http://bioconductor.org/packages/release/bioc/html/recount3.html" class="uri">http://bioconductor.org/packages/release/bioc/html/recount3.html</a></li>
-</ul></li>
+<li>Pre-print de diciembre 2020 <a href="https://www.biorxiv.org/content/10.1101/2020.12.11.386789v1" class="uri">https://www.biorxiv.org/content/10.1101/2020.12.11.386789v1</a></li>
+<li>Documentación del software <a href="http://research.libd.org/SPEAQeasy/" class="uri">http://research.libd.org/SPEAQeasy/</a></li>
+<li>Ejemplo de como usar el software y analizar los datos <a href="http://research.libd.org/SPEAQeasy-example/" class="uri">http://research.libd.org/SPEAQeasy-example/</a></li>
+<li>Taller de 3 días (aprox 6 horas en total) sobre expresión diferencial usando estos datos <a href="https://lcolladotor.github.io/bioc_team_ds/differential-expression-analysis.html" class="uri">https://lcolladotor.github.io/bioc_team_ds/differential-expression-analysis.html</a></li>
 </ul>
+</div>
+<div id="proyectos-recount" class="section level2">
+<h2><span class="header-section-number">4.2</span> Proyectos recount</h2>
+<ul>
+<li><code>ReCount</code>: datos de unos 20 estudios
+<ul>
+<li><a href="http://bowtie-bio.sourceforge.net/recount/index.shtml" class="uri">http://bowtie-bio.sourceforge.net/recount/index.shtml</a></li>
+<li>Artículo del 2011 <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-449" class="uri">https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-449</a></li>
+</ul></li>
+<li><code>recount</code>: 70 mil muestras de RNA-seq uniformemente procesadas
+<ul>
+<li><a href="https://jhubiostatistics.shinyapps.io/recount/" class="uri">https://jhubiostatistics.shinyapps.io/recount/</a></li>
+<li>Documentación con <code>pkgdown</code>: <a href="http://leekgroup.github.io/recount/" class="uri">http://leekgroup.github.io/recount/</a></li>
+<li>Documentación en Bioconductor: <a href="http://bioconductor.org/packages/recount" class="uri">http://bioconductor.org/packages/recount</a></li>
+<li>Artículo principal de 2017 <a href="http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html" class="uri">http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html</a></li>
+<li>Artículo que explica porque las cuentas (<em>counts</em>) son diferentes a las usuales <a href="https://f1000research.com/articles/6-1558/v1" class="uri">https://f1000research.com/articles/6-1558/v1</a></li>
+<li>Algunos análisis ejemplo que hicimos <a href="http://leekgroup.github.io/recount-analyses/" class="uri">http://leekgroup.github.io/recount-analyses/</a></li>
+</ul></li>
+<li><code>recount3</code>: 700 mil muestras de RNA-seq de humano y ratón
+<ul>
+<li><a href="http://research.libd.org/recount3-docs/" class="uri">http://research.libd.org/recount3-docs/</a></li>
+<li>Documentación con <code>pkgdown</code>: <a href="http://research.libd.org/recount3/" class="uri">http://research.libd.org/recount3/</a></li>
+<li>Documentación en Bioconductor: <a href="http://bioconductor.org/packages/recount3" class="uri">http://bioconductor.org/packages/recount3</a></li>
+<li>Artículo: en unas semanas estará el pre-print</li>
+</ul></li>
+<li>Ayuda a que todxs podamos analizar los datos sin importar quien tiene acceso a <em>high performance computing</em> (HPC) (clústers para procesar datos).</li>
+<li>Es como democratizar el acceso a los datos ^^</li>
+</ul>
+</div>
+<div id="usar-recount3" class="section level2">
+<h2><span class="header-section-number">4.3</span> Usar recount3</h2>
+<p><em>Check the original documentation in English <a href="http://research.libd.org/recount3-docs/docs/quick-access.html#quick-recount3">here</a> and <a href="http://research.libd.org/recount3-docs/docs/bioconductor.html#recount3">here</a>.</em></p>
+<p>Primero cargamos el paquete de R que automáticamente carga todas las dependencias incluyendo a <code>SummarizedExperiment</code>.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb53-1"></a><span class="co">## Load recount3 R package</span></span>
+<span id="cb53-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb53-2"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span></code></pre></div>
+<p>Después tenemos que identificar un estudio de interes y determinar si queremos accesar la información a nivel de genes, exones, etc. Sabiendo el estudio de interes, podemos descargar los datos usando la función <code>create_rse()</code> como mostramos a continuación. <code>create_rse()</code> tiene argumentos con los cuales podemos especificar la <strong>anotación</strong> que queremos usar (las opciones dependen del organismo).</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb54-1"></a><span class="co">## Revisemos todos los proyectos con datos de humano en recount3</span></span>
+<span id="cb54-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb54-2"></a>human_projects &lt;-<span class="st"> </span><span class="kw">available_projects</span>()</span></code></pre></div>
+<pre><code>## 2021-02-24 00:23:11 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/sra.recount_project.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:12 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:13 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz&#39;</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-1"></a><span class="co">## Encuentra tu proyecto de interés. Aquí usaremos</span></span>
+<span id="cb61-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-2"></a><span class="co">## SRP009615 de ejemplo</span></span>
+<span id="cb61-3"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-3"></a>proj_info &lt;-<span class="st"> </span><span class="kw">subset</span>(</span>
+<span id="cb61-4"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-4"></a>    human_projects,</span>
+<span id="cb61-5"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-5"></a>    project <span class="op">==</span><span class="st"> &quot;SRP009615&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
+<span id="cb61-6"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-6"></a>)</span>
+<span id="cb61-7"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-7"></a><span class="co">## Crea un objetio de tipo RangedSummarizedExperiment (RSE)</span></span>
+<span id="cb61-8"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-8"></a><span class="co">## con la información a nivel de genes</span></span>
+<span id="cb61-9"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb61-9"></a>rse_gene_SRP009615 &lt;-<span class="st"> </span><span class="kw">create_rse</span>(proj_info)</span></code></pre></div>
+<pre><code>## 2021-02-24 00:23:21 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-24 00:23:21 caching file sra.sra.SRP009615.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:22 caching file sra.recount_project.SRP009615.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:23 caching file sra.recount_qc.SRP009615.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:24 caching file sra.recount_seq_qc.SRP009615.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:25 caching file sra.recount_pred.SRP009615.MD.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:26 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-24 00:23:26 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:28 downloading and reading the counts: 12 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-24 00:23:28 caching file sra.gene_sums.SRP009615.G026.gz.</code></pre>
+<pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz&#39;</code></pre>
+<pre><code>## 2021-02-24 00:23:29 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb80-1"></a><span class="co">## Explora el objeto RSE</span></span>
+<span id="cb80-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb80-2"></a>rse_gene_SRP009615</span></code></pre></div>
+<pre><code>## class: RangedSummarizedExperiment 
+## dim: 63856 12 
+## metadata(8): time_created recount3_version ... annotation recount3_url
+## assays(1): raw_counts
+## rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ... ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y
+## rowData names(10): source type ... havana_gene tag
+## colnames(12): SRR387777 SRR387778 ... SRR389077 SRR389078
+## colData names(175): rail_id external_id ... recount_pred.curated.cell_line BigWigURL</code></pre>
+<p>De forma interactiva también podemos escoger nuestro estudio de interés usando el siguiente código o vía <a href="http://research.libd.org/recount3-docs/docs/index.html#study-explorer">el explorar de estudios</a> que creamos.</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-1"></a><span class="co">## Explora los proyectos disponibles de forma interactiva</span></span>
+<span id="cb82-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-2"></a>proj_info_interactive &lt;-<span class="st"> </span>interactiveDisplayBase<span class="op">::</span><span class="kw">display</span>(human_projects)</span>
+<span id="cb82-3"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-3"></a><span class="co">## Selecciona un solo renglón en la tabla y da click en &quot;send&quot;.</span></span>
+<span id="cb82-4"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-4"></a></span>
+<span id="cb82-5"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-5"></a><span class="co">## Aquí verificamos que solo seleccionaste un solo renglón.</span></span>
+<span id="cb82-6"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-6"></a><span class="kw">stopifnot</span>(<span class="kw">nrow</span>(proj_info_interactive) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb82-7"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-7"></a><span class="co">## Crea el objeto RSE</span></span>
+<span id="cb82-8"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb82-8"></a>rse_gene_interactive &lt;-<span class="st"> </span><span class="kw">create_rse</span>(proj_info_interactive)</span></code></pre></div>
+<p>Una vez que tenemos las cuentas, podemos usar <code>transform_counts()</code> o <code>compute_read_counts()</code> para convertir en los formatos esperados por otras herramientas. Revisen el artículo de 2017 del <code>recountWorkflow</code> para <a href="https://f1000research.com/articles/6-1558/v1">más detalles</a>.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb83-1"></a><span class="co">## Convirtamos las cuentas por nucleotido a cuentas por lectura</span></span>
+<span id="cb83-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb83-2"></a><span class="co">## usando compute_read_counts().</span></span>
+<span id="cb83-3"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb83-3"></a><span class="co">## Para otras transformaciones como RPKM y TPM, revisa transform_counts().</span></span>
+<span id="cb83-4"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb83-4"></a><span class="kw">assay</span>(rse_gene_SRP009615, <span class="st">&quot;counts&quot;</span>) &lt;-<span class="st"> </span><span class="kw">compute_read_counts</span>(rse_gene_SRP009615)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-1"></a><span class="co">## Para este estudio en específico, hagamos más fácil de usar la</span></span>
+<span id="cb84-2"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-2"></a><span class="co">## información del experimento</span></span>
+<span id="cb84-3"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-3"></a>rse_gene_SRP009615 &lt;-<span class="st"> </span><span class="kw">expand_sra_attributes</span>(rse_gene_SRP009615)</span>
+<span id="cb84-4"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-4"></a><span class="kw">colData</span>(rse_gene_SRP009615)[</span>
+<span id="cb84-5"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-5"></a>    ,</span>
+<span id="cb84-6"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-6"></a>    <span class="kw">grepl</span>(<span class="st">&quot;^sra_attribute&quot;</span>, <span class="kw">colnames</span>(<span class="kw">colData</span>(rse_gene_SRP009615)))</span>
+<span id="cb84-7"><a href="datos-de-rna-seq-a-través-de-recount3.html#cb84-7"></a>]</span></code></pre></div>
+<pre><code>## DataFrame with 12 rows and 4 columns
+##           sra_attribute.cells sra_attribute.shRNA_expression sra_attribute.source_name sra_attribute.treatment
+##                   &lt;character&gt;                    &lt;character&gt;               &lt;character&gt;             &lt;character&gt;
+## SRR387777                K562                             no                    SL2933               Puromycin
+## SRR387778                K562             yes, targeting SRF                    SL2934  Puromycin, doxycycline
+## SRR387779                K562                             no                    SL5265               Puromycin
+## SRR387780                K562              yes targeting SRF                    SL3141  Puromycin, doxycycline
+## SRR389079                K562            no shRNA expression                    SL6485               Puromycin
+## ...                       ...                            ...                       ...                     ...
+## SRR389082                K562         expressing shRNA tar..                    SL2592  Puromycin, doxycycline
+## SRR389083                K562            no shRNA expression                    SL4337               Puromycin
+## SRR389084                K562         expressing shRNA tar..                    SL4326  Puromycin, doxycycline
+## SRR389077                K562            no shRNA expression                    SL1584               Puromycin
+## SRR389078                K562         expressing shRNA tar..                    SL1583  Puromycin, doxycycline</code></pre>
+<p>Ahora estamos listos para usar otras herramientas para el análisis de los datos.</p>
+</div>
+<div id="ejercicio-1" class="section level2">
+<h2><span class="header-section-number">4.4</span> Ejercicio</h2>
+<ul>
+<li>Utiliza <code>iSEE</code> para reproducir la siguiente imagen</li>
+</ul>
+<p><img src="images/iSEE_SRP008615.PNG" width="500px" /></p>
+<ul>
+<li>Pistas:
+<ul>
+<li>Utiliza el <em>dynamic feature selection</em></li>
+<li>Utiliza información de las columnas para el eje X</li>
+<li>Utiliza información de las columnas para los colores</li>
+</ul></li>
+<li>(opcional) Crea tu cuenta gratis de <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a> y comparte tu visualiación de los datos usando <code>iSEE</code> de esa forma. Ejemplos reales: <a href="https://github.com/LieberInstitute/10xPilot_snRNAseq-human#explore-the-data-interactively" class="uri">https://github.com/LieberInstitute/10xPilot_snRNAseq-human#explore-the-data-interactively</a>.</li>
+</ul>
+</div>
+<div id="comunidad-2" class="section level2">
+<h2><span class="header-section-number">4.5</span> Comunidad</h2>
+<ul>
+<li>Autores de recount2 y 3 en Twitter:
+<ul>
+<li><a href="https://twitter.com/chrisnwilks" class="uri">https://twitter.com/chrisnwilks</a></li>
+<li><a href="https://twitter.com/BenLangmead" class="uri">https://twitter.com/BenLangmead</a></li>
+<li><a href="https://twitter.com/KasperDHansen" class="uri">https://twitter.com/KasperDHansen</a></li>
+<li><a href="https://twitter.com/AbhiNellore" class="uri">https://twitter.com/AbhiNellore</a></li>
+<li><a href="https://twitter.com/Shannon_E_Ellis" class="uri">https://twitter.com/Shannon_E_Ellis</a></li>
+<li><a href="https://twitter.com/jtleek" class="uri">https://twitter.com/jtleek</a></li>
+</ul></li>
+<li>Más sobre los tipos de cuentas:</li>
+</ul>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+If I'm using recount2 data for a differential analysis in DEseq2, should I be using the original counts, or the scaled counts?<a href="https://twitter.com/mikelove?ref_src=twsrc%5Etfw"><span class="citation">@mikelove</span></a> <a href="https://twitter.com/lcolladotor?ref_src=twsrc%5Etfw"><span class="citation">@lcolladotor</span></a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/Bioconductor?src=hash&amp;ref_src=twsrc%5Etfw">#Bioconductor</a>
+</p>
+— Dr. Robert M Flight, PhD (<span class="citation">@rmflight</span>) <a href="https://twitter.com/rmflight/status/1354981737525366786?ref_src=twsrc%5Etfw">January 29, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+</div>
 </div>
 <div class="container">
     <footer class="site-footer">
