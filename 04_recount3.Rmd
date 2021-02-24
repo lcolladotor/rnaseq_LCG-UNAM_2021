@@ -104,7 +104,7 @@ Ahora estamos listos para usar otras herramientas para el análisis de los datos
 
 * Utiliza `iSEE` para reproducir la siguiente imagen
 
-<img src="images/iSEE_SRP008615.PNG" width="500px" />
+<img src="images/iSEE_SRP009615.PNG" width="500px" />
 
 * Pistas:
     - Utiliza el _dynamic feature selection_
