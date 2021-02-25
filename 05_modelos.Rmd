@@ -124,6 +124,8 @@ summary(as.data.frame(colData(rse_gene_SRP045638)[
 ]))
 ```
 
+<a href="https://r4ds.had.co.nz/explore-intro.html"><img src="images/data-science-explore.png" width="800px" /></a>
+
 Ahora crearemos un par de variables para que las podamos usar en nuestro análisis.
 
 ```{r new_variables}
