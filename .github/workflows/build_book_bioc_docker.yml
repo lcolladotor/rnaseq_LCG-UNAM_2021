@@ -130,7 +130,7 @@ jobs:
       - name: Build website
         run: |
           bookdown::render_book("index.Rmd")
-          for(i in dir(pattern = "html") {
+          for(i in dir("_book", pattern = "html", full.names = TRUE) {
              x <- readLines(i)
              writeLines(gsub("_main_files/", "", x), i)
           }
