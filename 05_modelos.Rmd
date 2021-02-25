@@ -312,7 +312,7 @@ Agreguen los nombres de los genes a nuestro `pheatmap`.
 
 Pistas:
 
-* Revisen la información de `rowRanges(rse_gene_SRP045638)`.
+* Revisen la información de `rowRanges(rse_gene_SRP045638)` o `de_results`.
 * Exploren que hace la función `match()`.
 
 
@@ -337,7 +337,7 @@ Algunxs de lxs autores de `edgeR` y `limma`:
 ## Ejercicio: respuesta
 
 
-```{r respuesta, out.height="800px"}
+```{r respuesta, out.height="1100px"}
 ## Tenemos que usar gene_id y gene_name
 rowRanges(rse_gene_SRP045638)
 
