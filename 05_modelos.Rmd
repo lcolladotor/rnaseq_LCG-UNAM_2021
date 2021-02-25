@@ -66,6 +66,17 @@ http://bioconductor.org/packages/release/bioc/vignettes/ExploreModelMatrix/inst/
 * Interpreta `ResponseResistant.Treatmentpre` del ejercicio 2. Puede ser útil tomar un _screenshot_ (captura de pantalla) y anotarla con líneas de colores. Si haces eso, puedes incluir la imagen en tus notas.
 * ¿Por qué es clave el `0` al inicio de la fórmula en el ejercicio 3?
 
+### Para aprender más
+
+_A guide to creating design matrices for gene expression experiments_:
+
+* http://bioconductor.org/packages/release/workflows/vignettes/RNAseq123/inst/doc/designmatrices.html
+* https://f1000research.com/articles/9-1444
+
+_“Model matrix not full rank”_
+
+* http://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#model-matrix-not-full-rank
+
 ## Datos de SRP045638
 
 Vamos a usar datos de https://www.ncbi.nlm.nih.gov/sra/?term=SRP045638 procesados con `recount3`. Primero hay que descargar los datos con los comandos que vimos ayer.
