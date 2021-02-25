@@ -305,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb94-7"><a href="modelos-estadísticos.html#cb94-7"></a></span>
 <span id="cb94-8"><a href="modelos-estadísticos.html#cb94-8"></a><span class="co">## Veamos las imágenes</span></span>
 <span id="cb94-9"><a href="modelos-estadísticos.html#cb94-9"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(<span class="dt">plotlist =</span> vd<span class="op">$</span>plotlist)</span></code></pre></div>
-<p><img src="_main_files/figure-html/EMM_example1-1.png" width="672" /></p>
+<p><img src="figure-html/EMM_example1-1.png" width="672" /></p>
 <p>De forma interactiva podemos correr el siguiente código:</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="modelos-estadísticos.html#cb95-1"></a><span class="co">## Usaremos shiny otra ves</span></span>
 <span id="cb95-2"><a href="modelos-estadísticos.html#cb95-2"></a>app &lt;-<span class="st"> </span><span class="kw">ExploreModelMatrix</span>(</span>
@@ -336,32 +336,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="modelos-estadísticos.html#cb96-1"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
 <span id="cb96-2"><a href="modelos-estadísticos.html#cb96-2"></a></span>
 <span id="cb96-3"><a href="modelos-estadísticos.html#cb96-3"></a>human_projects &lt;-<span class="st"> </span><span class="kw">available_projects</span>()</span></code></pre></div>
-<pre><code>## 2021-02-25 03:41:32 caching file sra.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-25 03:41:33 caching file gtex.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-25 03:41:33 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:30 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:30 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:31 caching file tcga.recount_project.MD.gz.</code></pre>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="modelos-estadísticos.html#cb100-1"></a>rse_gene_SRP045638 &lt;-<span class="st"> </span><span class="kw">create_rse</span>(</span>
 <span id="cb100-2"><a href="modelos-estadísticos.html#cb100-2"></a>    <span class="kw">subset</span>(</span>
 <span id="cb100-3"><a href="modelos-estadísticos.html#cb100-3"></a>        human_projects,</span>
 <span id="cb100-4"><a href="modelos-estadísticos.html#cb100-4"></a>        project <span class="op">==</span><span class="st"> &quot;SRP045638&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
 <span id="cb100-5"><a href="modelos-estadísticos.html#cb100-5"></a>    )</span>
 <span id="cb100-6"><a href="modelos-estadísticos.html#cb100-6"></a>)</span></code></pre></div>
-<pre><code>## 2021-02-25 03:41:37 downloading and reading the metadata.</code></pre>
-<pre><code>## 2021-02-25 03:41:37 caching file sra.sra.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:34 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-25 04:37:35 caching file sra.sra.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.sra.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 03:41:38 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:36 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_project.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 03:41:39 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:37 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_qc.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 03:41:40 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:37 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_seq_qc.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 03:41:41 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:38 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_pred.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 03:41:42 downloading and reading the feature information.</code></pre>
-<pre><code>## 2021-02-25 03:41:42 caching file human.gene_sums.G026.gtf.gz.</code></pre>
-<pre><code>## 2021-02-25 03:41:43 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
-<pre><code>## 2021-02-25 03:41:43 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:39 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-25 04:37:39 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## 2021-02-25 04:37:40 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-25 04:37:41 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/38/SRP045638/sra.gene_sums.SRP045638.G026.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 03:41:46 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<pre><code>## 2021-02-25 04:37:43 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="modelos-estadísticos.html#cb118-1"></a><span class="kw">assay</span>(rse_gene_SRP045638, <span class="st">&quot;counts&quot;</span>) &lt;-<span class="st"> </span><span class="kw">compute_read_counts</span>(rse_gene_SRP045638)</span></code></pre></div>
 <p>Una vez descargados y con los números de lecturas podemos usar <code>expand_sra_attributes()</code>. Sin embargo, tenemos un problema con estos datos.</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="modelos-estadísticos.html#cb119-1"></a>rse_gene_SRP045638<span class="op">$</span>sra.sample_attributes[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
@@ -467,7 +467,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb133-3"><a href="modelos-estadísticos.html#cb133-3"></a></span>
 <span id="cb133-4"><a href="modelos-estadísticos.html#cb133-4"></a><span class="co">## Eliminemos a muestras malas</span></span>
 <span id="cb133-5"><a href="modelos-estadísticos.html#cb133-5"></a><span class="kw">hist</span>(rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop)</span></code></pre></div>
-<p><img src="_main_files/figure-html/filter_rse-1.png" width="672" /></p>
+<p><img src="figure-html/filter_rse-1.png" width="672" /></p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="modelos-estadísticos.html#cb134-1"></a><span class="kw">table</span>(rse_gene_SRP045638<span class="op">$</span>assigned_gene_prop <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## 
 ## FALSE  TRUE 
@@ -515,7 +515,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb143-4"><a href="modelos-estadísticos.html#cb143-4"></a><span class="st">    </span><span class="kw">theme_bw</span>(<span class="dt">base_size =</span> <span class="dv">20</span>) <span class="op">+</span></span>
 <span id="cb143-5"><a href="modelos-estadísticos.html#cb143-5"></a><span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;Assigned Gene Prop&quot;</span>) <span class="op">+</span></span>
 <span id="cb143-6"><a href="modelos-estadísticos.html#cb143-6"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Age Group&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/explore_gene_prop_by_age-1.png" width="672" />
+<p><img src="figure-html/explore_gene_prop_by_age-1.png" width="672" />
 Por ejemplo, usando el paquete de <a href="https://bioconductor.org/packages/variancePartition"><code>variancePartition</code></a> y <a href="https://bioconductor.org/packages/scater"><code>scater</code></a> entre otros tal como exploramos en el siguiente video del club de R de LIBD (<em><a href="https://docs.google.com/document/d/1hil3zwPN6BW6HlwldLbM1FdlLIBWKFNXRUqJJEK_-eY/edit">notes in English</a></em>)/</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OdNU5LUOHng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -529,7 +529,7 @@ Por ejemplo, usando el paquete de <a href="https://bioconductor.org/packages/var
 <p>Ya teniendo el modelo estadístico, podemos usar <code>limma</code> para realizar el análisis de expresión diferencial como tal.</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="modelos-estadísticos.html#cb146-1"></a><span class="kw">library</span>(<span class="st">&quot;limma&quot;</span>)</span>
 <span id="cb146-2"><a href="modelos-estadísticos.html#cb146-2"></a>vGene &lt;-<span class="st"> </span><span class="kw">voom</span>(dge, mod, <span class="dt">plot =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/run_limma-1.png" width="672" /></p>
+<p><img src="figure-html/run_limma-1.png" width="672" /></p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="modelos-estadísticos.html#cb147-1"></a>eb_results &lt;-<span class="st"> </span><span class="kw">eBayes</span>(<span class="kw">lmFit</span>(vGene))</span>
 <span id="cb147-2"><a href="modelos-estadísticos.html#cb147-2"></a></span>
 <span id="cb147-3"><a href="modelos-estadísticos.html#cb147-3"></a>de_results &lt;-<span class="st"> </span><span class="kw">topTable</span>(</span>
@@ -562,9 +562,9 @@ Por ejemplo, usando el paquete de <a href="https://bioconductor.org/packages/var
 ## 12898 34034</code></pre>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="modelos-estadísticos.html#cb153-1"></a><span class="co">## Visualicemos los resultados estadísticos</span></span>
 <span id="cb153-2"><a href="modelos-estadísticos.html#cb153-2"></a><span class="kw">plotMA</span>(eb_results, <span class="dt">coef =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/run_limma-2.png" width="672" /></p>
+<p><img src="figure-html/run_limma-2.png" width="672" /></p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="modelos-estadísticos.html#cb154-1"></a><span class="kw">volcanoplot</span>(eb_results, <span class="dt">coef =</span> <span class="dv">2</span>, <span class="dt">highlight =</span> <span class="dv">3</span>, <span class="dt">names =</span> de_results<span class="op">$</span>gene_name)</span></code></pre></div>
-<p><img src="_main_files/figure-html/run_limma-3.png" width="672" /></p>
+<p><img src="figure-html/run_limma-3.png" width="672" /></p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="modelos-estadísticos.html#cb155-1"></a>de_results[de_results<span class="op">$</span>gene_name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ZSCAN2&quot;</span>, <span class="st">&quot;VASH2&quot;</span>, <span class="st">&quot;KIAA0922&quot;</span>), ]</span></code></pre></div>
 <pre><code>##                    source type score phase            gene_id      gene_type gene_name level          havana_gene  tag
 ## ENSG00000143494.15 HAVANA gene  9086    NA ENSG00000143494.15 protein_coding     VASH2     2 OTTHUMG00000036925.5 &lt;NA&gt;
@@ -601,7 +601,7 @@ Por ejemplo, usando el paquete de <a href="https://bioconductor.org/packages/var
 <span id="cb157-16"><a href="modelos-estadísticos.html#cb157-16"></a>    <span class="dt">show_colnames =</span> <span class="ot">FALSE</span>,</span>
 <span id="cb157-17"><a href="modelos-estadísticos.html#cb157-17"></a>    <span class="dt">annotation_col =</span> df</span>
 <span id="cb157-18"><a href="modelos-estadísticos.html#cb157-18"></a>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/pheatmap-1.png" width="672" /></p>
+<p><img src="figure-html/pheatmap-1.png" width="672" /></p>
 <p>Los resultados que tenemos no son tan sorprendentes porque hay una diferencia enorme en los perfiles de expresión en el DLPFC entre muestra pre y post-natales. Eso lo podemos ver con MDS (multidimensional scaling) tal como describen en <a href="http://bioconductor.org/packages/release/workflows/vignettes/RNAseq123/inst/doc/limmaWorkflow.html#unsupervised-clustering-of-samples">este workflow</a>.</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="modelos-estadísticos.html#cb158-1"></a><span class="co">## Para colores</span></span>
 <span id="cb158-2"><a href="modelos-estadísticos.html#cb158-2"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</span>
@@ -614,7 +614,7 @@ Por ejemplo, usando el paquete de <a href="https://bioconductor.org/packages/var
 <span id="cb160-2"><a href="modelos-estadísticos.html#cb160-2"></a></span>
 <span id="cb160-3"><a href="modelos-estadísticos.html#cb160-3"></a><span class="co">## MDS por grupos de edad</span></span>
 <span id="cb160-4"><a href="modelos-estadísticos.html#cb160-4"></a><span class="kw">plotMDS</span>(vGene<span class="op">$</span>E, <span class="dt">labels =</span> df<span class="op">$</span>AgeGroup, <span class="dt">col =</span> col.group)</span></code></pre></div>
-<p><img src="_main_files/figure-html/plot_mds-1.png" width="672" /></p>
+<p><img src="figure-html/plot_mds-1.png" width="672" /></p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="modelos-estadísticos.html#cb161-1"></a><span class="co">## Conviertiendo los valores de Sex a colores</span></span>
 <span id="cb161-2"><a href="modelos-estadísticos.html#cb161-2"></a>col.sex &lt;-<span class="st"> </span>df<span class="op">$</span>Sex</span>
 <span id="cb161-3"><a href="modelos-estadísticos.html#cb161-3"></a><span class="kw">levels</span>(col.sex) &lt;-<span class="st"> </span><span class="kw">brewer.pal</span>(<span class="kw">nlevels</span>(col.sex), <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
@@ -623,7 +623,7 @@ Por ejemplo, usando el paquete de <a href="https://bioconductor.org/packages/var
 <span id="cb163-2"><a href="modelos-estadísticos.html#cb163-2"></a></span>
 <span id="cb163-3"><a href="modelos-estadísticos.html#cb163-3"></a><span class="co">## MDS por sexo</span></span>
 <span id="cb163-4"><a href="modelos-estadísticos.html#cb163-4"></a><span class="kw">plotMDS</span>(vGene<span class="op">$</span>E, <span class="dt">labels =</span> df<span class="op">$</span>Sex, <span class="dt">col =</span> col.sex)</span></code></pre></div>
-<p><img src="_main_files/figure-html/plot_mds-2.png" width="672" /></p>
+<p><img src="figure-html/plot_mds-2.png" width="672" /></p>
 </div>
 <div id="ejercicio-3" class="section level2">
 <h2><span class="header-section-number">5.6</span> Ejercicio</h2>
@@ -702,7 +702,7 @@ If you've ever been dazed by design matrices or confused by contrasts when perfo
 <span id="cb166-10"><a href="modelos-estadísticos.html#cb166-10"></a>    <span class="dt">show_colnames =</span> <span class="ot">FALSE</span>,</span>
 <span id="cb166-11"><a href="modelos-estadísticos.html#cb166-11"></a>    <span class="dt">annotation_col =</span> df</span>
 <span id="cb166-12"><a href="modelos-estadísticos.html#cb166-12"></a>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/respuesta-1.png" width="672" height="800px" /></p>
+<p><img src="figure-html/respuesta-1.png" width="672" height="800px" /></p>
 </div>
 <div id="específicaciones-del-proyecto" class="section level2">
 <h2><span class="header-section-number">5.9</span> Específicaciones del proyecto</h2>
