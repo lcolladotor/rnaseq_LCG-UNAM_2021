@@ -140,7 +140,7 @@ gitcreds::gitcreds_set() ## Ojo, copia el token, no tu password de git!
 ```
 
 
-En el servidor de [RStudio de la LCG-UNAM](http://132.248.220.108:8787/) no funciona bien `gitcreds::gitcreds_set()` así que tenemos que editar el archivo `.Renviron` donde nuestro token no se guarda de forma privada, y por lo cual hoy en día no es lo que recomienda [Jenny Bryan](https://twitter.com/JennyBryan). Pero es lo que funciona en este caso. Usando el siguiente comando podemos abrir el archivo `.Renviron`.
+En el servidor de [RStudio de la LCG-UNAM](http://132.248.220.108:8787/) no funciona bien `gitcreds::gitcreds_set()` así que tenemos que editar el archivo `.Renviron` donde nuestro token no se guarda de forma privada, y por lo cual hoy en día no es lo que recomienda [Jenny Bryan](https://twitter.com/JennyBryan). Pero es lo que funciona en este caso tal como lo hablamos con el autor de [`gitcreds` vía GitHub](https://github.com/r-lib/gitcreds/issues/29). Usando el siguiente comando podemos abrir el archivo `.Renviron`.
 
 ```{r edit_r_envir, eval = FALSE}
 usethis::edit_r_environ()
