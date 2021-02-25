@@ -214,12 +214,14 @@ col.sex <- as.character(col.sex)
 plotMDS(vGene$E, labels = df$Sex, col = col.sex)
 
 
-## ----respuesta, out.height="800px"--------------------------------------------------------------------------------
+## ----respuesta, out.height="1100px"-------------------------------------------------------------------------------
 ## Tenemos que usar gene_id y gene_name
 rowRanges(rse_gene_SRP045638)
 
 ## Con match() podemos encontrar cual es cual
-rownames(exprs_heatmap) <- rowRanges(rse_gene_SRP045638)$gene_name[match(rownames(exprs_heatmap), rowRanges(rse_gene_SRP045638)$gene_id)]
+rownames(exprs_heatmap) <- rowRanges(rse_gene_SRP045638)$gene_name[
+    match(rownames(exprs_heatmap), rowRanges(rse_gene_SRP045638)$gene_id)
+]
 
 ## Y luego podemos cambiar el valor de show_rownames de FALSE a TRUE
 pheatmap(
@@ -230,4 +232,16 @@ pheatmap(
     show_colnames = FALSE,
     annotation_col = df
 )
+
+## Guardar la imagen en un PDF largo para poder ver los nombres de los genes
+pdf("pheatmap_con_nombres.pdf", height = 14, useDingbats = FALSE)
+pheatmap(
+    exprs_heatmap,
+    cluster_rows = TRUE,
+    cluster_cols = TRUE,
+    show_rownames = TRUE,
+    show_colnames = FALSE,
+    annotation_col = df
+)
+dev.off()
 
