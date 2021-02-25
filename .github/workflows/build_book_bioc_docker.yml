@@ -134,7 +134,7 @@ jobs:
              x <- readLines(i)
              writeLines(gsub("_main_files/", "", x), i)
           }
-          system("mv _book/_main_files/figure-files _book/")
+          system("mv _book/_main_files/figure-html _book/")
         shell: Rscript {0}
 
       - name: Install deploy dependencies
