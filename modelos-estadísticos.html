@@ -349,32 +349,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="modelos-estadísticos.html#cb96-1"></a><span class="kw">library</span>(<span class="st">&quot;recount3&quot;</span>)</span>
 <span id="cb96-2"><a href="modelos-estadísticos.html#cb96-2"></a></span>
 <span id="cb96-3"><a href="modelos-estadísticos.html#cb96-3"></a>human_projects &lt;-<span class="st"> </span><span class="kw">available_projects</span>()</span></code></pre></div>
-<pre><code>## 2021-02-25 19:20:48 caching file sra.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-25 19:20:48 caching file gtex.recount_project.MD.gz.</code></pre>
-<pre><code>## 2021-02-25 19:20:48 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:07 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:07 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:08 caching file tcga.recount_project.MD.gz.</code></pre>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="modelos-estadísticos.html#cb100-1"></a>rse_gene_SRP045638 &lt;-<span class="st"> </span><span class="kw">create_rse</span>(</span>
 <span id="cb100-2"><a href="modelos-estadísticos.html#cb100-2"></a>    <span class="kw">subset</span>(</span>
 <span id="cb100-3"><a href="modelos-estadísticos.html#cb100-3"></a>        human_projects,</span>
 <span id="cb100-4"><a href="modelos-estadísticos.html#cb100-4"></a>        project <span class="op">==</span><span class="st"> &quot;SRP045638&quot;</span> <span class="op">&amp;</span><span class="st"> </span>project_type <span class="op">==</span><span class="st"> &quot;data_sources&quot;</span></span>
 <span id="cb100-5"><a href="modelos-estadísticos.html#cb100-5"></a>    )</span>
 <span id="cb100-6"><a href="modelos-estadísticos.html#cb100-6"></a>)</span></code></pre></div>
-<pre><code>## 2021-02-25 19:20:52 downloading and reading the metadata.</code></pre>
-<pre><code>## 2021-02-25 19:20:53 caching file sra.sra.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:12 downloading and reading the metadata.</code></pre>
+<pre><code>## 2021-02-25 19:58:12 caching file sra.sra.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.sra.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 19:20:53 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:13 caching file sra.recount_project.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_project.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 19:20:54 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:14 caching file sra.recount_qc.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_qc.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 19:20:55 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:14 caching file sra.recount_seq_qc.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_seq_qc.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 19:20:56 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:15 caching file sra.recount_pred.SRP045638.MD.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/38/SRP045638/sra.recount_pred.SRP045638.MD.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 19:20:57 downloading and reading the feature information.</code></pre>
-<pre><code>## 2021-02-25 19:20:57 caching file human.gene_sums.G026.gtf.gz.</code></pre>
-<pre><code>## 2021-02-25 19:20:58 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
-<pre><code>## 2021-02-25 19:20:58 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:16 downloading and reading the feature information.</code></pre>
+<pre><code>## 2021-02-25 19:58:16 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>## 2021-02-25 19:58:17 downloading and reading the counts: 66 samples across 63856 features.</code></pre>
+<pre><code>## 2021-02-25 19:58:18 caching file sra.gene_sums.SRP045638.G026.gz.</code></pre>
 <pre><code>## adding rname &#39;http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/38/SRP045638/sra.gene_sums.SRP045638.G026.gz&#39;</code></pre>
-<pre><code>## 2021-02-25 19:21:01 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
+<pre><code>## 2021-02-25 19:58:20 construcing the RangedSummarizedExperiment (rse) object.</code></pre>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="modelos-estadísticos.html#cb118-1"></a><span class="kw">assay</span>(rse_gene_SRP045638, <span class="st">&quot;counts&quot;</span>) &lt;-<span class="st"> </span><span class="kw">compute_read_counts</span>(rse_gene_SRP045638)</span></code></pre></div>
 <p>Una vez descargados y con los números de lecturas podemos usar <code>expand_sra_attributes()</code>. Sin embargo, tenemos un problema con estos datos.</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="modelos-estadísticos.html#cb119-1"></a>rse_gene_SRP045638<span class="op">$</span>sra.sample_attributes[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
@@ -707,18 +707,33 @@ If you've ever been dazed by design matrices or confused by contrasts when perfo
 ##   -------
 ##   seqinfo: 374 sequences from an unspecified genome; no seqlengths</code></pre>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="modelos-estadísticos.html#cb167-1"></a><span class="co">## Con match() podemos encontrar cual es cual</span></span>
-<span id="cb167-2"><a href="modelos-estadísticos.html#cb167-2"></a><span class="kw">rownames</span>(exprs_heatmap) &lt;-<span class="st"> </span><span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_name[<span class="kw">match</span>(<span class="kw">rownames</span>(exprs_heatmap), <span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_id)]</span>
-<span id="cb167-3"><a href="modelos-estadísticos.html#cb167-3"></a></span>
-<span id="cb167-4"><a href="modelos-estadísticos.html#cb167-4"></a><span class="co">## Y luego podemos cambiar el valor de show_rownames de FALSE a TRUE</span></span>
-<span id="cb167-5"><a href="modelos-estadísticos.html#cb167-5"></a><span class="kw">pheatmap</span>(</span>
-<span id="cb167-6"><a href="modelos-estadísticos.html#cb167-6"></a>    exprs_heatmap,</span>
-<span id="cb167-7"><a href="modelos-estadísticos.html#cb167-7"></a>    <span class="dt">cluster_rows =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb167-8"><a href="modelos-estadísticos.html#cb167-8"></a>    <span class="dt">cluster_cols =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb167-9"><a href="modelos-estadísticos.html#cb167-9"></a>    <span class="dt">show_rownames =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb167-10"><a href="modelos-estadísticos.html#cb167-10"></a>    <span class="dt">show_colnames =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb167-11"><a href="modelos-estadísticos.html#cb167-11"></a>    <span class="dt">annotation_col =</span> df</span>
-<span id="cb167-12"><a href="modelos-estadísticos.html#cb167-12"></a>)</span></code></pre></div>
+<span id="cb167-2"><a href="modelos-estadísticos.html#cb167-2"></a><span class="kw">rownames</span>(exprs_heatmap) &lt;-<span class="st"> </span><span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_name[</span>
+<span id="cb167-3"><a href="modelos-estadísticos.html#cb167-3"></a>    <span class="kw">match</span>(<span class="kw">rownames</span>(exprs_heatmap), <span class="kw">rowRanges</span>(rse_gene_SRP045638)<span class="op">$</span>gene_id)</span>
+<span id="cb167-4"><a href="modelos-estadísticos.html#cb167-4"></a>]</span>
+<span id="cb167-5"><a href="modelos-estadísticos.html#cb167-5"></a></span>
+<span id="cb167-6"><a href="modelos-estadísticos.html#cb167-6"></a><span class="co">## Y luego podemos cambiar el valor de show_rownames de FALSE a TRUE</span></span>
+<span id="cb167-7"><a href="modelos-estadísticos.html#cb167-7"></a><span class="kw">pheatmap</span>(</span>
+<span id="cb167-8"><a href="modelos-estadísticos.html#cb167-8"></a>    exprs_heatmap,</span>
+<span id="cb167-9"><a href="modelos-estadísticos.html#cb167-9"></a>    <span class="dt">cluster_rows =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb167-10"><a href="modelos-estadísticos.html#cb167-10"></a>    <span class="dt">cluster_cols =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb167-11"><a href="modelos-estadísticos.html#cb167-11"></a>    <span class="dt">show_rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb167-12"><a href="modelos-estadísticos.html#cb167-12"></a>    <span class="dt">show_colnames =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb167-13"><a href="modelos-estadísticos.html#cb167-13"></a>    <span class="dt">annotation_col =</span> df</span>
+<span id="cb167-14"><a href="modelos-estadísticos.html#cb167-14"></a>)</span></code></pre></div>
 <p><img src="figure-html/respuesta-1.png" width="672" height="1100px" /></p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="modelos-estadísticos.html#cb168-1"></a><span class="co">## Guardar la imagen en un PDF largo para poder ver los nombres de los genes</span></span>
+<span id="cb168-2"><a href="modelos-estadísticos.html#cb168-2"></a><span class="kw">pdf</span>(<span class="st">&quot;pheatmap_con_nombres.pdf&quot;</span>, <span class="dt">height =</span> <span class="dv">14</span>, <span class="dt">useDingbats =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb168-3"><a href="modelos-estadísticos.html#cb168-3"></a><span class="kw">pheatmap</span>(</span>
+<span id="cb168-4"><a href="modelos-estadísticos.html#cb168-4"></a>    exprs_heatmap,</span>
+<span id="cb168-5"><a href="modelos-estadísticos.html#cb168-5"></a>    <span class="dt">cluster_rows =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb168-6"><a href="modelos-estadísticos.html#cb168-6"></a>    <span class="dt">cluster_cols =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb168-7"><a href="modelos-estadísticos.html#cb168-7"></a>    <span class="dt">show_rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb168-8"><a href="modelos-estadísticos.html#cb168-8"></a>    <span class="dt">show_colnames =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb168-9"><a href="modelos-estadísticos.html#cb168-9"></a>    <span class="dt">annotation_col =</span> df</span>
+<span id="cb168-10"><a href="modelos-estadísticos.html#cb168-10"></a>)</span>
+<span id="cb168-11"><a href="modelos-estadísticos.html#cb168-11"></a><span class="kw">dev.off</span>()</span></code></pre></div>
+<pre><code>## pdf 
+##   3</code></pre>
 </div>
 <div id="específicaciones-del-proyecto" class="section level2">
 <h2><span class="header-section-number">5.9</span> Específicaciones del proyecto</h2>
