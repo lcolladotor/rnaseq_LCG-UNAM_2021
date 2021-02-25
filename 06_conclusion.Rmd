@@ -8,11 +8,16 @@
 
 # spatialLIBD
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🔥off the press! 👀 our <a href="https://twitter.com/biorxivpreprint?ref_src=twsrc%5Etfw">@biorxivpreprint</a> on human 🧠brain <a href="https://twitter.com/LieberInstitute?ref_src=twsrc%5Etfw">@LieberInstitute</a> spatial 🌌🔬transcriptomics data 🧬using Visium <a href="https://twitter.com/10xGenomics?ref_src=twsrc%5Etfw">@10xGenomics</a>🎉<a href="https://twitter.com/hashtag/spatialLIBD?src=hash&amp;ref_src=twsrc%5Etfw">#spatialLIBD</a><br><br>🔍<a href="https://t.co/RTW0VscUKR">https://t.co/RTW0VscUKR</a> <br>👩🏾‍💻<a href="https://t.co/bsg04XKONr">https://t.co/bsg04XKONr</a><br>📚<a href="https://t.co/FJDOOzrAJ6">https://t.co/FJDOOzrAJ6</a><br>📦<a href="https://t.co/Au5jwADGhY">https://t.co/Au5jwADGhY</a><a href="https://t.co/PiWEDN9q2N">https://t.co/PiWEDN9q2N</a> <a href="https://t.co/aWy0yLlR50">pic.twitter.com/aWy0yLlR50</a></p>&mdash; 🇲🇽 Leonardo Collado-Torres (@lcolladotor) <a href="https://twitter.com/lcolladotor/status/1233661576433061888?ref_src=twsrc%5Etfw">February 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <script async class="speakerdeck-embed" data-id="329db23f5f17460da31f45c7695a9f06" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 * Artículo: https://www.nature.com/articles/s41593-020-00787-0
 * Software: http://research.libd.org/spatialLIBD/
 * Interfaz de shiny: http://spatial.libd.org/spatialLIBD/
+* Pre-print sobre `SpatialExperiment` https://www.biorxiv.org/content/10.1101/2021.01.27.428431v1
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Are you working with spatial transcriptomics data such as Visium from <a href="https://twitter.com/10xGenomics?ref_src=twsrc%5Etfw">@10xGenomics</a>? Then you&#39;ll be interested in <a href="https://twitter.com/hashtag/SpatialExperiment?src=hash&amp;ref_src=twsrc%5Etfw">#SpatialExperiment</a> 📦 led by <a href="https://twitter.com/drighelli?ref_src=twsrc%5Etfw">@drighelli</a> <a href="https://twitter.com/lmwebr?ref_src=twsrc%5Etfw">@lmwebr</a> <a href="https://twitter.com/CrowellHL?ref_src=twsrc%5Etfw">@CrowellHL</a> with contributions by <a href="https://twitter.com/PardoBree?ref_src=twsrc%5Etfw">@PardoBree</a> <a href="https://twitter.com/shazanfar?ref_src=twsrc%5Etfw">@shazanfar</a> A Lun <a href="https://twitter.com/stephaniehicks?ref_src=twsrc%5Etfw">@stephaniehicks</a> <a href="https://twitter.com/drisso1893?ref_src=twsrc%5Etfw">@drisso1893</a> 🌟<br><br>📜 <a href="https://t.co/r36qlakRJe">https://t.co/r36qlakRJe</a> <a href="https://t.co/cWIiwLFitV">pic.twitter.com/cWIiwLFitV</a></p>&mdash; 🇲🇽 Leonardo Collado-Torres (@lcolladotor) <a href="https://twitter.com/lcolladotor/status/1355208674856329218?ref_src=twsrc%5Etfw">January 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Brenda Pardo
 

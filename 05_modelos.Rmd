@@ -134,6 +134,7 @@ table(rse_gene_SRP045638$prenatal)
 ## http://research.libd.org/recount3-docs/docs/quality-check-fields.html
 rse_gene_SRP045638$assigned_gene_prop <- rse_gene_SRP045638$recount_qc.gene_fc_count_all.assigned / rse_gene_SRP045638$recount_qc.gene_fc_count_all.total
 summary(rse_gene_SRP045638$assigned_gene_prop)
+with(colData(rse_gene_SRP045638), plot(assigned_gene_prop, sra_attribute.RIN))
 
 ## Hm... veamos si hay una diferencia entre los grupos
 with(colData(rse_gene_SRP045638), tapply(assigned_gene_prop, prenatal, summary))
