@@ -285,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $sACC
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.01194 0.01449 0.01686 0.01749 0.01836 0.03019</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="revisión.html#cb184-1"></a><span class="co">## Podemos resolver la primeras pregunas con iSEE</span></span>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="revisión.html#cb184-1"></a><span class="co">## Podemos resolver la primeras preguntas con iSEE</span></span>
 <span id="cb184-2"><a href="revisión.html#cb184-2"></a><span class="cf">if</span> (<span class="kw">interactive</span>()) iSEE<span class="op">::</span><span class="kw">iSEE</span>(rse_gene)</span>
 <span id="cb184-3"><a href="revisión.html#cb184-3"></a></span>
 <span id="cb184-4"><a href="revisión.html#cb184-4"></a><span class="co">## O hacer graficas nosotros mismos. Aquí les muestro una posible respuesta</span></span>
@@ -413,20 +413,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb199-2"><a href="revisión.html#cb199-2"></a><span class="co">## si no, vamos a tener un modelo que no sea _full rank_</span></span>
 <span id="cb199-3"><a href="revisión.html#cb199-3"></a>mod &lt;-<span class="st"> </span><span class="kw">with</span>(</span>
 <span id="cb199-4"><a href="revisión.html#cb199-4"></a>    <span class="kw">colData</span>(rse_gene),</span>
-<span id="cb199-5"><a href="revisión.html#cb199-5"></a>    <span class="kw">model.matrix</span>(<span class="op">~</span><span class="st"> </span>PrimaryDx <span class="op">+</span><span class="st"> </span>totalAssignedGene <span class="op">+</span><span class="st"> </span>rRNA_rate <span class="op">+</span><span class="st"> </span>BrainRegion <span class="op">+</span><span class="st"> </span>Sex <span class="op">+</span><span class="st"> </span>AgeDeath)</span>
+<span id="cb199-5"><a href="revisión.html#cb199-5"></a>    <span class="kw">model.matrix</span>(<span class="op">~</span><span class="st"> </span>PrimaryDx <span class="op">+</span><span class="st"> </span>totalAssignedGene <span class="op">+</span><span class="st"> </span>mitoRate <span class="op">+</span><span class="st"> </span>rRNA_rate <span class="op">+</span><span class="st"> </span>BrainRegion <span class="op">+</span><span class="st"> </span>Sex <span class="op">+</span><span class="st"> </span>AgeDeath)</span>
 <span id="cb199-6"><a href="revisión.html#cb199-6"></a>)</span>
 <span id="cb199-7"><a href="revisión.html#cb199-7"></a></span>
 <span id="cb199-8"><a href="revisión.html#cb199-8"></a><span class="co">## Exploremos el modelo de forma interactiva</span></span>
 <span id="cb199-9"><a href="revisión.html#cb199-9"></a><span class="cf">if</span> (<span class="kw">interactive</span>()) {</span>
 <span id="cb199-10"><a href="revisión.html#cb199-10"></a>    <span class="co">## Tenemos que eliminar columnas que tienen NAs.</span></span>
-<span id="cb199-11"><a href="revisión.html#cb199-11"></a>    ExploreModelMatrix<span class="op">::</span><span class="kw">ExploreModelMatrix</span>(</span>
-<span id="cb199-12"><a href="revisión.html#cb199-12"></a>        <span class="kw">colData</span>(rse_gene)[, <span class="kw">c</span>(</span>
-<span id="cb199-13"><a href="revisión.html#cb199-13"></a>            <span class="st">&quot;PrimaryDx&quot;</span>, <span class="st">&quot;totalAssignedGene&quot;</span>, <span class="st">&quot;rRNA_rate&quot;</span>, <span class="st">&quot;BrainRegion&quot;</span>, <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb199-14"><a href="revisión.html#cb199-14"></a>            <span class="st">&quot;AgeDeath&quot;</span></span>
-<span id="cb199-15"><a href="revisión.html#cb199-15"></a>        )],</span>
-<span id="cb199-16"><a href="revisión.html#cb199-16"></a>        <span class="op">~</span><span class="st"> </span>PrimaryDx <span class="op">+</span><span class="st"> </span>totalAssignedGene <span class="op">+</span><span class="st"> </span>rRNA_rate <span class="op">+</span><span class="st"> </span>BrainRegion <span class="op">+</span><span class="st"> </span>Sex <span class="op">+</span><span class="st"> </span>AgeDeath</span>
-<span id="cb199-17"><a href="revisión.html#cb199-17"></a>    )</span>
-<span id="cb199-18"><a href="revisión.html#cb199-18"></a>}</span></code></pre></div>
+<span id="cb199-11"><a href="revisión.html#cb199-11"></a>    info_no_NAs &lt;-<span class="st"> </span><span class="kw">colData</span>(rse_gene)[, <span class="kw">c</span>(</span>
+<span id="cb199-12"><a href="revisión.html#cb199-12"></a>        <span class="st">&quot;PrimaryDx&quot;</span>, <span class="st">&quot;totalAssignedGene&quot;</span>, <span class="st">&quot;rRNA_rate&quot;</span>, <span class="st">&quot;BrainRegion&quot;</span>, <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb199-13"><a href="revisión.html#cb199-13"></a>        <span class="st">&quot;AgeDeath&quot;</span>, <span class="st">&quot;mitoRate&quot;</span>, <span class="st">&quot;Race&quot;</span></span>
+<span id="cb199-14"><a href="revisión.html#cb199-14"></a>    )]</span>
+<span id="cb199-15"><a href="revisión.html#cb199-15"></a>    ExploreModelMatrix<span class="op">::</span><span class="kw">ExploreModelMatrix</span>(</span>
+<span id="cb199-16"><a href="revisión.html#cb199-16"></a>        info_no_NAs,</span>
+<span id="cb199-17"><a href="revisión.html#cb199-17"></a>        <span class="op">~</span><span class="st"> </span>PrimaryDx <span class="op">+</span><span class="st"> </span>totalAssignedGene <span class="op">+</span><span class="st"> </span>mitoRate <span class="op">+</span><span class="st"> </span>rRNA_rate <span class="op">+</span><span class="st"> </span>BrainRegion <span class="op">+</span><span class="st"> </span>Sex <span class="op">+</span><span class="st"> </span>AgeDeath</span>
+<span id="cb199-18"><a href="revisión.html#cb199-18"></a>    )</span>
+<span id="cb199-19"><a href="revisión.html#cb199-19"></a></span>
+<span id="cb199-20"><a href="revisión.html#cb199-20"></a>    <span class="co">## Veamos un modelo más sencillo sin las variables numéricas (continuas) porque</span></span>
+<span id="cb199-21"><a href="revisión.html#cb199-21"></a>    <span class="co">## ExploreModelMatrix nos las muestra como si fueran factors (categoricas)</span></span>
+<span id="cb199-22"><a href="revisión.html#cb199-22"></a>    <span class="co">## en vez de continuas</span></span>
+<span id="cb199-23"><a href="revisión.html#cb199-23"></a>    ExploreModelMatrix<span class="op">::</span><span class="kw">ExploreModelMatrix</span>(</span>
+<span id="cb199-24"><a href="revisión.html#cb199-24"></a>        info_no_NAs,</span>
+<span id="cb199-25"><a href="revisión.html#cb199-25"></a>        <span class="op">~</span><span class="st"> </span>PrimaryDx <span class="op">+</span><span class="st"> </span>BrainRegion <span class="op">+</span><span class="st"> </span>Sex</span>
+<span id="cb199-26"><a href="revisión.html#cb199-26"></a>    )</span>
+<span id="cb199-27"><a href="revisión.html#cb199-27"></a></span>
+<span id="cb199-28"><a href="revisión.html#cb199-28"></a>    <span class="co">## Si agregamos + Race nos da errores porque Race solo tiene 1 opción</span></span>
+<span id="cb199-29"><a href="revisión.html#cb199-29"></a>    <span class="co"># ExploreModelMatrix::ExploreModelMatrix(</span></span>
+<span id="cb199-30"><a href="revisión.html#cb199-30"></a>    <span class="co">#     info_no_NAs,</span></span>
+<span id="cb199-31"><a href="revisión.html#cb199-31"></a>    <span class="co">#     ~ PrimaryDx + BrainRegion + Sex + Race</span></span>
+<span id="cb199-32"><a href="revisión.html#cb199-32"></a>    <span class="co"># )</span></span>
+<span id="cb199-33"><a href="revisión.html#cb199-33"></a>}</span></code></pre></div>
 <p>¿Quieres más datos? Tenemos muchos en LIBD incluyendo <a href="http://eqtl.brainseq.org/phase2/" class="uri">http://eqtl.brainseq.org/phase2/</a>.</p>
 </div>
 </div>
