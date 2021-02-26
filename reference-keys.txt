@@ -39,6 +39,8 @@ comunidad-3
 ejercicio-respuesta
 específicaciones-del-proyecto
 revisión
+ejercicio-en-equipo
+respuestas
 spatiallibd
 comunidad-4
 de-ustedes
