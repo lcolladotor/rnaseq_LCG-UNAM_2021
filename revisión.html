@@ -211,11 +211,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">6</span> Revisión</h1>
 <ul>
 <li>¿Debemos explorar las relaciones entre nuestras variables?</li>
-<li></li>
 <li>¿Por qué usamos el paquete <code>edgeR</code>?</li>
 <li>¿Por qué es importante el argumento <code>sort.by</code> en <code>topTable()</code>?</li>
 <li>¿Por qué es importante el argumento <code>coef</code> en <code>topTable()</code>?</li>
 </ul>
+<p>Usemos los datos de <a href="http://research.libd.org/SPEAQeasy-example/bootcamp_intro" class="uri">http://research.libd.org/SPEAQeasy-example/bootcamp_intro</a></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="revisión.html#cb170-1"></a>speaqeasy_data &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">&quot;rse_speaqeasy.RData&quot;</span>)</span>
+<span id="cb170-2"><a href="revisión.html#cb170-2"></a><span class="kw">download.file</span>(<span class="st">&quot;https://github.com/LieberInstitute/SPEAQeasy-example/blob/master/rse_speaqeasy.RData?raw=true&quot;</span>, speaqeasy_data, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
+<span id="cb170-3"><a href="revisión.html#cb170-3"></a><span class="kw">library</span>(<span class="st">&quot;SummarizedExperiment&quot;</span>)</span>
+<span id="cb170-4"><a href="revisión.html#cb170-4"></a><span class="kw">load</span>(speaqeasy_data, <span class="dt">verbose =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## Loading objects:
+##   rse_gene</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="revisión.html#cb172-1"></a>rse_gene</span></code></pre></div>
+<pre><code>## class: RangedSummarizedExperiment 
+## dim: 60609 40 
+## metadata(0):
+## assays(1): counts
+## rownames(60609): ENSG00000223972.5 ENSG00000227232.5 ... ENSG00000210195.2 ENSG00000210196.2
+## rowData names(10): Length gencodeID ... NumTx gencodeTx
+## colnames(40): R13896_H7JKMBBXX R13903_HCTYLBBXX ... R15120_HFY2MBBXX R15134_HFFGHBBXX
+## colData names(67): SAMPLE_ID FQCbasicStats ... AgeDeath BrNum</code></pre>
+<ul>
+<li>¿Cuantos genes y muestras tenemos en estos datos?</li>
+<li>¿Hay diferencias en <code>totalAssignedGene</code> o <code>mitoRate</code> entre los grupos de diagnosis (<code>PrimaryDx</code>)?</li>
+<li>Grafica la expresión de <em>SNAP25</em> para cada grupo de diagnosis.</li>
+<li>Sugiere un modelo estadistico que podríamos usar en una análisis de expresión diferencial. Verifica que si sea un modelo <em>full rank</em>. ¿Cúal sería el o los coeficientes de interés?</li>
+</ul>
+<p>¿Quieres más datos? Tenemos muchos en LIBD incluyendo <a href="http://eqtl.brainseq.org/phase2/" class="uri">http://eqtl.brainseq.org/phase2/</a>.</p>
 </div>
 <div class="container">
     <footer class="site-footer">
