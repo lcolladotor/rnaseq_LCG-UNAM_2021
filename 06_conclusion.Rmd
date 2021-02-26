@@ -1,6 +1,6 @@
 # Revisión
 
-* ¿Debemos explorar las relaciones entre nuestras variables?
+* ¿Debemos explorar las relaciones entre nuestras variables con información de nuestras muestras previo a hacer un análisis de expresión diferencial?
 * ¿Por qué usamos el paquete `edgeR`?
 * ¿Por qué es importante el argumento `sort.by` en `topTable()`?
 * ¿Por qué es importante el argumento `coef` en `topTable()`?
@@ -42,7 +42,7 @@ https://twitter.com/PardoBree
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today I gave my first talk at a congress in <a href="https://twitter.com/hashtag/EuroBioc2020?src=hash&amp;ref_src=twsrc%5Etfw">#EuroBioc2020</a> about our work on adapting the package <a href="https://twitter.com/hashtag/spatialLIBD?src=hash&amp;ref_src=twsrc%5Etfw">#spatialLIBD</a> to use VisiumExperiment objects. <a href="https://t.co/U23yE32RWM">pic.twitter.com/U23yE32RWM</a></p>&mdash; Brenda Pardo (@PardoBree) <a href="https://twitter.com/PardoBree/status/1338560370382942209?ref_src=twsrc%5Etfw">December 14, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-## Comunidad
+# Comunidad
 
 * https://twitter.com/miR_community
 * https://twitter.com/R_LGBTQ
@@ -72,3 +72,4 @@ https://twitter.com/PardoBree
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Wake up <br>Brew some <a href="https://twitter.com/tyulmalcafe?ref_src=twsrc%5Etfw">@tyulmalcafe</a> beans <br>Attend <a href="https://twitter.com/lcolladotor?ref_src=twsrc%5Etfw">@lcolladotor</a> amazing class on visualizing expression data using ISEE <a href="https://twitter.com/FedeBioinfo?ref_src=twsrc%5Etfw">@FedeBioinfo</a> <a href="https://twitter.com/KevinRUE67?ref_src=twsrc%5Etfw">@KevinRUE67</a> <a href="https://twitter.com/CSoneson?ref_src=twsrc%5Etfw">@CSoneson</a> <br>Am I dreaming? <br>Nah! Mug is empty.</p>&mdash; Alfredo Varela (@fikandata) <a href="https://twitter.com/fikandata/status/1364669473634983941?ref_src=twsrc%5Etfw">February 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today I learned how to visualize data in a cool and easy way in <a href="https://twitter.com/lcolladotor?ref_src=twsrc%5Etfw">@lcolladotor</a> &#39;s class. <br><br>ExploreModelMatrix definitely makes your life easier! <br>Shoutouts to:<a href="https://twitter.com/CSoneson?ref_src=twsrc%5Etfw">@CSoneson</a> <a href="https://twitter.com/FedeBioinfo?ref_src=twsrc%5Etfw">@FedeBioinfo</a> <a href="https://twitter.com/mikelove?ref_src=twsrc%5Etfw">@mikelove</a></p>&mdash; Axel Zagal Norman (@NormanZagal) <a href="https://twitter.com/NormanZagal/status/1365034931261349889?ref_src=twsrc%5Etfw">February 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
