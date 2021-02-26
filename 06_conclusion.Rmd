@@ -115,7 +115,7 @@ mod <- with(
 )
 
 ## Exploremos el modelo de forma interactiva
-if (interacive()) {
+if (interactive()) {
     ## Tenemos que eliminar columnas que tienen NAs.
     ExploreModelMatrix::ExploreModelMatrix(
         colData(rse_gene)[, c(
