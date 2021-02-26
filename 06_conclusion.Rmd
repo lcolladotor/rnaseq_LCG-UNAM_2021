@@ -15,9 +15,69 @@ load(speaqeasy_data, verbose = TRUE)
 rse_gene
 ```
 * ¿Cuantos genes y muestras tenemos en estos datos?
+
+## Ejercicio en equipo
+
 * ¿Hay diferencias en `totalAssignedGene` o `mitoRate` entre los grupos de diagnosis (`PrimaryDx`)?
 * Grafica la expresión de _SNAP25_ para cada grupo de diagnosis.
 * Sugiere un modelo estadistico que podríamos usar en una análisis de expresión diferencial. Verifica que si sea un modelo _full rank_. ¿Cúal sería el o los coeficientes de interés?
+
+## Respuestas
+
+```{r "respuestas"}
+table(rse_gene$PrimaryDx)
+rse_gene$PrimaryDx <- droplevels(rse_gene$PrimaryDx)
+with(colData(rse_gene), tapply(totalAssignedGene, PrimaryDx, summary))
+with(colData(rse_gene), tapply(mitoRate, PrimaryDx, summary))
+
+if (interactive()) iSEE::iSEE(rse_gene)
+
+library("ggplot2")
+ggplot(
+    as.data.frame(colData(rse_gene)),
+    aes(y = totalAssignedGene, group = PrimaryDx, x = PrimaryDx)
+) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis")
+ggplot(
+    as.data.frame(colData(rse_gene)),
+    aes(y = mitoRate, group = PrimaryDx, x = PrimaryDx)
+) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis")
+
+rowRanges(rse_gene)
+i <- which(rowRanges(rse_gene)$Symbol == "SNAP25")
+i
+df <- data.frame(
+    expression = assay(rse_gene)[i, ],
+    Dx = rse_gene$PrimaryDx
+)
+ggplot(df, aes(y = log2(expression + 0.5), group = Dx, x = Dx)) +
+    geom_boxplot() +
+    theme_bw(base_size = 20) +
+    xlab("Diagnosis") +
+    ylab("SNAP25: log2(x + 0.5)")
+
+colnames(colData(rse_gene))
+table(rse_gene$BrainRegion)
+table(rse_gene$Race)
+mod <- with(
+    colData(rse_gene),
+    model.matrix(~ PrimaryDx + totalAssignedGene + rRNA_rate + BrainRegion + Sex + AgeDeath)
+)
+if (interacive()) {
+    ExploreModelMatrix::ExploreModelMatrix(
+        colData(rse_gene)[, c(
+            "PrimaryDx", "totalAssignedGene", "rRNA_rate", "BrainRegion", "Sex",
+            "AgeDeath"
+        )],
+        ~ PrimaryDx + totalAssignedGene + rRNA_rate + BrainRegion + Sex + AgeDeath
+    )
+}
+```
 
 ¿Quieres más datos? Tenemos muchos en LIBD incluyendo http://eqtl.brainseq.org/phase2/.
 
