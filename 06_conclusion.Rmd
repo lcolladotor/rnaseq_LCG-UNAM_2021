@@ -1,10 +1,26 @@
 # Revisión
 
 * ¿Debemos explorar las relaciones entre nuestras variables?
-* 
 * ¿Por qué usamos el paquete `edgeR`?
 * ¿Por qué es importante el argumento `sort.by` en `topTable()`?
 * ¿Por qué es importante el argumento `coef` en `topTable()`?
+
+Usemos los datos de http://research.libd.org/SPEAQeasy-example/bootcamp_intro
+
+```{r "speaqeasy_data"}
+speaqeasy_data <- file.path(tempdir(), "rse_speaqeasy.RData")
+download.file("https://github.com/LieberInstitute/SPEAQeasy-example/blob/master/rse_speaqeasy.RData?raw=true", speaqeasy_data, mode = "wb")
+library("SummarizedExperiment")
+load(speaqeasy_data, verbose = TRUE)
+rse_gene
+```
+* ¿Cuantos genes y muestras tenemos en estos datos?
+* ¿Hay diferencias en `totalAssignedGene` o `mitoRate` entre los grupos de diagnosis (`PrimaryDx`)?
+* Grafica la expresión de _SNAP25_ para cada grupo de diagnosis.
+* Sugiere un modelo estadistico que podríamos usar en una análisis de expresión diferencial. Verifica que si sea un modelo _full rank_. ¿Cúal sería el o los coeficientes de interés?
+
+¿Quieres más datos? Tenemos muchos en LIBD incluyendo http://eqtl.brainseq.org/phase2/.
+
 
 # spatialLIBD
 
