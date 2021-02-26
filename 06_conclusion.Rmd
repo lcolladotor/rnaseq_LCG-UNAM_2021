@@ -39,7 +39,7 @@ with(colData(rse_gene), tapply(mitoRate, PrimaryDx, summary))
 ## Podemos hacer lo mismo para otras variables
 with(colData(rse_gene), tapply(mitoRate, BrainRegion, summary))
 
-## Podemos resolver la primeras pregunas con iSEE
+## Podemos resolver la primeras preguntas con iSEE
 if (interactive()) iSEE::iSEE(rse_gene)
 
 ## O hacer graficas nosotros mismos. Aquí les muestro una posible respuesta
@@ -111,19 +111,34 @@ table(rse_gene$Race)
 ## si no, vamos a tener un modelo que no sea _full rank_
 mod <- with(
     colData(rse_gene),
-    model.matrix(~ PrimaryDx + totalAssignedGene + rRNA_rate + BrainRegion + Sex + AgeDeath)
+    model.matrix(~ PrimaryDx + totalAssignedGene + mitoRate + rRNA_rate + BrainRegion + Sex + AgeDeath)
 )
 
 ## Exploremos el modelo de forma interactiva
 if (interactive()) {
     ## Tenemos que eliminar columnas que tienen NAs.
+    info_no_NAs <- colData(rse_gene)[, c(
+        "PrimaryDx", "totalAssignedGene", "rRNA_rate", "BrainRegion", "Sex",
+        "AgeDeath", "mitoRate", "Race"
+    )]
     ExploreModelMatrix::ExploreModelMatrix(
-        colData(rse_gene)[, c(
-            "PrimaryDx", "totalAssignedGene", "rRNA_rate", "BrainRegion", "Sex",
-            "AgeDeath"
-        )],
-        ~ PrimaryDx + totalAssignedGene + rRNA_rate + BrainRegion + Sex + AgeDeath
+        info_no_NAs,
+        ~ PrimaryDx + totalAssignedGene + mitoRate + rRNA_rate + BrainRegion + Sex + AgeDeath
     )
+
+    ## Veamos un modelo más sencillo sin las variables numéricas (continuas) porque
+    ## ExploreModelMatrix nos las muestra como si fueran factors (categoricas)
+    ## en vez de continuas
+    ExploreModelMatrix::ExploreModelMatrix(
+        info_no_NAs,
+        ~ PrimaryDx + BrainRegion + Sex
+    )
+
+    ## Si agregamos + Race nos da errores porque Race solo tiene 1 opción
+    # ExploreModelMatrix::ExploreModelMatrix(
+    #     info_no_NAs,
+    #     ~ PrimaryDx + BrainRegion + Sex + Race
+    # )
 }
 ```
 
