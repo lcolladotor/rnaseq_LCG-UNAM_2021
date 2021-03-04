@@ -298,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb184-11"><a href="revisión.html#cb184-11"></a><span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
 <span id="cb184-12"><a href="revisión.html#cb184-12"></a><span class="st">    </span><span class="kw">theme_bw</span>(<span class="dt">base_size =</span> <span class="dv">20</span>) <span class="op">+</span></span>
 <span id="cb184-13"><a href="revisión.html#cb184-13"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>)</span></code></pre></div>
-<p><img src="figure-html/respuestas-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/respuestas-1.png" width="672" /></p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="revisión.html#cb185-1"></a><span class="kw">ggplot</span>(</span>
 <span id="cb185-2"><a href="revisión.html#cb185-2"></a>    <span class="kw">as.data.frame</span>(<span class="kw">colData</span>(rse_gene)),</span>
 <span id="cb185-3"><a href="revisión.html#cb185-3"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> mitoRate, <span class="dt">group =</span> PrimaryDx, <span class="dt">x =</span> PrimaryDx)</span>
@@ -306,7 +306,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb185-5"><a href="revisión.html#cb185-5"></a><span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
 <span id="cb185-6"><a href="revisión.html#cb185-6"></a><span class="st">    </span><span class="kw">theme_bw</span>(<span class="dt">base_size =</span> <span class="dv">20</span>) <span class="op">+</span></span>
 <span id="cb185-7"><a href="revisión.html#cb185-7"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>)</span></code></pre></div>
-<p><img src="figure-html/respuestas-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/respuestas-2.png" width="672" /></p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="revisión.html#cb186-1"></a><span class="co">## Otras variables</span></span>
 <span id="cb186-2"><a href="revisión.html#cb186-2"></a><span class="kw">ggplot</span>(</span>
 <span id="cb186-3"><a href="revisión.html#cb186-3"></a>    <span class="kw">as.data.frame</span>(<span class="kw">colData</span>(rse_gene)),</span>
@@ -315,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb186-6"><a href="revisión.html#cb186-6"></a><span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
 <span id="cb186-7"><a href="revisión.html#cb186-7"></a><span class="st">    </span><span class="kw">theme_bw</span>(<span class="dt">base_size =</span> <span class="dv">20</span>) <span class="op">+</span></span>
 <span id="cb186-8"><a href="revisión.html#cb186-8"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Brain Region&quot;</span>)</span></code></pre></div>
-<p><img src="figure-html/respuestas-3.png" width="672" /></p>
+<p><img src="_main_files/figure-html/respuestas-3.png" width="672" /></p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="revisión.html#cb187-1"></a><span class="co">## Encontremos el gene SNAP25</span></span>
 <span id="cb187-2"><a href="revisión.html#cb187-2"></a><span class="kw">rowRanges</span>(rse_gene)</span></code></pre></div>
 <pre><code>## GRanges object with 60609 ranges and 10 metadata columns:
@@ -363,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb191-10"><a href="revisión.html#cb191-10"></a><span class="st">    </span><span class="kw">theme_bw</span>(<span class="dt">base_size =</span> <span class="dv">20</span>) <span class="op">+</span></span>
 <span id="cb191-11"><a href="revisión.html#cb191-11"></a><span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Diagnosis&quot;</span>) <span class="op">+</span></span>
 <span id="cb191-12"><a href="revisión.html#cb191-12"></a><span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;SNAP25: log2(x + 0.5)&quot;</span>)</span></code></pre></div>
-<p><img src="figure-html/respuestas-4.png" width="672" /></p>
+<p><img src="_main_files/figure-html/respuestas-4.png" width="672" /></p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="revisión.html#cb192-1"></a><span class="co">## https://bioconductor.org/packages/release/bioc/vignettes/scater/inst/doc/overview.html#3_Visualizing_expression_values</span></span>
 <span id="cb192-2"><a href="revisión.html#cb192-2"></a>scater<span class="op">::</span><span class="kw">plotExpression</span>(</span>
 <span id="cb192-3"><a href="revisión.html#cb192-3"></a>    <span class="kw">as</span>(rse_gene, <span class="st">&quot;SingleCellExperiment&quot;</span>),</span>
@@ -373,7 +373,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb192-7"><a href="revisión.html#cb192-7"></a>    <span class="dt">colour_by =</span> <span class="st">&quot;BrainRegion&quot;</span>,</span>
 <span id="cb192-8"><a href="revisión.html#cb192-8"></a>    <span class="dt">xlab =</span> <span class="st">&quot;Diagnosis&quot;</span></span>
 <span id="cb192-9"><a href="revisión.html#cb192-9"></a>)</span></code></pre></div>
-<p><img src="figure-html/respuestas-5.png" width="672" /></p>
+<p><img src="_main_files/figure-html/respuestas-5.png" width="672" /></p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="revisión.html#cb193-1"></a><span class="co">## Para el model estadístico exploremos la información de las muestras</span></span>
 <span id="cb193-2"><a href="revisión.html#cb193-2"></a><span class="kw">colnames</span>(<span class="kw">colData</span>(rse_gene))</span></code></pre></div>
 <pre><code>##  [1] &quot;SAMPLE_ID&quot;                          &quot;FQCbasicStats&quot;                      &quot;perBaseQual&quot;                       
